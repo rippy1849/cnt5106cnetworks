@@ -49,7 +49,14 @@ def handle_bitfield_message(message_payload):
     
     res = ''.join(format(ord(i), '08b') for i in message_payload)
     
-    print(res)
+    missing_list = []
+    for chunk,c in enumerate(res):
+        if c == 0:
+            missing_list.append(chunk)
+    
+    
+            
+    # print(res)
     # print(message_payload)
     
     # for c in message_payload:
