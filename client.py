@@ -54,7 +54,7 @@ def handle_bitfield_message(message_payload):
         if c == 0:
             missing_list.append(chunk)
     
-    
+    print(missing_list)
             
     # print(res)
     # print(message_payload)
