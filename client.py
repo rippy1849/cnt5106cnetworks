@@ -49,12 +49,18 @@ def handle_bitfield_message(message_payload):
     
     res = ''.join(format(ord(i), '08b') for i in message_payload)
     
-    missing_list = []
+    avaliable_list = []
     for chunk,c in enumerate(res):
-        if c == 0:
-            missing_list.append(chunk)
+        if c == '1':
+            avaliable_list.append(chunk)
+    print(avaliable_list)
+    #If peer has pieces this peer wants, send interested message
     
-    print(missing_list)
+    
+    
+    
+    # print(res)
+    # print(missing_list)
             
     # print(res)
     # print(message_payload)
@@ -86,6 +92,8 @@ def check_message(message):
             #Check peer_id to see if it is correct, then begin accepting messages
             #NEED THE CHECK PEER ID
             #See if the connection is the correct neighbor ie check the header and make sure the peer id is good
+            
+            return message[32:]
                 
     else:
         # print(message)
@@ -94,11 +102,11 @@ def check_message(message):
             message_length = message[:4].decode()
             message_type = message[4:5].decode()
             
-            #Check to see if it is a valid message
+            #Check to see if it is a valid message info
             if check_integer(message_length) and check_integer(message_type):
                 
-                #Make sure the length field and type field are what we expect
-                if int(message_type) < 8 and int(message_length) > 0:
+                #Make sure the length field and type field are what we expect, and that the message contains the full payload. Reject bad messages
+                if int(message_type) < 8 and int(message_length) > 0 and len(message) >= (int(message_length) + 5):
                     
                 
                     
@@ -107,10 +115,13 @@ def check_message(message):
                     message_payload = message[5:5+message_length].decode()
                     handle_message(int(message_type), message_payload)
                     # print(message_payload)
+                    return message[5+message_length:]
                 else:
-                    print("Invalid Msg Length Field or Invalid Msg Type")
+                    print("Invalid Msg Length,Invalid Msg Type, or Invalid Msg Payload")
+                    return ""
             else:
                 print("Invalid Msg Length Field or Invalid Msg Type")
+                return ""
     
 
 s = socket.socket()
@@ -125,16 +136,26 @@ s.connect((ip, port))
 
 
 
+
 handshake_read = False
 while True:
 # receive data from the server
     
+    #What if message gets cut off?
     
-    message = s.recv(1024)
+    #Need to make this the max packet size
+    message = s.recv(32773)
+    # print(message)
 
+  
     #Looking for handshake segment
-    check_message(message) 
-        
+    
+    #what if message contains more than one message?
+    while len(message) > 0:
+        message = check_message(message)
+    # print(remaining_messages)
+    
+    
         
     # time.sleep(3)
 # close the connection
