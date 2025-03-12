@@ -8,7 +8,7 @@ HANDSHAKE_HEADER = b'P2PFILESHARINGPROJ'
 
 
 
-def peer_routine(connection, peer_count):
+def peer_send_routine(connection, peer_count):
     
     handshake = False
     
@@ -104,7 +104,7 @@ while True:
     peer_count += 1
     print ('Got connection from', addr )
     
-    t1 = threading.Thread(target=peer_routine, args=(c,peer_count,))
+    t1 = threading.Thread(target=peer_send_routine, args=(c,peer_count,))
     # print ('Got connection from', addr )
     t1.start()
     # # send a thank you message to the client.

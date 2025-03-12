@@ -3,6 +3,40 @@ import time
 import re
 # Create a socket object
 
+
+def peer_recieve_routine():
+    s = socket.socket()
+
+    # Define the port on which you want to connect
+    port = 5000
+    # ip = '10.192.162.102'
+    ip = '127.0.0.1'
+
+    # connect to the server on local computer
+    s.connect((ip, port))
+
+
+    while True:
+    # receive data from the server
+        
+        #What if message gets cut off?
+        
+        #Need to make this the max packet size
+        message = s.recv(32773)
+
+    
+        #Looking for handshake segment
+        
+        #what if message contains more than one message?
+        while len(message) > 0:
+            message = check_message(message)
+    
+    
+    
+    return
+
+
+
 def check_integer(s):
     # our created pattern to check for the integer value
     if re.match('^[+-]?[0-9]+$', s):
@@ -53,22 +87,10 @@ def handle_bitfield_message(message_payload):
     for chunk,c in enumerate(res):
         if c == '1':
             avaliable_list.append(chunk)
-    print(avaliable_list)
-    #If peer has pieces this peer wants, send interested message
+    # print(avaliable_list)
+    #If peer has pieces this peer wants, send interested message else, send 
     
-    
-    
-    
-    # print(res)
-    # print(missing_list)
-            
-    # print(res)
-    # print(message_payload)
-    
-    # for c in message_payload:
-    #     print(c)
         
-    
     
     
     return
@@ -107,9 +129,7 @@ def check_message(message):
                 
                 #Make sure the length field and type field are what we expect, and that the message contains the full payload. Reject bad messages
                 if int(message_type) < 8 and int(message_length) > 0 and len(message) >= (int(message_length) + 5):
-                    
-                
-                    
+      
                     message_length = int(message_length.replace("0", ""))
                     
                     message_payload = message[5:5+message_length].decode()
@@ -124,39 +144,5 @@ def check_message(message):
                 return ""
     
 
-s = socket.socket()
 
-# Define the port on which you want to connect
-port = 5000
-# ip = '10.192.162.102'
-ip = '127.0.0.1'
-
-# connect to the server on local computer
-s.connect((ip, port))
-
-
-
-
-handshake_read = False
-while True:
-# receive data from the server
-    
-    #What if message gets cut off?
-    
-    #Need to make this the max packet size
-    message = s.recv(32773)
-    # print(message)
-
-  
-    #Looking for handshake segment
-    
-    #what if message contains more than one message?
-    while len(message) > 0:
-        message = check_message(message)
-    # print(remaining_messages)
-    
-    
-        
-    # time.sleep(3)
-# close the connection
-# s.close()
+peer_recieve_routine()
