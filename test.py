@@ -1,13 +1,31 @@
 import threading
 import peer
 
-#start a thread for each peer
+def binary_to_string(bits):
+    return ''.join([chr(int(i, 2)) for i in bits])
+   
+# Driver Code
+ 
+# This is the binary equivalent of string "GFG"
+# bin_values = ['01101011', '01101011'] 
+ 
+# # calling the function
+# # and storing the result in variable 's'
+# s = binary_to_string(bin_values)
 
 
-# string = b"282"
+# s = '0009'
+# print(int(s))
+# print(s)
 
+# test_number = 1.2
+# print(int(test_number))
 
-# print(len(string[5:]))
+# print(len('P2PFILESHARINGPROJ'))
+
+# string = 'testString'
+
+# print(string[0:1])
 
 # exit()
 

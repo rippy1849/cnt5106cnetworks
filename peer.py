@@ -2,27 +2,23 @@ import socket
 import time
 import re
 import threading
-# Create a socket object
+import os
+import math
 
 
-HANDSHAKE_HEADER = b'P2PFILESHARINGPROJ'
+HANDSHAKE_HEADER = 'P2PFILESHARINGPROJ'
 
 
-#Might need to put mutex's here, maybe
-class ConnectionTable:
-    def __init__(self):
-        self.table = {}
 
-    def updateTable(self,key,connection):
-        # print("Hello my name is " + self.name)
-        self.table[key] = connection
-    def getConnection(self,key):
-        return self.table[key]
+def binary_to_string(bits):
+    return ''.join([chr(int(i, 2)) for i in bits])
 
-def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,connection_table):
+
+def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,connection_table, peer_cfg, common_cfg):
     s = socket.socket()
     connected = False
 
+    message_recieve_size = int(common_cfg['PieceSize']) + 5
     
 
     #Try to connect to host
@@ -40,16 +36,22 @@ def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,connection_table):
         #What if message gets cut off?
         
         #Need to make this the max packet size
-        message = s.recv(32773)
+        # print(message_recieve_size)
+        message = s.recv(message_recieve_size)
         # print(message)
         # print("Recieve loop")
         
-    
+        decoded_message = message.decode('utf-16')
         #Looking for handshake segment
         
         #what if message contains more than one message? NEED TO FIX
-        while len(message) > 0:
-            message = check_message(message,self_peer_id,connection_table,target_peer_id)
+        while len(decoded_message) > 0:
+            # print(message)
+            decoded_message = check_message(decoded_message,self_peer_id,connection_table,target_peer_id, peer_cfg, common_cfg)
+            # print(message)
+            #Might need to fix this, temp fix
+            if decoded_message == None:
+                decoded_message = ""
         
         
         # check_message(message,self_peer_id,connection_table,target_peer_id)
@@ -71,7 +73,7 @@ def check_integer(s):
 
 
 
-def handle_message(message_type,message_payload,connection_table, connected_peer_id, self_peer_id):
+def handle_message(message_type,message_payload,connection_table, connected_peer_id, self_peer_id, peer_cfg,common_cfg):
     
     match message_type:
         case 0:
@@ -92,24 +94,40 @@ def handle_message(message_type,message_payload,connection_table, connected_peer
         case 5:
             #Bitfield
             print("Bitfield")
-            handle_bitfield_message(message_payload)
+            handle_bitfield_message(message_payload,self_peer_id,connected_peer_id)
         case 6:
             #request
             print("Request")
+            handle_request_message(message_payload,connected_peer_id,connection_table)
         case 7:
             #piece
             print("Piece")
         case 8:
             #Establishing Connection Table Needed for python
             # print("Establishing")
-            handle_establishing_message(message_payload,connection_table, connected_peer_id, self_peer_id)
+            # print(message_payload)
+            handle_establishing_message(message_payload,connection_table, connected_peer_id, self_peer_id,peer_cfg)
     
     
     
     return
 
 
-def handle_establishing_message(message_payload, connection_table, connected_peer_id, self_peer_id):
+def handle_request_message(message_payload,connected_peer_id, connection_table):
+    
+    
+    #Upon getting the request message, if not choking, send the piece
+    connection = connection_table[connection_table[str(connected_peer_id)]]
+    piece_index = ""
+    if len(message_payload) > 4:
+        piece_index = message_payload[:4]  
+    
+              
+    
+    return
+
+
+def handle_establishing_message(message_payload, connection_table, connected_peer_id, self_peer_id, peer_cfg):
     
     
     # print(message_payload)
@@ -130,17 +148,25 @@ def handle_establishing_message(message_payload, connection_table, connected_pee
             message_payload = '1' + message_payload[1:]
             forward_message += message_payload
             
-            connection_table[1].send(forward_message.encode())
-            connection_table[2].send(forward_message.encode())
+            
+            #could act weird for over 1000 peers
+            
+            #Make sure the connection table is fully populated before iterating over it
+            num_connections = len(peer_cfg)-1
             
             
+            while len(connection_table) < num_connections:
+                print("Waiting for connection table to populate",num_connections,len(connection_table))
+                # print(connection_table)
+                
             
-            # connection_table[1].send(HANDSHAKE_HEADER)
-            #Send message to all, forward it to all peers
-            # print(connection_table)
-            # for cn,connection in connection_table.items():
-            #     connection.send(forward_message)
-                # print("forwarding")
+            
+            #Should be populated with all connections, but not the actual peers
+            for i in range(1,num_connections+1):
+                connection = connection_table[i]
+                connection.send(forward_message.encode('utf-16'))
+
+            
         else:
             # print("Not forwarding")
             
@@ -151,83 +177,12 @@ def handle_establishing_message(message_payload, connection_table, connected_pee
                 connection_number = message_payload[5:9]
                 connection_number = int(connection_number.replace("0", ""))
                 
-                # print(self_peer_id, connection_number,peer_id)
-                
-                # connection_table[str(peer_id)] = connection_number
-                
-                # print(len(connection_table))
-                
-                # peer_id == 
+
                 
                 if str(self_peer_id) == str(peer_id):
-                    # print(self_peer_id,connected_peer_id)
-                    # print("Establishing Message: ", message_payload, "from",connected_peer_id, "to", self_peer_id)
-                    # print(self_peer_id, connected_peer_id,connection_number)
-                    # if str(self_peer_id)
-                    
-                    
-                    #
-                    # connection_table[str(self_peer_id) + str(connected_peer_id)] = connection_number
+                    # print()
                     connection_table[str(connected_peer_id)] = connection_number
                     
-                    # print(connection_table)
-                    
-                        # print(peer_id,connection_number)
-                    # connection_table[str(connected_peer_id)] = connection_number
-                    # print()
-                    
-                    
-                    # if str(self_peer_id) == '1001':
-                    #     # print(connected_peer_id)
-                    #     if '1002' in connection_table and '1003' in connection_table:
-                    #         print(1001,connection_table['1002'],connection_table['1003']) 
-                            
-                            
-                    # if str(self_peer_id) == '1002':
-                    #     # print(connected_peer_id)
-                    #     if '1001' in connection_table and '1003' in connection_table:
-                    #         print(1002,connection_table['1001'],connection_table['1003']) 
-                            
-                    # if str(self_peer_id) == '1003':
-                    #     # print(connected_peer_id)
-                    #     if '1002' in connection_table and '1001' in connection_table:
-                    #         print(1003,connection_table['1002'],connection_table['1001']) 
-                        # print(connection_table)
-                    
-                    
-                    # if str(self_peer_id) == '1002':
-                    #     print(connection_table['1001'],connection_table['1003']) 
-                        
-                    # if str(self_peer_id) == '1003':
-                    #     print(connection_table['1002'],connection_table['1001']) 
-                    
-                    # print(connection_table)
-                    
-                    
-                    
-                    # connection_table[connection_number]
-                    # print(connection_table)
-                
-                # print("Establishing Message: ", message_payload, "from",connected_peer_id, "to", self_peer_id)
-                # print("Establishing Message: ", message_payload, "from",connected_peer_id, "to", self_peer_id)
-                
-                
-                # if connected_peer_id == 1002:
-                #     print(peer_id, connection_number)
-                
-                # connection_table[str(peer_id)] = connection_number
-                # print(connection_table)
-
-                # print(peer_id,connection_number)
-                # connection_table[str(peer_id)] = connection_number
-                
-            
-            
-            # connection_table[]
-            
-            #
-            
-        # if message_payload[0:1] == '1':
             
         
     
@@ -236,14 +191,18 @@ def handle_establishing_message(message_payload, connection_table, connected_pee
 
 
 
-def handle_bitfield_message(message_payload):
+def handle_bitfield_message(message_payload,self_peer_id,connected_peer_id):
     
     res = ''.join(format(ord(i), '08b') for i in message_payload)
     
+    
+    # print(res)
     avaliable_list = []
     for chunk,c in enumerate(res):
         if c == '1':
             avaliable_list.append(chunk)
+            
+    # print(message_payload,self_peer_id)
     # print(avaliable_list)
     #If peer has pieces this peer wants, send interested message else, send 
     
@@ -253,81 +212,229 @@ def handle_bitfield_message(message_payload):
     return
 
 
-def check_message(message,self_peer_id,connection_table, connected_peer_id):
+def check_message(message,self_peer_id,connection_table, connected_peer_id, peer_cfg, common_cfg):
     
     
-    if message != "" and len(message) >= 32:
+    offset_handshake = 0
+    if str(hex(ord(message[0:1]))) == '0xfeff':
+        offset_handshake = 1
+
+
+    if len(message) >= 18:
+        handshake_header = message[offset_handshake:18+offset_handshake]
+    else:
+        handshake_header = ""
+    
+    
+    
+    if handshake_header == 'P2PFILESHARINGPROJ':
         # print(message,len(message))
-        handshake_header = message[:18]
-        # print(handshake_header)
-        if handshake_header.decode() == 'P2PFILESHARINGPROJ':
-            # print("is handshake")
-            zero_bits = message[18:28].decode()
-            peer_id = message[28:32].decode()
-            
-            # print(zero_bits)
-            # print(peer_id)
-            
-            print("Handshake from ", connected_peer_id ,"to", self_peer_id)
-            
         
-            # TODO
+        
+        # print(handshake_header)
+        # print("is handshake")
+        if len(message) >= 32:
+            zero_bits = message[18+offset_handshake:28+offset_handshake]
+            peer_id = message[28+offset_handshake:32+offset_handshake]
+        
+            print("Handshake from ", connected_peer_id ,"to", self_peer_id)
+        
+        
+        
+            #return the DECODED message, consistent with size
+        
             # print(message)
-            #Check peer_id to see if it is correct, then begin accepting messages
-            #NEED THE CHECK PEER ID
-            #See if the connection is the correct neighbor ie check the header and make sure the peer id is good
-            # return ""
-            
-            # if message[32:] == None:
-            #     print("---------------")
-            #     # print(len(message))
-            #     return ""
-            
-            #Issue with None Type
-            
-            
-            # return ""
-            return message[32:]
+            return message[32+offset_handshake:]
     else:
         # print(message)
+        
         if len(message) > 5:
+            # print(message)
+
             
-            message_length = message[:4].decode()
-            message_type = message[4:5].decode()
+            # print(message_length,message)
             
+            # print(decoded_message,message_length,message_type)
+            
+            # print(message)
             #Check to see if it is a valid message info
+            
+            
+            #There is a very weird issue with UTF-16 encoding, need to use it, but causes a bug I can't figure out
+            # https://unicodemap.com/details/0xFEFF/
+            
+            offset = 0
+            if str(hex(ord(message[0:1]))) == '0xfeff':
+                offset = 1
+                
+            message_length = message[offset:4+offset]
+            message_type = message[4+offset:5+offset]   
+            
             
             if check_integer(message_length) and check_integer(message_type):
                 
                 #Make sure the length field and type field are what we expect, and that the message contains the full payload. Reject bad messages
                 if int(message_type) < 9 and int(message_length) > 0 and len(message) >= (int(message_length) + 5):
       
-                    message_length = int(message_length.replace("0", ""))
+                    # message_length = int(message_length.replace("0", ""))
+                    message_length = int(message_length)
                     
-                    message_payload = message[5:5+message_length].decode()
-                    handle_message(int(message_type), message_payload, connection_table, connected_peer_id, self_peer_id)
+                    message_payload = message[5+offset:5+message_length+offset]
+                    handle_message(int(message_type), message_payload, connection_table, connected_peer_id, self_peer_id, peer_cfg,common_cfg)
                     # print(message_payload)
                 
+                
+                    # print(message[5+message_length:])
+                    # return ""
+                    # print(message[5+message_length:])
                     return message[5+message_length:]
                 else:
                     print("Invalid Msg Length,Invalid Msg Type, or Invalid Msg Payload")
+                    # print(message)
                     return ""
             else:
-                print(message)
-                print(len(message))
+                
+                
+                # testString = 'testString'
+                # copy = message[:]
+                # weird_char = message[0:1]
+                # print(hex(ord(weird_char)), str(hex(ord(weird_char))) == '0xfeff')
+                # print(copy,len(copy[0:4]),copy[0:4])
+                # print(testString[0:1])
+                # print(message,message[0:1],message[:4],message[:5],message_length, check_integer(message_length),check_integer(message_type))
+                # print(len(message))
                 print("Invalid Msg Length Field or Invalid Msg Type")
                 return ""
     
 
 
-def peer_send_routine(connection, self_peer_id, connection_table, connection_number):
+
+
+def send_request_message():
+    
+    
+    return
+
+
+def send_bitfield_message(connection,self_peer_id,common_cfg):
+    
+    
+    directory = "peer_" + str(self_peer_id)
+    #check to see if the directory exists, if not create it
+    if not os.path.exists(os.path.join(os.getcwd(), directory)):
+        os.mkdir(os.path.join(os.getcwd(), directory))
+    
+    
+    file_name = common_cfg['FileName']
+    if os.path.exists(os.path.join(os.getcwd(), directory, file_name)):
+        
+        bitfield_message = ""
+        bin_values = []
+        piece_size = int(common_cfg['PieceSize'])
+        file_size = int(common_cfg['FileSize'])
+        
+        number_of_pieces = file_size/piece_size
+        number_of_pieces_int = int(number_of_pieces)
+        total_number_of_pieces = 0
+        
+        if number_of_pieces != number_of_pieces_int:
+            #Float has extra decimal, not a perfect split, need one extra piece for remaining file chunk
+            total_number_of_pieces = number_of_pieces_int + 1
+        else:
+            total_number_of_pieces = number_of_pieces_int
+         
+         
+        # print(total_number_of_pieces)
+        # piece_count = 0   
+        bin_string = ""
+        for i in range(0,total_number_of_pieces):
+            # print(i)
+            if i % 8 == 0:
+                # print(bin_string)
+                
+                if i != 0:
+                    bin_values.append(bin_string)
+                bin_string = '1'
+            else:
+                bin_string += '1'
+        if len(bin_string) > 0:
+            for i in range(0,8-len(bin_string)):
+                bin_string += '0'
+            bin_values.append(bin_string)
+        piece_string = binary_to_string(bin_values)
+        # print(piece_string)
+        # print(bin_values)
+
+        # piece_string_length = len(piece_string)
+        
+        # print(len(str(len(piece_string))))
+        # size_of_length = len(piece_size)
+        
+        # print(size_of_length)
+        # print(len(str(piece_string)))
+        # string = "11"
+        
+        
+        for i in range(0,4-len(str(len(piece_string)))):
+            bitfield_message += '0'
+            # print('hello')
+        bitfield_message += str(len(piece_string))
+        
+        # print(bitfield_message)
+        bitfield_message += '5'
+        bitfield_message += piece_string
+        
+        # encoded = bitfield_message.encode()
+        # print(encoded.decode())
+        
+        # print(bitfield_message.encode())
+        # connection.send()
+        encoded = bitfield_message.encode('utf-16')
+        # connection.send(encoded)
+        # print(encoded)
+    
+    
+    return
+
+
+def send_establishing_message(connection,self_peer_id, connection_number):
+
+    establishing_message = "000980"
+
+    establishing_message += str(self_peer_id)
+    
+    
+    for i in range(0, 4 - len(str(connection_number))):
+        establishing_message += str(0)    
+
+    
+    establishing_message += str(connection_number)
+    
+    # print(establishing_message)
+        
+    connection.send(establishing_message.encode('utf-16')) 
+    
+    
+    return
+
+
+
+def peer_send_routine(connection, self_peer_id, connection_table, connection_number, peer_cfg, common_cfg):
     
     handshake = False
     established = False
+    send_all = False
 
-    handshake_message = HANDSHAKE_HEADER + b'0000000000' + str(self_peer_id).encode()
+
+    handshake_message = 'P2PFILESHARINGPROJ0000000000' + str(self_peer_id)
+    # print(handshake_message)
+    # print(handshake_message)
+    # handshake_message = HANDSHAKE_HEADER + b'0000000000' + str(self_peer_id).encode('utf-16')
+    handshake_message = handshake_message.encode('utf-16')
     
-    fake_message = '00055hello'.encode()
+    # print(handshake_message)
+    
+    # fake_message = '00055hello'.encode()
     
     
 
@@ -340,6 +447,7 @@ def peer_send_routine(connection, self_peer_id, connection_table, connection_num
             #CHECK initial message header and peer id
             # connection.send(b'Thank you for connecting ' + str(peer_count).encode())
         if handshake == False:
+            # print(handshake_message.decode('utf-16'))
             connection.send(handshake_message)
             # handshake = True
             #Check to make sure peer is correct (handshake is also good on their end)
@@ -349,39 +457,32 @@ def peer_send_routine(connection, self_peer_id, connection_table, connection_num
         # connection.send(fake_message)
         # print("sent fake message")
         else:
-            # print("hi")
-            # connection.send(fake_message)
-            # for cn,connection_ in connection_table.items():
+            # established = True
             if established == False:
-                establishing_message = "000980"
-                
-                # message_length = 9
-                
-                # for i in range(0, 4 - len(str(message_length))):
-                #     establishing_message += str(0)
-                
-                # establishing_message += str(message_length)
-                
-                # establishing_message += str(8)
-                # establishing_message += '0'
-                establishing_message += str(self_peer_id)
-                
-                
-                for i in range(0, 4 - len(str(connection_number))):
-                    establishing_message += str(0)    
-                # print(establishing_message)
+                send_establishing_message(connection,self_peer_id,connection_number)
+                # print("hi")
+                established = True
+            # else:
+            #     send_bitfield_message(connection,self_peer_id, common_cfg)
+                # print(common_cfg)
 
                 
-                establishing_message += str(connection_number)
-                
-                # print(establishing_message)
+                # if(str(self_peer_id) == '1001'):
+                #     connection_table[connection_table['1002']].send(b'000451002')
+                #     connection_table[connection_table['1003']].send(b'000451003')
                     
-                connection.send(establishing_message.encode())
+                # if(str(self_peer_id) == '1002'):
+                #     connection_table[connection_table['1001']].send(b'000451001')
+                #     connection_table[connection_table['1003']].send(b'000451003')
+
+                # if(str(self_peer_id) == '1003'):
+                #     connection_table[connection_table['1002']].send(b'000451002')
+                #     connection_table[connection_table['1001']].send(b'000451001')
+                    # print(c_1002)
+                    
+                    # print(c_1002)
                 
-                established = True
-            
-            
-                
+    
                 # print("hi")
                 
                 
@@ -413,11 +514,12 @@ def start_peer(peer_id, port):
     
     for line in common_cfg_file:
         options = line.split(" ")
-        common_cfg[options[0]] = options[1]
+        common_cfg[options[0]] = options[1].rstrip()
         
     for line in peer_info_cfg_file:
         peer_info = line.split(" ")
         peer_cfg[peer_info[0]] = {'ip' : peer_info[1], 'port' : peer_info[2], 'has_file' : peer_info[3]}
+    # print(peer_cfg)
     
     #Keep track of the send & recieve threads
     
@@ -428,7 +530,7 @@ def start_peer(peer_id, port):
             
             peer_ip = info['ip']
             peer_port = info['port']
-            recieve_thread = threading.Thread(target=peer_recieve_routine, args=(peer_ip,peer_port,int(peer),int(peer_id),connection_table,))
+            recieve_thread = threading.Thread(target=peer_recieve_routine, args=(peer_ip,peer_port,int(peer),int(peer_id),connection_table,peer_cfg,common_cfg))
             recieve_thread.start()
             print(peer_id,"Connecting to", peer)
 
@@ -461,7 +563,7 @@ def start_peer(peer_id, port):
         connection_table[connection_count] = c
         
         
-        t1 = threading.Thread(target=peer_send_routine, args=(c,peer_id,connection_table, connection_count))
+        t1 = threading.Thread(target=peer_send_routine, args=(c,peer_id,connection_table, connection_count, peer_cfg,common_cfg))
         
         connection_count += 1
         # t2 = threading.Thread(target=peer_recieve_routine, args=(peer_ip,peer_port,peer_id,))
