@@ -26,6 +26,9 @@ def binary_to_string(bits):
 # string = 'testString'
 
 # print(string[0:1])
+piece = '9u3yry293yr3iurhoewhiofewoijfeo'
+
+# print(len(piece))
 
 # exit()
 
