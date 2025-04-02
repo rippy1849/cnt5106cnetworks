@@ -118,10 +118,22 @@ def handle_message(message_type,message_payload,connection_table, connected_peer
             print("Establishing")
             # print(message_payload)
             handle_establishing_message(message_payload,connection_table, connected_peer_id, self_peer_id,peer_cfg)
+            
+        case 9:
+            #Download Rate Message
+            print("Download Rate Message")
+            
     
     
     
     return
+
+
+def handle_download_rate_message(message_payload,connection_table, connected_peer_id, self_peer_id,peer_cfg):
+    
+    
+    return
+
 
 
 def handle_request_message(message_payload,self_peer_id,connected_peer_id, connection_table, peer_cfg):
@@ -138,6 +150,7 @@ def handle_request_message(message_payload,self_peer_id,connected_peer_id, conne
     
     
     connection = connection_table[connection_table[str(connected_peer_id)]]  
+    
 
     # piece = '9u3yry293yr3iurhoewhiofewoijfeo2'
     piece = 'hello!'
@@ -415,6 +428,9 @@ def send_piece(connection, piece, piece_size):
     #Assuming message length field is 4 bytes long, we must divide 5 byte int by 2 to fit it in 4 byte length field
     piece_message = ""
     
+    
+    #Divide the piece by n, based on how large the piece size is, such that it fits in a 4 byte number.
+    
     message_payload_length = piece_size/2
     
     for i in range(0,4-len(str(int(message_payload_length)))):
@@ -584,11 +600,19 @@ def peer_send_routine(connection, self_peer_id, connection_table, connection_num
                 established = True
             
             #TODO
+            #Update, there MIGHT be an issue with dropped messages
             #There is a race case condition where the connection table is stuck at 3 entries. No idea why. Breaks sometimes
             #MAKE SURE Connection table populates before sending ANY messages
             
             while (len(connection_table) < 2*(len(peer_cfg)-1)):
-                print('Waiting for connection table to populate-main loop', len(connection_table), 2*(len(peer_cfg)-1))          
+                print('Waiting for connection table to populate-main loop', len(connection_table), 2*(len(peer_cfg)-1))   
+                
+                time.sleep(2)
+                
+                if(len(connection_table) < 2*(len(peer_cfg)-1)):
+                    #Deal with message being dropped and repopulate the table
+                    send_establishing_message(connection,self_peer_id, connection_number)
+                          
             
             
             if connection_table_populated == False:
