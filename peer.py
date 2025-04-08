@@ -5,9 +5,16 @@ import threading
 import os
 import math
 from datetime import datetime
+from multiprocessing import Process
+import random
 
 
 #TODO Anywhere there is a connection.send, need to wrap it in a connection error handler
+
+#TODO Processes Cannot share data, they make a copy and pass it in. There is a max number of threads allowed, threads are a necessity. 
+#TODO Max Number of peers allowed is 10 without slowing down to nothing.
+
+#TODO Remove interested entries in handle_not_interested
 
 HANDSHAKE_HEADER = 'P2PFILESHARINGPROJ'
 DOWNLOAD_RATE_WINDOW = 0.5
@@ -17,6 +24,12 @@ class Tables:
         self.connection_table = {}
         self.connection_key_table = {}
         self.download_table = {}
+        self.piece_list = {}
+        # self.preferred_peers = {}
+        self.rate_entry = {}
+        self.interested_peers = {}
+        self.choked_peers = {}
+        self.optimistically_unchoked_neighbor = ''
         
     def getConnectionTable(self):        
         return self.connection_table
@@ -32,7 +45,30 @@ class Tables:
         return self.download_table
     def setDownloadTableEntry(self,entry,value):
         self.download_table[entry] = value
-
+        
+    def resetDownloadTable(self):
+        self.download_table = {}
+    
+    def setRateEntry(self,entry,value):
+        self.rate_entry[entry] = value
+    def getRateTable(self):
+        return self.rate_entry
+    
+    def setInterestedEntry(self,entry,value):
+        self.interested_peers[entry] = value
+    def getInterestedTable(self):
+        return self.interested_peers
+    
+    def setChokedEntry(self,entry,value):
+        self.choked_peers[entry] = value
+    
+    def getChokedTable(self):
+        return self.choked_peers 
+    
+    def setOptimisticNeighbor(self,neighbor):
+        self.optimistically_unchoked_neighbor = neighbor
+    def getOptimisticNeighbor(self):
+        return self.optimistically_unchoked_neighbor
 
 def exit_thread_and_cleanup():
     
@@ -59,6 +95,88 @@ def send_message(connection, message, self_peer_id, target_peer_id, i):
     
     return
 
+
+def preferred_peers(tables,peer_cfg,common_cfg):
+    
+    while True:
+        
+        download_table = tables.getDownloadTable()
+        number_of_preffered_neighbors = int(common_cfg['NumberOfPreferredNeighbors'])
+        top_dl_rate_list = []
+        top_rates = []
+        peers_preferred = []
+        
+        if len(download_table) == (len(peer_cfg)-1)*2:
+            download_rate_table = tables.getRateTable()
+            interested_table = tables.getInterestedTable()
+            try:
+                for key,value in download_rate_table.items():
+                    #Check only interested neighbors
+                    if interested_table[key] == 'Yes':
+                        #Of peers that are interested choose top k
+                        top_dl_rate_list.append(value)
+                top_dl_rate_list.sort()
+                
+                size = min(int(number_of_preffered_neighbors),len(top_dl_rate_list))
+                for i in range(len(top_dl_rate_list)-1,len(top_dl_rate_list)-size-1,-1):
+                    top_rates.append(top_dl_rate_list[i])
+                
+                for i in range(0,len(top_rates)):
+                    for key,value in download_rate_table.items():
+                        if value == top_rates[i] and key not in peers_preferred:
+                            
+                            peers_preferred.append(key)
+                            del download_rate_table[key]
+                            break
+                #Send unchoke message to all preffered peers
+                #Check which neighbors are choked
+                choked_table = tables.getChokedTable()
+                # print(choked_table)
+                connection_table = tables.getConnectionTable()
+                connection_key_table = tables.getConnectionKeyTable()
+                for pref_neighbor in peers_preferred:
+                    if pref_neighbor in choked_table:
+                        connection_key = connection_key_table[pref_neighbor]
+                        connection = connection_table[connection_key]
+                        
+                        
+                        send_unchoking_message(connection,pref_neighbor)
+                
+                optimistic_neighbor = tables.getOptimisticNeighbor()     
+                for key,value in download_rate_table.items():
+                    #Make sure not optimistic neighbor, not already choked, and not a preferred peer
+                    if key != optimistic_neighbor and key not in peers_preferred and key in choked_table:
+                        connection_key = connection_key_table[key]
+                        connection = connection_table[connection_key]
+                        
+                        send_choking_message(connection,key)
+                        
+                        
+                        
+                        #send unchoking message
+                        
+                        
+                        # send_unchoking_message()
+                    
+                            
+                    
+                
+                
+                # for i in range(0,5):
+                #     print(i)
+                    
+                        
+            except:
+                #Sometimes DL rate table not fully populated (error reading download table, size changes)
+                print("Download Table Not Populated")
+            
+            tables.resetDownloadTable()
+            
+            
+        # download_table = tables.getDownloadTable()
+        # print(len(download_table))
+    
+    return
 
 
 def cleanup_logs(self_peer_id):
@@ -249,9 +367,9 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
     
     if message_payload[0] == '0':
         #Start Junk Download Data
-        
+        # print(len(tables.getDownloadTable()))
         # print("Junk Data begin")
-        log_entry(str(self_peer_id)+'_log','Junk Download Data Message')
+        # log_entry(str(self_peer_id)+'_log','Junk Download Data Message')
 
         byte_entry = str(connected_peer_id) + "-bytes"
         tables.setDownloadTableEntry(byte_entry,0)
@@ -294,7 +412,8 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         download_table = tables.getDownloadTable()
         start_entry = str(connected_peer_id) + '-start'
         byte_entry = str(connected_peer_id) + "-bytes"
-        rate_entry = str(connected_peer_id) + "-rate"
+        # rate_entry = str(connected_peer_id) + "-rate"
+        rate_entry = str(connected_peer_id)
         
         
         #TODO Somehow, some way, '0' is being skipped, and the table entry is not being set, defaulting to 0, bad connection
@@ -316,13 +435,21 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         except:
             print(stop_timestamp,start_timestamp)
         
+        #If bad download rate, randomize so that all peers are possible. Only happens when rate limited
+        if download_rate == 0:
+            download_rate = random.randint(1, 10)
+        
+        tables.setRateEntry(rate_entry,download_rate)
         
         
-        tables.setDownloadTableEntry(rate_entry,download_rate)
+        #TODO Need to do this upon recieving interested entry, in handle_interested. Putting it here to make all interested for testing.
+        #TODO Need to do this upon recieving choked, in handle_choke. Remove from table in handle_unchoke
         
+        tables.setInterestedEntry(rate_entry, 'Yes')
+        tables.setChokedEntry(rate_entry, 'Yes')
         
-        dlTable = tables.getDownloadTable()
-        print('Download Rate', dlTable[rate_entry])
+        # dlTable = tables.getDownloadTable()
+        # print('Download Rate', dlTable[rate_entry])
         
         # print(dlTable)
     
@@ -494,7 +621,7 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
     else:
         # print(message)
         
-        if len(message) > 5:
+        if len(message) >= 5:
             # print(message)
 
             
@@ -525,7 +652,7 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
                     message_length *= 2
                 
                 
-                if int(message_type) < 10 and int(message_length) > 0 and len(message) >= (int(message_length) + 5):
+                if int(message_type) < 10 and int(message_length) >= 0 and len(message) >= (int(message_length) + 5):
       
                     # message_length = int(message_length.replace("0", ""))
                     
@@ -548,7 +675,7 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
                     return message[5+message_length +offset:]
                 else:
                     print("Invalid Msg Length,Invalid Msg Type, or Invalid Msg Payload")
-                    # print(message)
+                    # print(message, int(message[offset:4+offset]),message[4+offset:5+offset])
                     return ""
             else:
                 
@@ -562,6 +689,28 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
     return ""
     
 
+def send_interested_message():
+    
+    return
+
+def send_unchoking_message(connection, target_peer_id):
+    
+    unchoking_message = '00001'
+    
+    # print(f"Sending Unchoking Message to {target_peer_id}")
+    
+    connection.send(unchoking_message.encode('utf-16'))
+    
+    return
+
+def send_choking_message(connection, target_peer_id):
+    
+    choking_message = '00000'
+    
+    connection.send(choking_message.encode('utf-16'))
+    
+    
+    return
 
 
 #Sends a request message to the desired peer connection for a specific piece
@@ -764,7 +913,7 @@ def send_junk_message(connection, self_peer_id, target_peer_id):
 def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,tables, peer_cfg, common_cfg, pieces_list):
     s = socket.socket()
     connected = False
-    message_content = False
+    # message_content = False
 
     message_recieve_size = int(common_cfg['PieceSize']) + 5
     
@@ -818,7 +967,7 @@ def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,tables, peer_cfg, c
             current_timestamp = datetime.now().timestamp()
         
         
-        #TODO Need to deal with dropped connections. Later
+        #TODO Need to deal with dropped connections. Later.
         if (current_timestamp - prev_timestamp) > 5:
             #It has been 5 seconds since last message, connection likely broke
             print("Connection Dropped, attempting to reconnect")
@@ -864,7 +1013,8 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
     # print(handshake_message)
     
     # fake_message = '00055hello'.encode()
-    
+    # recieve_thread = threading.Thread(target=preferred_peers, args=(tables,peer_cfg,common_cfg,))
+    # recieve_thread.start()
     
 
     prev_timestamp_unchoking = datetime.now().timestamp()
@@ -919,7 +1069,7 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
             # print(current_timestamp - prev_timestamp)
             # print(current_timestamp)
             
-            #TODO Make this it's own thread to be non-blocking for the optimistic interval, not really necessary given how fast this works
+            #Make this it's own thread to be non-blocking for the optimistic interval, not really necessary given how fast this works
             if current_timestamp - prev_timestamp_unchoking > int(common_cfg['UnchokingInterval']):
                 
                 # print(current_timestamp - prev_timestamp_unchoking, "Unchoking Interval")
@@ -950,7 +1100,7 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
             #     except:
             #         print("Error starting optimistic unchoking thread")
                 
-            #TODO Make this it's own thread to be non-blocking for the choking interval, not really necessary given how fast 
+            # Make this it's own thread to be non-blocking for the choking interval, not really necessary given how fast 
             if current_timestamp - prev_timestamp_optimistic > int(common_cfg['OptimisticUnchokingInterval']):
                 
                 # print(current_timestamp - prev_timestamp_optimistic, "Optimistic Unchoking " + str(connection_number))
@@ -1005,8 +1155,7 @@ def start_peer(peer_id, port):
     # print(peer_cfg)
     
     #Keep track of the send & recieve threads
-    
-    
+
     
     #Establish Connection to all other peers in peer list
     for peer,info in peer_cfg.items():
@@ -1018,15 +1167,16 @@ def start_peer(peer_id, port):
             recieve_thread.start()
 
     
+      
     
     
-    
-    
-    
-    
+
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     hostName = socket.gethostbyname( '0.0.0.0' )
     s.bind((hostName, port))
+
+    preferred_peer_process = threading.Thread(target=preferred_peers, args=(tables,peer_cfg,common_cfg,))
+    preferred_peer_process.start()
 
 
     # print ("socket binded to %s" %(port))
