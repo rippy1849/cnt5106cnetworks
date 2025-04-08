@@ -56,6 +56,7 @@ class Tables:
     
     def setInterestedEntry(self,entry,value):
         self.interested_peers[entry] = value
+        
     def getInterestedTable(self):
         return self.interested_peers
     
@@ -64,6 +65,9 @@ class Tables:
     
     def getChokedTable(self):
         return self.choked_peers 
+    
+    def removeChokedEntry(self,entry):
+        del self.choked_peers[entry]
     
     def setOptimisticNeighbor(self,neighbor):
         self.optimistically_unchoked_neighbor = neighbor
@@ -106,7 +110,12 @@ def preferred_peers(tables,peer_cfg,common_cfg):
         top_rates = []
         peers_preferred = []
         
+        
+        
         if len(download_table) == (len(peer_cfg)-1)*2:
+            
+            # print("Determining Preffered Peers")
+            
             download_rate_table = tables.getRateTable()
             interested_table = tables.getInterestedTable()
             try:
@@ -130,26 +139,33 @@ def preferred_peers(tables,peer_cfg,common_cfg):
                             break
                 #Send unchoke message to all preffered peers
                 #Check which neighbors are choked
+                
+                # print(peers_preferred)
+                
                 choked_table = tables.getChokedTable()
                 # print(choked_table)
                 connection_table = tables.getConnectionTable()
                 connection_key_table = tables.getConnectionKeyTable()
                 for pref_neighbor in peers_preferred:
-                    if pref_neighbor in choked_table:
-                        connection_key = connection_key_table[pref_neighbor]
-                        connection = connection_table[connection_key]
+                    # if pref_neighbor in choked_table:
+                    #Send Unchoke to preffered peers regardless of choke status
+                    connection_key = connection_key_table[str(pref_neighbor)]
+                    connection = connection_table[connection_key]
                         
-                        
-                        send_unchoking_message(connection,pref_neighbor)
+                    # print(connection)
+                    send_unchoking_message(connection,tables,pref_neighbor)
                 
-                optimistic_neighbor = tables.getOptimisticNeighbor()     
+                optimistic_neighbor = tables.getOptimisticNeighbor()
                 for key,value in download_rate_table.items():
                     #Make sure not optimistic neighbor, not already choked, and not a preferred peer
-                    if key != optimistic_neighbor and key not in peers_preferred and key in choked_table:
+                    if key != optimistic_neighbor and key not in peers_preferred and key not in choked_table:
                         connection_key = connection_key_table[key]
                         connection = connection_table[connection_key]
                         
-                        send_choking_message(connection,key)
+                        # choked_table = tables.getChokedTable()
+                        # print(choked_table,key)
+                        
+                        send_choking_message(connection, tables, key)
                         
                         
                         
@@ -446,7 +462,7 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         #TODO Need to do this upon recieving choked, in handle_choke. Remove from table in handle_unchoke
         
         tables.setInterestedEntry(rate_entry, 'Yes')
-        tables.setChokedEntry(rate_entry, 'Yes')
+        # tables.setChokedEntry(rate_entry, 'Yes')
         
         # dlTable = tables.getDownloadTable()
         # print('Download Rate', dlTable[rate_entry])
@@ -693,21 +709,31 @@ def send_interested_message():
     
     return
 
-def send_unchoking_message(connection, target_peer_id):
+def send_unchoking_message(connection, tables, target_peer_id):
     
     unchoking_message = '00001'
     
+    
     # print(f"Sending Unchoking Message to {target_peer_id}")
+    # tables.setChokedEntry(str(target_peer_id), 'No')
     
     connection.send(unchoking_message.encode('utf-16'))
     
+    choked_table = tables.getChokedTable()
+    
+    if target_peer_id in choked_table:
+    
+        tables.removeChokedEntry(str(target_peer_id))
+    
+    
     return
 
-def send_choking_message(connection, target_peer_id):
+def send_choking_message(connection, tables, target_peer_id):
     
     choking_message = '00000'
     
     connection.send(choking_message.encode('utf-16'))
+    tables.setChokedEntry(str(target_peer_id), 'Yes')
     
     
     return
@@ -1109,6 +1135,46 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
                 
                 
                 prev_timestamp_optimistic = current_timestamp
+                
+                choked_table = tables.getChokedTable()
+                interested_table = tables.getInterestedTable()
+                
+                # print(choked_table)
+                
+                choked_and_interested = []
+                
+                # print(choked_table)
+                
+                for choked_neighbor,value in choked_table.items():
+                    interested = interested_table[choked_neighbor]
+                    
+                    # print(interested)
+                    
+                    if interested == 'Yes':
+                        choked_and_interested.append(choked_neighbor)
+
+                # print(choked_and_interested)
+                
+                if len(choked_and_interested) > 0:
+                    random_peer_index = random.randint(0, len(choked_and_interested)-1)
+                
+                    optimistic_peer = choked_and_interested[random_peer_index]
+                    
+                    # print(optimistic_peer)
+                    connection_table = tables.getConnectionTable()
+                    connection_key_table = tables.getConnectionKeyTable()
+                    
+                    connection_key = connection_key_table[optimistic_peer]
+                    connection = connection_table[connection_key]
+                    
+                    
+                    # prev_neighbor = tables.getOptimisticNeighbor()
+                    # print(prev_neighbor)
+                    send_unchoking_message(connection,tables,optimistic_peer)
+                    tables.setOptimisticNeighbor(optimistic_peer)
+
+                
+                
             
        
                 
