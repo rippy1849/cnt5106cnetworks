@@ -46,6 +46,7 @@ class Tables:
         
         self.self_interested_in_connected_peers = {}
         
+        self.total_pieces = 0
         # self.peer_list = []
         # self.current_peer = 0
         
@@ -130,8 +131,8 @@ class Tables:
             self.requested_piece_list[connected_peer_id] = requested_piece
     
     def getRequestedPieceList(self):
-        
-        return self.requested_piece_list
+        with self.lock:
+            return self.requested_piece_list
     
     def getSelfInterestedTable(self):
         
@@ -150,45 +151,16 @@ class Tables:
         
         return
     
-    
-    
-    
-    
-    # def setPeerList(self,array_list):
-    #     self.peer_list = array_list
+    def getTotalPieces(self):
         
-    #     return
-    # def nextPeer(self):
         
-    #     self.current_peer += 1
+        return self.total_pieces
+    
+    def setTotalPieces(self, total_number):
         
-    #     return
-    
-    # def getCurrentPeer(self):
-    #     return self.peer_list[self.current_peer]
-    
-    # def getPeerCount(self):
+        self.total_pieces = total_number
         
-    #     return len(self.peer_list)
-    # def getPeerCounter(self):
-    #     return self.current_peer
-    
-    # def setPeerCounter(self):
-    #     self.current_peer = 0
-        
-    
-        
-
-def exit_thread_and_cleanup():
-    
-    
-    #Delete connection entry from table
-    
-    #Delete all existing pieces in peer file
-    
-    exit()
-    
-    return
+        return
 
 
 def send_message(connection, message, self_peer_id, target_peer_id, i):
@@ -197,9 +169,55 @@ def send_message(connection, message, self_peer_id, target_peer_id, i):
         connection.send(message.encode('utf-16'))
     except:
         print(f"Connection Lost {self_peer_id} to {target_peer_id} on {i}")
-        # exit_thread_and_cleanup()
         return 1
         
+    return
+
+
+def generate_file(self_peer_id,common_cfg, tables):
+    
+    
+    while True:
+    
+        directory = 'peer_' + str(self_peer_id)
+        
+        piece_files = Path(directory).glob("*.piece")
+
+        file_name = common_cfg['FileName']
+        total_number_of_pieces = tables.getTotalPieces()
+        
+        total_pieces = 0
+        for piece in piece_files:
+            total_pieces += 1
+        
+        # self_piece_list = tables.getPieceList()
+        
+        # print(total_pieces,total_number_of_pieces,self_piece_list)
+            
+            
+        
+        if total_number_of_pieces <= total_pieces:                     
+            
+            filepath = os.path.join(os.getcwd(), directory, file_name)
+            
+            
+            if not os.path.exists(filepath):
+                # print("Peer without file")
+                piece_files = Path(directory).glob("*.piece")
+                
+                file_string = ""
+                for piece in piece_files:
+                    f = open(piece)
+                    for line in f:
+                        # print(line)
+                        file_string += line
+                f2 = open(filepath, 'w')
+                f2.write(file_string)
+                f.close()
+            
+            
+            
+        time.sleep(5)
     
     
     return
@@ -223,18 +241,9 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
         top_rates = []
         peers_preferred = []
         
-                
-        # if str(self_peer_id) == '1001':
-        #     print("hi - 1001", len(download_table))
-        
-        #TODO Is there a chance a start download message never makes it through? If so, default to 0. Set a timeout here as well? Error later on where start messages
-        
         if len(download_table) == (len(peer_cfg)-1)*2:
             prev_timestamp_dl_table = datetime.now().timestamp()
-            # log_entry(self_peer_id,'Download Table Populated')
             
-            
-            # print("Determining Preffered Peers")
             has_file = check_file(file_name,self_peer_id)
             
             if has_file:
@@ -514,10 +523,12 @@ def determine_requested_piece_index(tables):
     
     # print(needed_pieces)
     
-    for req_piece in requested_pieces:
-        if req_piece in needed_pieces:
-            index_of_req_piece = needed_pieces.index(req_piece)
-            del needed_pieces[index_of_req_piece]
+    # print(needed_pieces)
+    
+    # for req_piece in requested_pieces:
+    #     if req_piece in needed_pieces:
+    #         index_of_req_piece = needed_pieces.index(req_piece)
+    #         del needed_pieces[index_of_req_piece]
     
     if len(needed_pieces) > 0:
         requested_piece_index = (np.random.choice(needed_pieces, size=1, replace=False))
@@ -526,7 +537,7 @@ def determine_requested_piece_index(tables):
     else:
         requested_piece_index = -1
     
-    
+    # print(needed_pieces,requested_piece_index)
     
     return requested_piece_index
     
@@ -589,6 +600,7 @@ def generate_piece_list(tables,self_peer_id,common_cfg,peer_cfg):
             tables.setConnectedPieceList(str(peer),default_piece_list)
      
     # print(total_number_of_pieces)       
+    tables.setTotalPieces(total_number_of_pieces)
     
              
     
@@ -690,11 +702,11 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
     match message_type:
         case 0:
             #Choke Case
-            # print("Choking")
+            print("Choking")
             error = 1 # Need something here to not error
         case 1:
             #Unchoke
-            # print("Unchoking")
+            print("Unchoking")
             handle_unchoking_message(tables, connected_peer_id)
             # log_entry(self_peer_id, 'Unchoking')
         case 2:
@@ -729,7 +741,7 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
             # print("Piece")
             
             #Check to see the index of the piece
-            handle_piece_message(message_payload,tables, connected_peer_id, self_peer_id)
+            handle_piece_message(message_payload,tables, connected_peer_id, self_peer_id, common_cfg)
             
             
             # print(message_payload)
@@ -753,13 +765,10 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
     return
 
 
-def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_id):
+def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_id, common_cfg):
     
     requested_piece_list = tables.getRequestedPieceList()
-    
-    # print(connected_peer_id in requested_piece_list)
-    
-    # print(requested_piece_list)
+
 
     connection_table = tables.getConnectionTable()
     connection_key_table = tables.getConnectionKeyTable()
@@ -779,31 +788,17 @@ def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_i
         f.write(message_payload)
         f.close()
         
-        # for key,value in connection_key_table.items():
         
         for key,conn in connection_table.items():
             
             send_have_message(conn,piece_index)
-            # print(key)
-            # print(value)
-        
-        
-        
-        
-    #         def setPieceList(self, list):
-        
-    #     with self.lock:
-    #         self.self_piece_list = list
-        
-    #     return
-    
-    # def getPieceList(self):
-    #     with self.lock:
-    #         return self.self_piece_list
+
         
         piece_list = tables.getPieceList()
         piece_list[piece_index] = 1
         tables.setPieceList(piece_list)
+        
+        # generate_file(self_peer_id,common_cfg, tables)
     
     #Determine what piece to ask for here
     
@@ -831,7 +826,7 @@ def handle_unchoking_message(tables,connected_peer_id):
     requested_piece_index = determine_requested_piece_index(tables)
     
     if requested_piece_index != -1:
-    
+        # print("Sending Request Message")
         send_request_message(tables,connection,requested_piece_index, connected_peer_id)
     
     
@@ -887,33 +882,27 @@ def handle_have_message(tables, self_peer_id,connected_peer_id,message_payload):
     
     #Issue caused by rate limiting. Too many not interested messages overloads the connection. Had to comment out.
     
-    interested = False
-    for self_piece,conn_piece in zip(piece_list,connected_piece_list):
+    # interested = False
+    # for self_piece,conn_piece in zip(piece_list,connected_piece_list):
         
-        if self_piece == 0 and conn_piece == 1:
-            interested = True
+    #     if self_piece == 0 and conn_piece == 1:
+    #         interested = True
         
-    if interested == False:
+    # if interested == False:
         
-        # current_timestamp = datetime.now().timestamp()
+    #     current_timestamp = datetime.now().timestamp()
         
-        self_interested_table = tables.getSelfInterestedTable()
+    #     self_interested_table = tables.getSelfInterestedTable()
         
-        if str(connected_peer_id) in self_interested_table:
+    #     if str(connected_peer_id) in self_interested_table:
             
-            last_message_sent = self_interest_table[str(connected_peer_id)][1]
+    #         last_message_sent = self_interested_table[str(connected_peer_id)][1]
             
-            if current_timestamp - last_message_sent > 1:
+    #         if current_timestamp - last_message_sent > 1:
                 
-                send_not_interested_message(connection,tables,self_peer_id)
-                tables.removeSelfInterestedTableEntry(str(connected_peer_id))
-    
-    
-    
-    #TODO Cannot test this code until piece and request are complete
-    
-    
-    
+    #             send_not_interested_message(connection,tables,self_peer_id)
+    #             tables.removeSelfInterestedTableEntry(str(connected_peer_id))
+        
     
     return
 
@@ -938,18 +927,7 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
     
     
     if message_payload[0] == '0':
-        #Start Junk Download Data
-        # print(len(tables.getDownloadTable()))
-        # print("Junk Data begin")
-        # log_entry(str(self_peer_id),'Junk Download Data Message')
-        # current_peer = tables.getCurrentPeer()
-        # while str(current_peer) != str(self_peer_id):
-        #     current_peer = tables.getCurrentPeer()
-            
-        #     print(current_peer)
-
-        
-
+ 
         byte_entry = str(connected_peer_id) + "-bytes"
         tables.setDownloadTableEntry(byte_entry,0)
 
@@ -957,7 +935,6 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         start_entry = str(connected_peer_id) + '-start'
         tables.setDownloadTableEntry(start_entry,current_timestamp)
 
-        # tables.nextPeer()
 
         connection_key_table = tables.getConnectionKeyTable()
         connection_table = tables.getConnectionTable()
@@ -966,13 +943,6 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         
         
         connection = connection_table[connection_key]
-        # connection = connection_table[connection_table[str(connected_peer_id)]]
-        
-        
-        #Assuming no junk messages made it through, will need this 
-        # t = threading.Thread(target=timeout_download_rate, args=(tables,self_peer_id,connected_peer_id))
-        # t.start()
-
         
         #Issue with threads, unfixable the way that threads work. Since we are comparing download rates, this is functionally the same.
         send_junk_message(connection,self_peer_id,connected_peer_id)
@@ -982,8 +952,6 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         
     if message_payload[0] == '1':
         # Calculate Download Rate
-        # print("Download Rate Message")
-        # print(len(message_payload))
         
         download_table = tables.getDownloadTable()
         byte_entry = str(connected_peer_id) + "-bytes"
@@ -999,19 +967,12 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
     
     #If a stop message is never recieved, likely dropped, stop after fixed time   
     if message_payload[0] == '2':
-        # print("Stop Message")
-        # log_entry(str(self_peer_id),'Stop Message')
         
         stop_timestamp = datetime.now().timestamp()
         
         download_table = tables.getDownloadTable()
         start_entry = str(connected_peer_id) + '-start'
         byte_entry = str(connected_peer_id) + "-bytes"
-        # stop_entry = str(connected_peer_id) + '-stop'
-        
-        # tables.setDownloadTableEntry(stop_entry, stop_timestamp)
-        
-        # rate_entry = str(connected_peer_id) + "-rate"
         rate_entry = str(connected_peer_id)
         
         
@@ -1040,18 +1001,6 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         
         tables.setRateEntry(rate_entry,download_rate)
         
-        
-        #TODO Need to do this upon recieving interested entry, in handle_interested. Putting it here to make all interested for testing.
-        #TODO Need to do this upon recieving choked, in handle_choke. Remove from table in handle_unchoke
-        
-        # tables.setInterestedEntry(rate_entry, 'Yes')
-        # tables.setChokedEntry(rate_entry, 'Yes')
-        
-        # dlTable = tables.getDownloadTable()
-        # print('Download Rate', dlTable[rate_entry])
-        
-        # print(dlTable)
-    
     
     return
 
@@ -1072,36 +1021,9 @@ def handle_request_message(message_payload,self_peer_id,connected_peer_id,tables
     
     requested_index = int(message_payload)
     
-    # print(choked_table)
     if str(connected_peer_id) not in choked_table:
         send_piece(connection,requested_index,self_peer_id)
         
-    # piece_index = ""
-    # if len(message_payload) >= 4:
-    #     piece_index = message_payload[:4]
-        
-        
-
-    
-    
-    # connection = connection_table[connection_table[str(connected_peer_id)]]  
-    
-
-    # piece = '9u3yry293yr3iurhoewhiofewoijfeo2'
-    # piece = 'hello!'
-    
-    
-
-    # send_piece(connection,piece,6)
-    # if str(self_peer_id) == '1001':
-    #     # print(connection_table.keys())
-    #     print(len(peer_cfg)-1)
-    # print(connection_table, str(connected_peer_id))
-    
-    # print(piece_index)
-    
-    # print(len(connection_table))
-     
     
               
     
@@ -1109,13 +1031,9 @@ def handle_request_message(message_payload,self_peer_id,connected_peer_id,tables
 
 
 def handle_establishing_message(message_payload, tables, connected_peer_id, self_peer_id, peer_cfg):
-    
-    
-    # print(message_payload)
+
     #Only forward once
-    # print("Establishing Message: ", message_payload, "from",connected_peer_id, "to", self_peer_id)
-    
-    
+       
     if len(message_payload) > 0:
         if message_payload[0:1] == '0': 
     
@@ -1130,18 +1048,14 @@ def handle_establishing_message(message_payload, tables, connected_peer_id, self
             forward_message += message_payload
             
             
-            #will act weird for over 1000 peers
-            
-            #Make sure the connection table is fully populated before iterating over it
+
             num_connections = len(peer_cfg)-1
             
             
             while len(tables.getConnectionTable()) < num_connections:
                 print("Waiting for connection table to populate",num_connections,len(tables.getConnectionTable()))
                 time.sleep(5)
-                # print(connection_table)
                 
-            
             
             #Should be populated with all connections, but not the actual peers
             for i in range(1,num_connections+1):
@@ -1152,9 +1066,6 @@ def handle_establishing_message(message_payload, tables, connected_peer_id, self
 
             
         else:
-            # print("Not forwarding")
-            
-            # print(message_payload)
             
             if len(message_payload) >= 9:
                 peer_id = message_payload[1:5]
@@ -1164,15 +1075,8 @@ def handle_establishing_message(message_payload, tables, connected_peer_id, self
 
                 
                 if str(self_peer_id) == str(peer_id):
-                    # print()
                     tables.setConnectionKeyTableEntry(str(connected_peer_id), connection_number)
                     
-                    # connection_table[str(connected_peer_id)] = connection_number
-                    # print(message_payload)
-            
-        
-    
-                    # print(len(connection_table))
     return 
 
 
@@ -1189,30 +1093,19 @@ def handle_bitfield_message(message_payload, tables, self_peer_id,connected_peer
     connection = connection_table[connection_key]
     
     
-    # print(res)
     avaliable_list = []
     for chunk,c in enumerate(res):
         if c == '1':
-            #might need to make these numbers
             avaliable_list.append(1)
-        # else:
             
             
     piece_list = tables.getPieceList()
     tables.setConnectedPieceList(str(connected_peer_id),avaliable_list)
     
     
-    # connected_pieces_list = tables.getConnectedPiecesList()
-    # print(connected_pieces_list)
-    
-    # print(len(piece_list),len(avaliable_list))
-    
     for piece,avaliable in zip(piece_list,avaliable_list):
         if piece != avaliable:
-            # print("Has interesting piece")
-            # if str(self_peer_id) == '1001' and str(connected_peer_id) == '1002':
-            #     print("Issue here")
-            #     print(avaliable_list,piece_list)
+  
             self_interested_table = tables.getSelfInterestedTable()
             
             if str(connected_peer_id) not in self_interested_table:
@@ -1236,12 +1129,6 @@ def handle_bitfield_message(message_payload, tables, self_peer_id,connected_peer
             tables.removeSelfInterestedTableEntry(str(connected_peer_id))
             
             
-            
-    # print(len(avaliable_list))
-            
-    # print(message_payload,self_peer_id)
-    # print(avaliable_list)
-    #If peer has pieces this peer wants, send interested message else, send 
     
         
     
@@ -1265,11 +1152,7 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
     
     
     if handshake_header == 'P2PFILESHARINGPROJ':
-        # print(message,len(message))
-        
-        
-        # print(handshake_header)
-        # print("is handshake")
+  
         if len(message) >= 32:
             zero_bits = message[18+offset_handshake:28+offset_handshake]
             peer_id = message[28+offset_handshake:32+offset_handshake]
@@ -1279,22 +1162,11 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
         
         
             #return the DECODED message, consistent with size
-        
-            # print(message)
+    
             return message[32+offset_handshake:]
     else:
-        # print(message)
         
         if len(message) >= 5:
-            # print(message)
-
-            
-            # print(message_length,message)
-            
-            # print(decoded_message,message_length,message_type)
-            
-            # print(message)
-            #Check to see if it is a valid message info
             
             
             #There is a very weird issue with utf-16 encoding, need to use it, but causes a bug I can't figure out
@@ -1318,34 +1190,20 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
                 
                 if int(message_type) < 10 and int(message_length) >= 0 and len(message) >= (int(message_length) + 5):
       
-                    # message_length = int(message_length.replace("0", ""))
                     
                     message_payload = message[5+offset:5+message_length+offset]
                     handle_message(int(message_type), message_payload, tables, connected_peer_id, self_peer_id, peer_cfg,common_cfg, pieces_list)
-                    # print(message_payload)
-                
-                
-                    # print(message[5+message_length:])
-                    # return ""
-                    # print(message[5+message_length:])
-                    # print(message[5+message_length:],message)
                     
-                    # if message[5+message_length+offset:] == None:
-                        
-                        # print(message)
-                        # exit()
                         
                     
                     return message[5+message_length +offset:]
                 else:
                     print("Invalid Msg Length,Invalid Msg Type, or Invalid Msg Payload")
-                    # print(message, int(message[offset:4+offset]),message[4+offset:5+offset])
                     return ""
             else:
                 
                 print("Invalid Msg Length Field or Invalid Msg Type - 1")
                 
-                # print(message)
                 return ""
         
         print("Invalid Msg Length Field or Invalid Msg Type - 2") 
@@ -1358,8 +1216,6 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
 def send_interested_message(connection, tables, self_peer_id):
     
     interested_message = '00002'
-    
-    # log_entry(self_peer_id, 'Interested')
     
     connection.send(interested_message.encode('utf-16'))
     
@@ -1377,10 +1233,6 @@ def send_unchoking_message(connection, tables, target_peer_id):
     
     unchoking_message = '00001'
     
-    
-    
-    # print(f"Sending Unchoking Message to {target_peer_id}")
-    # tables.setChokedEntry(str(target_peer_id), 'No')
     
     connection.send(unchoking_message.encode('utf-16'))
     
@@ -1418,21 +1270,6 @@ def send_request_message(tables,connection, piece_index, connected_peer_id):
     
     request_message = '00046' + payload
     
-    
-    # length_of_payload = len(str(payload))
-    # length_of_payload = 4
-    
-    # request_message = ""
-    
-    # for i in range(0, 4-len(str(length_of_payload))):
-    #     request_message += '0'
-    
-    # request_message += str(length_of_payload)
-    # request_message += '6'
-    # request_message += payload
-    
-    
-    # print(request_message)
     
     tables.setRequestedPiece(connected_peer_id, piece_index)
     
@@ -1478,16 +1315,9 @@ def send_piece(connection, piece_index, self_peer_id):
         
         piece_message += piece_string
         
-        # print(len(piece_message))
-        
-
-    # print(piece_message)
     
         connection.send(piece_message.encode('utf-16'))
         
-        
-    # else:
-    #     print("Missing Piece File")
     
 
 
@@ -1508,7 +1338,6 @@ def send_have_message(connection, piece_index):
     
     have_message += str(piece_index)
     
-    # print(have_message)
     
     connection.send(have_message.encode('utf-16'))
     
@@ -1990,6 +1819,9 @@ def start_peer(peer_id, port):
 
     preferred_peer_process = threading.Thread(target=preferred_peers, args=(tables,peer_id,peer_cfg,common_cfg,))
     preferred_peer_process.start()
+
+    generate_the_file = threading.Thread(target=generate_file, args=(peer_id,common_cfg, tables))
+    generate_the_file.start()
 
 
     # print ("socket binded to %s" %(port))
