@@ -758,7 +758,6 @@ def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_i
   
     
     if connected_peer_id in requested_piece_list:
-        # print("hi")
         directory = 'peer_' + str(self_peer_id)
         piece_index = requested_piece_list[connected_peer_id]
         piece_file = str(piece_index) + '.piece'
@@ -769,7 +768,7 @@ def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_i
         f.write(message_payload)
         f.close()
         
-        total_pieces = tables.getTotalPieces
+        total_pieces = tables.getTotalPieces()
         current_pieces = tables.getCurrentPieces()
         
         if current_pieces <= total_pieces:
@@ -866,26 +865,26 @@ def handle_have_message(tables, self_peer_id,connected_peer_id,message_payload):
     
     #Issue caused by rate limiting. Too many not interested messages overloads the connection. Had to comment out.
     
-    # interested = False
-    # for self_piece,conn_piece in zip(piece_list,connected_piece_list):
+    interested = False
+    for self_piece,conn_piece in zip(piece_list,connected_piece_list):
         
-    #     if self_piece == 0 and conn_piece == 1:
-    #         interested = True
+        if self_piece == 0 and conn_piece == 1:
+            interested = True
         
-    # if interested == False:
+    if interested == False:
         
-    #     current_timestamp = datetime.now().timestamp()
+        current_timestamp = datetime.now().timestamp()
         
-    #     self_interested_table = tables.getSelfInterestedTable()
+        self_interested_table = tables.getSelfInterestedTable()
         
-    #     if str(connected_peer_id) in self_interested_table:
+        if str(connected_peer_id) in self_interested_table:
             
-    #         last_message_sent = self_interested_table[str(connected_peer_id)][1]
+            last_message_sent = self_interested_table[str(connected_peer_id)][1]
             
-    #         if current_timestamp - last_message_sent > 1:
+            if current_timestamp - last_message_sent > 1:
                 
-    #             send_not_interested_message(connection,tables,self_peer_id)
-    #             tables.removeSelfInterestedTableEntry(str(connected_peer_id))
+                send_not_interested_message(connection,tables,self_peer_id)
+                tables.removeSelfInterestedTableEntry(str(connected_peer_id))
         
     
     return
