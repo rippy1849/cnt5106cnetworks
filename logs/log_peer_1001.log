@@ -1,0 +1,870 @@
+[1744472903.14]: Peer 1001 makes a connection to Peer 1004
+[1744472903.14]: Peer 1001 makes a connection to Peer 1005
+[1744472903.14]: Peer 1001 makes a connection from Peer 1003
+[1744472903.14]: Peer 1001 makes a connection to Peer 1006
+[1744472903.14]: Peer 1001 makes a connection from Peer 1004
+[1744472903.14]: Peer 1001 makes a connection from Peer 1005
+[1744472903.14]: Peer 1001 makes a connection from Peer 1006
+[1744472903.7]: Peer 1001 makes a connection to Peer 1002
+[1744472903.81]: Peer 1001 makes a connection from Peer 1002
+[1744472906.75]: Peer 1001 recieved the 'interested' message from 1003
+[1744472906.77]: Peer 1001 recieved the 'interested' message from 1004
+[1744472906.88]: Peer 1001 recieved the 'interested' message from 1005
+[1744472906.96]: Peer 1001 recieved the 'not interested' message from 1002
+[1744472906.91]: Peer 1001 recieved the 'interested' message from 1006
+[1744472908.34]: Peer 1001 has preferred neighbors 1005 1003 1006 
+[1744472908.46]: Peer 1001 is unchoked by 1002
+[1744472908.99]: Peer 1001 is choked by 1004
+[1744472909.1]: Peer 1001 is choked by 1003
+[1744472909.2]: Peer 1001 is choked by 1006
+[1744472909.15]: Peer 1001 is choked by 1005
+[1744472910.72]: Peer 1001 recieved the 'have' message from 1005 for the piece 91
+[1744472910.75]: Peer 1001 recieved the 'have' message from 1006 for the piece 40
+[1744472910.88]: Peer 1001 recieved the 'have' message from 1003 for the piece 33
+[1744472911.01]: Peer 1001 recieved the 'have' message from 1004 for the piece 69
+[1744472911.04]: Peer 1001 recieved the 'have' message from 1003 for the piece 38
+[1744472911.29]: Peer 1001 recieved the 'have' message from 1006 for the piece 3
+[1744472911.32]: Peer 1001 recieved the 'have' message from 1005 for the piece 35
+[1744472911.51]: Peer 1001 recieved the 'have' message from 1003 for the piece 44
+[1744472911.6]: Peer 1001 recieved the 'have' message from 1004 for the piece 106
+[1744472911.66]: Peer 1001 recieved the 'have' message from 1003 for the piece 62
+[1744472911.94]: Peer 1001 recieved the 'have' message from 1005 for the piece 44
+[1744472911.99]: Peer 1001 recieved the 'have' message from 1006 for the piece 45
+[1744472912.19]: Peer 1001 recieved the 'have' message from 1003 for the piece 11
+[1744472912.19]: Peer 1001 recieved the 'have' message from 1004 for the piece 39
+[1744472912.49]: Peer 1001 recieved the 'have' message from 1003 for the piece 52
+[1744472912.56]: Peer 1001 recieved the 'have' message from 1005 for the piece 22
+[1744472912.67]: Peer 1001 recieved the 'have' message from 1006 for the piece 31
+[1744472912.78]: Peer 1001 recieved the 'have' message from 1004 for the piece 3
+[1744472912.84]: Peer 1001 recieved the 'have' message from 1003 for the piece 57
+[1744472912.97]: Peer 1001 recieved the 'have' message from 1003 for the piece 15
+[1744472913.22]: Peer 1001 recieved the 'have' message from 1005 for the piece 68
+[1744472913.29]: Peer 1001 recieved the 'have' message from 1006 for the piece 29
+[1744472913.32]: Peer 1001 has preferred neighbors 1002 1004 1003 
+[1744472913.34]: Peer 1001 recieved the 'have' message from 1003 for the piece 73
+[1744472913.42]: Peer 1001 is choked by 1002
+[1744472913.42]: Peer 1001 recieved the 'have' message from 1003 for the piece 83
+[1744472913.45]: Peer 1001 recieved the 'have' message from 1004 for the piece 18
+[1744472913.58]: Peer 1001 recieved the 'have' message from 1005 for the piece 21
+[1744472913.7]: Peer 1001 recieved the 'have' message from 1005 for the piece 67
+[1744472913.75]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744472913.75]: Peer 1001 recieved the 'have' message from 1004 for the piece 92
+[1744472913.86]: Peer 1001 recieved the 'have' message from 1005 for the piece 31
+[1744472913.86]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744472913.97]: Peer 1001 recieved the 'have' message from 1006 for the piece 65
+[1744472913.97]: Peer 1001 recieved the 'have' message from 1003 for the piece 112
+[1744472914.02]: Peer 1001 recieved the 'have' message from 1004 for the piece 33
+[1744472914.08]: Peer 1001 recieved the 'have' message from 1003 for the piece 91
+[1744472914.09]: Peer 1001 is unchoked by 1002
+[1744472914.13]: Peer 1001 recieved the 'have' message from 1006 for the piece 82
+[1744472914.09]: Peer 1001 recieved the 'have' message from 1004 for the piece 74
+[1744472914.18]: Peer 1001 has preferred neighbors 1005 1006 1004 
+[1744472914.18]: Peer 1001 recieved the 'have' message from 1003 for the piece 92
+[1744472914.18]: Peer 1001 recieved the 'have' message from 1004 for the piece 31
+[1744472914.29]: Peer 1001 recieved the 'have' message from 1003 for the piece 21
+[1744472914.33]: Peer 1001 recieved the 'have' message from 1006 for the piece 88
+[1744472914.36]: Peer 1001 recieved the 'have' message from 1005 for the piece 25
+[1744472914.46]: Peer 1001 recieved the 'have' message from 1003 for the piece 99
+[1744472914.48]: Peer 1001 recieved the 'have' message from 1006 for the piece 36
+[1744472914.54]: Peer 1001 recieved the 'have' message from 1003 for the piece 78
+[1744472914.56]: Peer 1001 recieved the 'have' message from 1005 for the piece 112
+[1744472914.62]: Peer 1001 recieved the 'have' message from 1003 for the piece 104
+[1744472914.6]: Peer 1001 recieved the 'have' message from 1006 for the piece 35
+[1744472914.59]: Peer 1001 recieved the 'have' message from 1004 for the piece 2
+[1744472914.73]: Peer 1001 recieved the 'have' message from 1003 for the piece 71
+[1744472914.73]: Peer 1001 recieved the 'have' message from 1005 for the piece 53
+[1744472914.73]: Peer 1001 recieved the 'have' message from 1004 for the piece 42
+[1744472914.94]: Peer 1001 recieved the 'have' message from 1006 for the piece 93
+[1744472915.14]: Peer 1001 recieved the 'have' message from 1006 for the piece 11
+[1744472915.23]: Peer 1001 recieved the 'have' message from 1003 for the piece 4
+[1744472915.23]: Peer 1001 recieved the 'have' message from 1005 for the piece 52
+[1744472915.17]: Peer 1001 recieved the 'have' message from 1004 for the piece 65
+[1744472915.28]: Peer 1001 recieved the 'have' message from 1006 for the piece 25
+[1744472915.3]: Peer 1001 recieved the 'have' message from 1005 for the piece 58
+[1744472915.31]: Peer 1001 recieved the 'have' message from 1006 for the piece 87
+[1744472915.52]: Peer 1001 recieved the 'have' message from 1005 for the piece 14
+[1744472915.55]: Peer 1001 recieved the 'have' message from 1006 for the piece 2
+[1744472915.55]: Peer 1001 recieved the 'have' message from 1003 for the piece 59
+[1744472915.59]: Peer 1001 recieved the 'have' message from 1005 for the piece 81
+[1744472915.61]: Peer 1001 recieved the 'have' message from 1004 for the piece 16
+[1744472915.61]: Peer 1001 recieved the 'have' message from 1006 for the piece 112
+[1744472915.63]: Peer 1001 recieved the 'have' message from 1004 for the piece 23
+[1744472915.82]: Peer 1001 recieved the 'have' message from 1005 for the piece 59
+[1744472915.82]: Peer 1001 recieved the 'have' message from 1004 for the piece 8
+[1744472915.87]: Peer 1001 recieved the 'have' message from 1006 for the piece 75
+[1744472915.91]: Peer 1001 recieved the 'have' message from 1003 for the piece 56
+[1744472915.91]: Peer 1001 recieved the 'have' message from 1005 for the piece 95
+[1744472916.08]: Peer 1001 recieved the 'have' message from 1004 for the piece 4
+[1744472916.22]: Peer 1001 recieved the 'have' message from 1006 for the piece 44
+[1744472916.28]: Peer 1001 recieved the 'have' message from 1005 for the piece 55
+[1744472916.3]: Peer 1001 recieved the 'have' message from 1003 for the piece 76
+[1744472916.36]: Peer 1001 recieved the 'have' message from 1006 for the piece 52
+[1744472916.42]: Peer 1001 recieved the 'have' message from 1004 for the piece 85
+[1744472916.5]: Peer 1001 recieved the 'have' message from 1004 for the piece 103
+[1744472916.52]: Peer 1001 recieved the 'have' message from 1005 for the piece 77
+[1744472916.58]: Peer 1001 recieved the 'have' message from 1006 for the piece 18
+[1744472916.6]: Peer 1001 recieved the 'have' message from 1005 for the piece 34
+[1744472916.66]: Peer 1001 recieved the 'have' message from 1006 for the piece 34
+[1744472916.66]: Peer 1001 recieved the 'have' message from 1003 for the piece 100
+[1744472916.82]: Peer 1001 recieved the 'have' message from 1004 for the piece 78
+[1744472916.9]: Peer 1001 recieved the 'have' message from 1005 for the piece 24
+[1744472916.96]: Peer 1001 recieved the 'have' message from 1003 for the piece 102
+[1744472916.98]: Peer 1001 recieved the 'have' message from 1004 for the piece 25
+[1744472917.02]: Peer 1001 recieved the 'have' message from 1005 for the piece 41
+[1744472917.23]: Peer 1001 recieved the 'have' message from 1006 for the piece 20
+[1744472917.3]: Peer 1001 recieved the 'have' message from 1005 for the piece 88
+[1744472917.34]: Peer 1001 recieved the 'have' message from 1006 for the piece 33
+[1744472917.34]: Peer 1001 recieved the 'have' message from 1004 for the piece 95
+[1744472917.4]: Peer 1001 recieved the 'have' message from 1003 for the piece 14
+[1744472917.48]: Peer 1001 recieved the 'have' message from 1005 for the piece 75
+[1744472917.54]: Peer 1001 recieved the 'have' message from 1004 for the piece 77
+[1744472917.67]: Peer 1001 recieved the 'have' message from 1006 for the piece 46
+[1744472917.77]: Peer 1001 recieved the 'have' message from 1006 for the piece 53
+[1744472917.78]: Peer 1001 recieved the 'have' message from 1005 for the piece 7
+[1744472917.85]: Peer 1001 recieved the 'have' message from 1003 for the piece 0
+[1744472917.91]: Peer 1001 recieved the 'have' message from 1005 for the piece 13
+[1744472917.97]: Peer 1001 recieved the 'have' message from 1004 for the piece 1
+[1744472918.12]: Peer 1001 recieved the 'have' message from 1004 for the piece 97
+[1744472918.18]: Peer 1001 recieved the 'have' message from 1006 for the piece 32
+[1744472918.29]: Peer 1001 recieved the 'have' message from 1005 for the piece 29
+[1744472918.3]: Peer 1001 recieved the 'have' message from 1006 for the piece 4
+[1744472918.3]: Peer 1001 recieved the 'have' message from 1003 for the piece 87
+[1744472918.43]: Peer 1001 recieved the 'have' message from 1005 for the piece 50
+[1744472918.45]: Peer 1001 recieved the 'have' message from 1004 for the piece 14
+[1744472918.57]: Peer 1001 recieved the 'have' message from 1006 for the piece 37
+[1744472918.61]: Peer 1001 recieved the 'have' message from 1005 for the piece 36
+[1744472918.72]: Peer 1001 recieved the 'have' message from 1003 for the piece 108
+[1744472918.77]: Peer 1001 recieved the 'have' message from 1006 for the piece 49
+[1744472918.83]: Peer 1001 recieved the 'have' message from 1006 for the piece 9
+[1744472918.86]: Peer 1001 recieved the 'have' message from 1004 for the piece 21
+[1744472919.0]: Peer 1001 recieved the 'have' message from 1003 for the piece 35
+[1744472919.05]: Peer 1001 recieved the 'have' message from 1005 for the piece 69
+[1744472919.16]: Peer 1001 is choked by 1002
+[1744472919.18]: Peer 1001 has preferred neighbors 1006 1003 1002 
+[1744472919.18]: Peer 1001 recieved the 'have' message from 1004 for the piece 46
+[1744472919.2]: Peer 1001 recieved the 'have' message from 1006 for the piece 100
+[1744472919.25]: Peer 1001 recieved the 'have' message from 1004 for the piece 86
+[1744472919.3]: Peer 1001 recieved the 'have' message from 1003 for the piece 103
+[1744472919.3]: Peer 1001 recieved the 'have' message from 1005 for the piece 8
+[1744472919.31]: Peer 1001 recieved the 'have' message from 1006 for the piece 67
+[1744472919.35]: Peer 1001 recieved the 'have' message from 1004 for the piece 5
+[1744472919.35]: Peer 1001 recieved the 'have' message from 1005 for the piece 74
+[1744472919.43]: Peer 1001 recieved the 'have' message from 1004 for the piece 90
+[1744472919.43]: Peer 1001 recieved the 'have' message from 1006 for the piece 26
+[1744472919.58]: Peer 1001 recieved the 'have' message from 1003 for the piece 64
+[1744472919.6]: Peer 1001 recieved the 'have' message from 1004 for the piece 110
+[1744472919.6]: Peer 1001 recieved the 'have' message from 1005 for the piece 63
+[1744472919.73]: Peer 1001 recieved the 'have' message from 1005 for the piece 62
+[1744472919.84]: Peer 1001 recieved the 'have' message from 1006 for the piece 95
+[1744472919.96]: Peer 1001 recieved the 'have' message from 1006 for the piece 83
+[1744472919.96]: Peer 1001 recieved the 'have' message from 1003 for the piece 51
+[1744472919.98]: Peer 1001 recieved the 'have' message from 1004 for the piece 105
+[1744472919.98]: Peer 1001 recieved the 'have' message from 1005 for the piece 92
+[1744472920.01]: Peer 1001 recieved the 'have' message from 1006 for the piece 92
+[1744472920.05]: Peer 1001 recieved the 'have' message from 1003 for the piece 67
+[1744472920.18]: Peer 1001 recieved the 'have' message from 1003 for the piece 1
+[1744472920.25]: Peer 1001 recieved the 'have' message from 1006 for the piece 111
+[1744472920.31]: Peer 1001 recieved the 'have' message from 1005 for the piece 26
+[1744472920.31]: Peer 1001 recieved the 'have' message from 1004 for the piece 35
+[1744472920.4]: Peer 1001 recieved the 'have' message from 1006 for the piece 79
+[1744472920.42]: Peer 1001 recieved the 'have' message from 1005 for the piece 66
+[1744472920.59]: Peer 1001 recieved the 'have' message from 1006 for the piece 55
+[1744472920.67]: Peer 1001 recieved the 'have' message from 1003 for the piece 101
+[1744472920.74]: Peer 1001 recieved the 'have' message from 1005 for the piece 93
+[1744472920.74]: Peer 1001 recieved the 'have' message from 1004 for the piece 61
+[1744472920.86]: Peer 1001 recieved the 'have' message from 1005 for the piece 17
+[1744472920.83]: Peer 1001 recieved the 'have' message from 1006 for the piece 102
+[1744472920.86]: Peer 1001 recieved the 'have' message from 1003 for the piece 7
+[1744472920.96]: Peer 1001 recieved the 'have' message from 1006 for the piece 85
+[1744472921.02]: Peer 1001 recieved the 'have' message from 1003 for the piece 2
+[1744472921.01]: Peer 1001 recieved the 'have' message from 1004 for the piece 94
+[1744472921.09]: Peer 1001 recieved the 'have' message from 1005 for the piece 98
+[1744472921.09]: Peer 1001 recieved the 'have' message from 1006 for the piece 54
+[1744472921.21]: Peer 1001 recieved the 'have' message from 1005 for the piece 33
+[1744472921.34]: Peer 1001 recieved the 'have' message from 1004 for the piece 109
+[1744472921.45]: Peer 1001 recieved the 'have' message from 1006 for the piece 77
+[1744472921.6]: Peer 1001 recieved the 'have' message from 1005 for the piece 79
+[1744472921.6]: Peer 1001 recieved the 'have' message from 1003 for the piece 105
+[1744472921.61]: Peer 1001 recieved the 'have' message from 1006 for the piece 76
+[1744472921.78]: Peer 1001 recieved the 'have' message from 1004 for the piece 84
+[1744472921.86]: Peer 1001 recieved the 'have' message from 1005 for the piece 57
+[1744472921.86]: Peer 1001 recieved the 'have' message from 1006 for the piece 28
+[1744472922.02]: Peer 1001 recieved the 'have' message from 1005 for the piece 42
+[1744472922.15]: Peer 1001 recieved the 'have' message from 1004 for the piece 7
+[1744472922.22]: Peer 1001 recieved the 'have' message from 1006 for the piece 38
+[1744472922.35]: Peer 1001 recieved the 'have' message from 1003 for the piece 32
+[1744472922.37]: Peer 1001 recieved the 'have' message from 1005 for the piece 39
+[1744472922.54]: Peer 1001 recieved the 'have' message from 1005 for the piece 105
+[1744472922.53]: Peer 1001 recieved the 'have' message from 1004 for the piece 112
+[1744472922.59]: Peer 1001 recieved the 'have' message from 1006 for the piece 62
+[1744472922.73]: Peer 1001 recieved the 'have' message from 1006 for the piece 96
+[1744472922.86]: Peer 1001 recieved the 'have' message from 1003 for the piece 94
+[1744472922.91]: Peer 1001 recieved the 'have' message from 1005 for the piece 101
+[1744472922.96]: Peer 1001 recieved the 'have' message from 1004 for the piece 56
+[1744472923.07]: Peer 1001 recieved the 'have' message from 1005 for the piece 80
+[1744472923.3]: Peer 1001 recieved the 'have' message from 1006 for the piece 22
+[1744472923.38]: Peer 1001 recieved the 'have' message from 1004 for the piece 75
+[1744472923.41]: Peer 1001 recieved the 'have' message from 1003 for the piece 31
+[1744472923.81]: Peer 1001 recieved the 'have' message from 1004 for the piece 45
+[1744472923.89]: Peer 1001 recieved the 'have' message from 1003 for the piece 29
+[1744472923.89]: Peer 1001 recieved the 'have' message from 1006 for the piece 51
+[1744472924.01]: Peer 1001 recieved the 'have' message from 1006 for the piece 80
+[1744472923.95]: Peer 1001 recieved the 'have' message from 1005 for the piece 104
+[1744472924.01]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744472924.1]: Peer 1001 recieved the 'have' message from 1005 for the piece 51
+[1744472924.18]: Peer 1001 has preferred neighbors 1005 1002 1003 
+[1744472924.2]: Peer 1001 recieved the 'have' message from 1004 for the piece 111
+[1744472924.24]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744472924.26]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744472924.28]: Peer 1001 recieved the 'have' message from 1005 for the piece 48
+[1744472924.31]: Peer 1001 recieved the 'have' message from 1004 for the piece 68
+[1744472924.39]: Peer 1001 recieved the 'have' message from 1006 for the piece 101
+[1744472924.39]: Peer 1001 recieved the 'have' message from 1003 for the piece 74
+[1744472924.39]: Peer 1001 recieved the 'have' message from 1005 for the piece 78
+[1744472924.5]: Peer 1001 recieved the 'have' message from 1004 for the piece 89
+[1744472924.5]: Peer 1001 recieved the 'have' message from 1006 for the piece 110
+[1744472924.62]: Peer 1001 recieved the 'have' message from 1004 for the piece 73
+[1744472924.77]: Peer 1001 recieved the 'have' message from 1003 for the piece 27
+[1744472924.96]: Peer 1001 recieved the 'have' message from 1005 for the piece 106
+[1744472924.96]: Peer 1001 recieved the 'have' message from 1004 for the piece 67
+[1744472925.01]: Peer 1001 recieved the 'have' message from 1003 for the piece 98
+[1744472925.1]: Peer 1001 recieved the 'have' message from 1005 for the piece 84
+[1744472925.12]: Peer 1001 recieved the 'have' message from 1003 for the piece 24
+[1744472925.04]: Peer 1001 recieved the 'have' message from 1004 for the piece 60
+[1744472925.21]: Peer 1001 recieved the 'have' message from 1003 for the piece 77
+[1744472925.26]: Peer 1001 recieved the 'have' message from 1004 for the piece 80
+[1744472925.37]: Peer 1001 recieved the 'have' message from 1005 for the piece 111
+[1744472925.48]: Peer 1001 recieved the 'have' message from 1003 for the piece 86
+[1744472925.48]: Peer 1001 recieved the 'have' message from 1004 for the piece 83
+[1744472925.48]: Peer 1001 recieved the 'have' message from 1005 for the piece 70
+[1744472925.48]: Peer 1001 recieved the 'have' message from 1005 for the piece 16
+[1744472925.51]: Peer 1001 recieved the 'have' message from 1003 for the piece 66
+[1744472925.48]: Peer 1001 recieved the 'have' message from 1006 for the piece 97
+[1744472925.5]: Peer 1001 recieved the 'have' message from 1005 for the piece 5
+[1744472925.66]: Peer 1001 recieved the 'have' message from 1006 for the piece 72
+[1744472925.75]: Peer 1001 recieved the 'have' message from 1004 for the piece 26
+[1744472925.83]: Peer 1001 recieved the 'have' message from 1005 for the piece 27
+[1744472925.8]: Peer 1001 recieved the 'have' message from 1003 for the piece 37
+[1744472925.93]: Peer 1001 recieved the 'have' message from 1005 for the piece 23
+[1744472925.93]: Peer 1001 recieved the 'have' message from 1003 for the piece 16
+[1744472925.93]: Peer 1001 recieved the 'have' message from 1005 for the piece 56
+[1744472925.94]: Peer 1001 recieved the 'have' message from 1004 for the piece 27
+[1744472925.95]: Peer 1001 recieved the 'have' message from 1003 for the piece 26
+[1744472925.96]: Peer 1001 recieved the 'have' message from 1003 for the piece 72
+[1744472925.96]: Peer 1001 recieved the 'have' message from 1005 for the piece 60
+[1744472926.04]: Peer 1001 recieved the 'have' message from 1004 for the piece 54
+[1744472926.08]: Peer 1001 recieved the 'have' message from 1006 for the piece 43
+[1744472926.16]: Peer 1001 recieved the 'have' message from 1006 for the piece 0
+[1744472926.26]: Peer 1001 recieved the 'have' message from 1006 for the piece 10
+[1744472926.27]: Peer 1001 recieved the 'have' message from 1005 for the piece 54
+[1744472926.38]: Peer 1001 recieved the 'have' message from 1005 for the piece 3
+[1744472926.45]: Peer 1001 recieved the 'have' message from 1003 for the piece 42
+[1744472926.5]: Peer 1001 recieved the 'have' message from 1004 for the piece 82
+[1744472926.6]: Peer 1001 recieved the 'have' message from 1006 for the piece 48
+[1744472926.59]: Peer 1001 recieved the 'have' message from 1003 for the piece 48
+[1744472926.62]: Peer 1001 recieved the 'have' message from 1005 for the piece 18
+[1744472926.62]: Peer 1001 recieved the 'have' message from 1004 for the piece 71
+[1744472926.67]: Peer 1001 recieved the 'have' message from 1006 for the piece 59
+[1744472926.82]: Peer 1001 recieved the 'have' message from 1005 for the piece 61
+[1744472926.92]: Peer 1001 recieved the 'have' message from 1003 for the piece 30
+[1744472926.87]: Peer 1001 recieved the 'have' message from 1006 for the piece 12
+[1744472927.02]: Peer 1001 recieved the 'have' message from 1005 for the piece 11
+[1744472927.02]: Peer 1001 recieved the 'have' message from 1003 for the piece 3
+[1744472927.08]: Peer 1001 recieved the 'have' message from 1004 for the piece 96
+[1744472927.29]: Peer 1001 recieved the 'have' message from 1006 for the piece 106
+[1744472927.37]: Peer 1001 recieved the 'have' message from 1003 for the piece 55
+[1744472927.3]: Peer 1001 recieved the 'have' message from 1005 for the piece 72
+[1744472927.38]: Peer 1001 recieved the 'have' message from 1006 for the piece 6
+[1744472927.46]: Peer 1001 recieved the 'have' message from 1003 for the piece 10
+[1744472927.62]: Peer 1001 recieved the 'have' message from 1005 for the piece 76
+[1744472927.62]: Peer 1001 recieved the 'have' message from 1004 for the piece 48
+[1744472927.65]: Peer 1001 recieved the 'have' message from 1006 for the piece 105
+[1744472927.8]: Peer 1001 recieved the 'have' message from 1004 for the piece 43
+[1744472927.82]: Peer 1001 recieved the 'have' message from 1006 for the piece 24
+[1744472927.87]: Peer 1001 recieved the 'have' message from 1003 for the piece 80
+[1744472927.93]: Peer 1001 recieved the 'have' message from 1005 for the piece 108
+[1744472927.98]: Peer 1001 recieved the 'have' message from 1003 for the piece 40
+[1744472928.08]: Peer 1001 recieved the 'have' message from 1006 for the piece 13
+[1744472928.07]: Peer 1001 recieved the 'have' message from 1004 for the piece 79
+[1744472928.11]: Peer 1001 recieved the 'have' message from 1005 for the piece 37
+[1744472928.23]: Peer 1001 recieved the 'have' message from 1003 for the piece 85
+[1744472928.39]: Peer 1001 recieved the 'have' message from 1004 for the piece 22
+[1744472928.36]: Peer 1001 recieved the 'have' message from 1003 for the piece 6
+[1744472928.49]: Peer 1001 recieved the 'have' message from 1006 for the piece 13
+[1744472928.58]: Peer 1001 recieved the 'have' message from 1005 for the piece 45
+[1744472928.66]: Peer 1001 recieved the 'have' message from 1003 for the piece 28
+[1744472928.69]: Peer 1001 recieved the 'have' message from 1006 for the piece 27
+[1744472928.81]: Peer 1001 recieved the 'have' message from 1003 for the piece 106
+[1744472928.83]: Peer 1001 recieved the 'have' message from 1005 for the piece 9
+[1744472928.93]: Peer 1001 recieved the 'have' message from 1004 for the piece 6
+[1744472928.99]: Peer 1001 is unchoked by 1002
+[1744472929.01]: Peer 1001 recieved the 'have' message from 1006 for the piece 70
+[1744472929.04]: Peer 1001 recieved the 'have' message from 1004 for the piece 44
+[1744472929.18]: Peer 1001 recieved the 'have' message from 1005 for the piece 28
+[1744472929.18]: Peer 1001 has preferred neighbors 1005 1002 1004 
+[1744472929.18]: Peer 1001 recieved the 'have' message from 1006 for the piece 60
+[1744472929.18]: Peer 1001 recieved the 'have' message from 1003 for the piece 20
+[1744472929.23]: Peer 1001 recieved the 'have' message from 1004 for the piece 102
+[1744472929.29]: Peer 1001 recieved the 'have' message from 1003 for the piece 9
+[1744472929.48]: Peer 1001 recieved the 'have' message from 1004 for the piece 98
+[1744472929.48]: Peer 1001 recieved the 'have' message from 1006 for the piece 14
+[1744472929.61]: Peer 1001 recieved the 'have' message from 1003 for the piece 81
+[1744472929.56]: Peer 1001 recieved the 'have' message from 1005 for the piece 109
+[1744472929.57]: Peer 1001 recieved the 'have' message from 1006 for the piece 86
+[1744472929.67]: Peer 1001 recieved the 'have' message from 1003 for the piece 18
+[1744472929.7]: Peer 1001 recieved the 'have' message from 1005 for the piece 65
+[1744472929.75]: Peer 1001 recieved the 'have' message from 1006 for the piece 1
+[1744472929.78]: Peer 1001 recieved the 'have' message from 1004 for the piece 32
+[1744472929.93]: Peer 1001 recieved the 'have' message from 1004 for the piece 63
+[1744472930.08]: Peer 1001 recieved the 'have' message from 1004 for the piece 66
+[1744472930.08]: Peer 1001 recieved the 'have' message from 1006 for the piece 107
+[1744472930.17]: Peer 1001 recieved the 'have' message from 1003 for the piece 34
+[1744472930.19]: Peer 1001 recieved the 'have' message from 1005 for the piece 49
+[1744472930.2]: Peer 1001 recieved the 'have' message from 1004 for the piece 38
+[1744472930.31]: Peer 1001 recieved the 'have' message from 1005 for the piece 83
+[1744472930.31]: Peer 1001 recieved the 'have' message from 1003 for the piece 82
+[1744472930.31]: Peer 1001 recieved the 'have' message from 1003 for the piece 34
+[1744472930.32]: Peer 1001 recieved the 'have' message from 1006 for the piece 17
+[1744472930.43]: Peer 1001 recieved the 'have' message from 1003 for the piece 79
+[1744472930.4]: Peer 1001 recieved the 'have' message from 1004 for the piece 13
+[1744472930.53]: Peer 1001 recieved the 'have' message from 1006 for the piece 108
+[1744472930.63]: Peer 1001 recieved the 'have' message from 1004 for the piece 13
+[1744472930.65]: Peer 1001 recieved the 'have' message from 1005 for the piece 107
+[1744472930.74]: Peer 1001 recieved the 'have' message from 1003 for the piece 63
+[1744472930.76]: Peer 1001 recieved the 'have' message from 1005 for the piece 10
+[1744472930.76]: Peer 1001 recieved the 'have' message from 1006 for the piece 84
+[1744472930.84]: Peer 1001 recieved the 'have' message from 1005 for the piece 110
+[1744472930.85]: Peer 1001 recieved the 'have' message from 1004 for the piece 55
+[1744472930.91]: Peer 1001 recieved the 'have' message from 1004 for the piece 88
+[1744472930.94]: Peer 1001 recieved the 'have' message from 1006 for the piece 81
+[1744472931.05]: Peer 1001 recieved the 'have' message from 1003 for the piece 49
+[1744472931.04]: Peer 1001 recieved the 'have' message from 1004 for the piece 99
+[1744472931.16]: Peer 1001 recieved the 'have' message from 1006 for the piece 98
+[1744472931.23]: Peer 1001 recieved the 'have' message from 1005 for the piece 99
+[1744472931.38]: Peer 1001 recieved the 'have' message from 1003 for the piece 88
+[1744472931.43]: Peer 1001 recieved the 'have' message from 1004 for the piece 51
+[1744472931.48]: Peer 1001 recieved the 'have' message from 1005 for the piece 96
+[1744472931.49]: Peer 1001 recieved the 'have' message from 1003 for the piece 89
+[1744472931.49]: Peer 1001 recieved the 'have' message from 1006 for the piece 7
+[1744472931.55]: Peer 1001 recieved the 'have' message from 1004 for the piece 30
+[1744472931.65]: Peer 1001 recieved the 'have' message from 1006 for the piece 58
+[1744472931.66]: Peer 1001 recieved the 'have' message from 1004 for the piece 52
+[1744472931.69]: Peer 1001 recieved the 'have' message from 1005 for the piece 86
+[1744472931.79]: Peer 1001 recieved the 'have' message from 1006 for the piece 66
+[1744472931.82]: Peer 1001 recieved the 'have' message from 1005 for the piece 20
+[1744472931.9]: Peer 1001 recieved the 'have' message from 1003 for the piece 45
+[1744472931.95]: Peer 1001 recieved the 'have' message from 1004 for the piece 100
+[1744472932.06]: Peer 1001 recieved the 'have' message from 1003 for the piece 65
+[1744472932.09]: Peer 1001 recieved the 'have' message from 1004 for the piece 101
+[1744472932.17]: Peer 1001 recieved the 'have' message from 1005 for the piece 73
+[1744472932.17]: Peer 1001 recieved the 'have' message from 1006 for the piece 5
+[1744472932.41]: Peer 1001 recieved the 'have' message from 1006 for the piece 78
+[1744472932.47]: Peer 1001 recieved the 'have' message from 1004 for the piece 104
+[1744472932.58]: Peer 1001 recieved the 'have' message from 1005 for the piece 85
+[1744472932.63]: Peer 1001 recieved the 'have' message from 1006 for the piece 21
+[1744472932.66]: Peer 1001 recieved the 'have' message from 1005 for the piece 87
+[1744472932.65]: Peer 1001 recieved the 'have' message from 1003 for the piece 109
+[1744472932.65]: Peer 1001 recieved the 'have' message from 1004 for the piece 91
+[1744472932.76]: Peer 1001 recieved the 'have' message from 1006 for the piece 99
+[1744472932.96]: Peer 1001 recieved the 'have' message from 1006 for the piece 63
+[1744472933.06]: Peer 1001 recieved the 'have' message from 1004 for the piece 40
+[1744472933.02]: Peer 1001 recieved the 'have' message from 1003 for the piece 25
+[1744472933.07]: Peer 1001 recieved the 'have' message from 1005 for the piece 85
+[1744472933.15]: Peer 1001 recieved the 'have' message from 1004 for the piece 58
+[1744472933.19]: Peer 1001 recieved the 'have' message from 1005 for the piece 97
+[1744472933.18]: Peer 1001 recieved the 'have' message from 1003 for the piece 95
+[1744472933.23]: Peer 1001 recieved the 'have' message from 1006 for the piece 8
+[1744472933.34]: Peer 1001 recieved the 'have' message from 1004 for the piece 34
+[1744472933.35]: Peer 1001 recieved the 'have' message from 1006 for the piece 57
+[1744472933.53]: Peer 1001 recieved the 'have' message from 1006 for the piece 68
+[1744472933.63]: Peer 1001 recieved the 'have' message from 1005 for the piece 71
+[1744472933.63]: Peer 1001 recieved the 'have' message from 1004 for the piece 15
+[1744472933.64]: Peer 1001 recieved the 'have' message from 1006 for the piece 69
+[1744472933.69]: Peer 1001 recieved the 'have' message from 1005 for the piece 97
+[1744472933.71]: Peer 1001 recieved the 'have' message from 1004 for the piece 57
+[1744472933.84]: Peer 1001 recieved the 'have' message from 1006 for the piece 74
+[1744472933.98]: Peer 1001 is unchoked by 1002
+[1744472934.0]: Peer 1001 recieved the 'have' message from 1003 for the piece 93
+[1744472934.04]: Peer 1001 recieved the 'have' message from 1004 for the piece 20
+[1744472934.09]: Peer 1001 recieved the 'have' message from 1005 for the piece 90
+[1744472934.18]: Peer 1001 has preferred neighbors 1003 1006 1005 
+[1744472934.18]: Peer 1001 recieved the 'have' message from 1006 for the piece 71
+[1744472934.18]: Peer 1001 recieved the 'have' message from 1004 for the piece 0
+[1744472934.2]: Peer 1001 recieved the 'have' message from 1006 for the piece 94
+[1744472934.3]: Peer 1001 recieved the 'have' message from 1004 for the piece 20
+[1744472934.32]: Peer 1001 recieved the 'have' message from 1006 for the piece 109
+[1744472934.41]: Peer 1001 recieved the 'have' message from 1006 for the piece 50
+[1744472934.42]: Peer 1001 recieved the 'have' message from 1004 for the piece 64
+[1744472934.5]: Peer 1001 recieved the 'have' message from 1005 for the piece 82
+[1744472934.47]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744472934.5]: Peer 1001 recieved the 'have' message from 1004 for the piece 12
+[1744472934.57]: Peer 1001 recieved the 'have' message from 1003 for the piece 84
+[1744472934.58]: Peer 1001 recieved the 'have' message from 1005 for the piece 82
+[1744472934.63]: Peer 1001 recieved the 'have' message from 1003 for the piece 68
+[1744472934.68]: Peer 1001 recieved the 'have' message from 1004 for the piece 28
+[1744472934.74]: Peer 1001 recieved the 'have' message from 1006 for the piece 41
+[1744472934.78]: Peer 1001 recieved the 'have' message from 1003 for the piece 12
+[1744472934.81]: Peer 1001 recieved the 'have' message from 1003 for the piece 53
+[1744472934.92]: Peer 1001 recieved the 'have' message from 1005 for the piece 103
+[1744472935.01]: Peer 1001 recieved the 'have' message from 1006 for the piece 42
+[1744472935.09]: Peer 1001 recieved the 'have' message from 1006 for the piece 19
+[1744472935.06]: Peer 1001 recieved the 'have' message from 1004 for the piece 108
+[1744472935.13]: Peer 1001 recieved the 'have' message from 1005 for the piece 46
+[1744472935.14]: Peer 1001 recieved the 'have' message from 1003 for the piece 47
+[1744472935.14]: Peer 1001 recieved the 'have' message from 1004 for the piece 10
+[1744472935.31]: Peer 1001 recieved the 'have' message from 1005 for the piece 47
+[1744472935.42]: Peer 1001 recieved the 'have' message from 1005 for the piece 38
+[1744472935.6]: Peer 1001 recieved the 'have' message from 1004 for the piece 49
+[1744472935.76]: Peer 1001 recieved the 'have' message from 1004 for the piece 47
+[1744472935.82]: Peer 1001 recieved the 'have' message from 1003 for the piece 22
+[1744472935.88]: Peer 1001 recieved the 'have' message from 1004 for the piece 9
+[1744472935.96]: Peer 1001 recieved the 'have' message from 1005 for the piece 94
+[1744472935.98]: Peer 1001 recieved the 'have' message from 1003 for the piece 19
+[1744472936.06]: Peer 1001 recieved the 'have' message from 1006 for the piece 30
+[1744472936.1]: Peer 1001 recieved the 'have' message from 1005 for the piece 6
+[1744472936.17]: Peer 1001 recieved the 'have' message from 1006 for the piece 23
+[1744472936.17]: Peer 1001 recieved the 'have' message from 1004 for the piece 62
+[1744472936.23]: Peer 1001 recieved the 'have' message from 1005 for the piece 2
+[1744472936.25]: Peer 1001 recieved the 'have' message from 1004 for the piece 17
+[1744472936.34]: Peer 1001 recieved the 'have' message from 1003 for the piece 50
+[1744472936.38]: Peer 1001 recieved the 'have' message from 1006 for the piece 64
+[1744472936.42]: Peer 1001 recieved the 'have' message from 1003 for the piece 107
+[1744472936.49]: Peer 1001 recieved the 'have' message from 1005 for the piece 100
+[1744472936.53]: Peer 1001 recieved the 'have' message from 1003 for the piece 58
+[1744472936.55]: Peer 1001 recieved the 'have' message from 1004 for the piece 41
+[1744472936.64]: Peer 1001 recieved the 'have' message from 1005 for the piece 6
+[1744472936.72]: Peer 1001 recieved the 'have' message from 1005 for the piece 12
+[1744472936.79]: Peer 1001 recieved the 'have' message from 1003 for the piece 39
+[1744472936.82]: Peer 1001 recieved the 'have' message from 1004 for the piece 70
+[1744472936.88]: Peer 1001 recieved the 'have' message from 1006 for the piece 103
+[1744472936.9]: Peer 1001 recieved the 'have' message from 1004 for the piece 29
+[1744472936.93]: Peer 1001 recieved the 'have' message from 1005 for the piece 32
+[1744472937.07]: Peer 1001 recieved the 'have' message from 1004 for the piece 24
+[1744472937.17]: Peer 1001 recieved the 'have' message from 1004 for the piece 93
+[1744472937.2]: Peer 1001 recieved the 'have' message from 1003 for the piece 5
+[1744472937.25]: Peer 1001 recieved the 'have' message from 1005 for the piece 1
+[1744472937.26]: Peer 1001 recieved the 'have' message from 1006 for the piece 56
+[1744472937.42]: Peer 1001 recieved the 'have' message from 1003 for the piece 43
+[1744472937.47]: Peer 1001 recieved the 'have' message from 1004 for the piece 76
+[1744472937.51]: Peer 1001 recieved the 'have' message from 1003 for the piece 13
+[1744472937.56]: Peer 1001 recieved the 'have' message from 1006 for the piece 23
+[1744472937.59]: Peer 1001 recieved the 'have' message from 1004 for the piece 93
+[1744472937.61]: Peer 1001 recieved the 'have' message from 1005 for the piece 15
+[1744472937.69]: Peer 1001 recieved the 'have' message from 1005 for the piece 19
+[1744472937.69]: Peer 1001 recieved the 'have' message from 1003 for the piece 43
+[1744472937.85]: Peer 1001 recieved the 'have' message from 1006 for the piece 39
+[1744472937.86]: Peer 1001 recieved the 'have' message from 1004 for the piece 107
+[1744472937.86]: Peer 1001 recieved the 'have' message from 1005 for the piece 19
+[1744472937.86]: Peer 1001 recieved the 'have' message from 1003 for the piece 23
+[1744472938.07]: Peer 1001 recieved the 'have' message from 1005 for the piece 15
+[1744472938.07]: Peer 1001 recieved the 'have' message from 1006 for the piece 15
+[1744472938.13]: Peer 1001 recieved the 'have' message from 1003 for the piece 60
+[1744472938.16]: Peer 1001 recieved the 'have' message from 1004 for the piece 19
+[1744472938.18]: Peer 1001 recieved the 'have' message from 1006 for the piece 15
+[1744472938.19]: Peer 1001 recieved the 'have' message from 1005 for the piece 0
+[1744472938.2]: Peer 1001 recieved the 'have' message from 1004 for the piece 19
+[1744472938.19]: Peer 1001 recieved the 'have' message from 1003 for the piece 61
+[1744472938.21]: Peer 1001 recieved the 'have' message from 1004 for the piece 72
+[1744472938.26]: Peer 1001 recieved the 'have' message from 1006 for the piece 15
+[1744472938.29]: Peer 1001 recieved the 'have' message from 1003 for the piece 69
+[1744472938.29]: Peer 1001 recieved the 'have' message from 1005 for the piece 40
+[1744472938.34]: Peer 1001 recieved the 'have' message from 1004 for the piece 37
+[1744472938.42]: Peer 1001 recieved the 'have' message from 1005 for the piece 89
+[1744472938.45]: Peer 1001 recieved the 'have' message from 1004 for the piece 107
+[1744472938.51]: Peer 1001 recieved the 'have' message from 1004 for the piece 53
+[1744472938.65]: Peer 1001 recieved the 'have' message from 1003 for the piece 41
+[1744472938.7]: Peer 1001 recieved the 'have' message from 1005 for the piece 30
+[1744472938.76]: Peer 1001 recieved the 'have' message from 1006 for the piece 91
+[1744472938.72]: Peer 1001 recieved the 'have' message from 1004 for the piece 36
+[1744472938.89]: Peer 1001 recieved the 'have' message from 1003 for the piece 70
+[1744472939.05]: Peer 1001 recieved the 'have' message from 1005 for the piece 30
+[1744472939.17]: Peer 1001 recieved the 'have' message from 1004 for the piece 37
+[1744472939.16]: Peer 1001 recieved the 'have' message from 1003 for the piece 97
+[1744472939.18]: Peer 1001 recieved the 'have' message from 1005 for the piece 43
+[1744472939.18]: Peer 1001 has preferred neighbors 1005 1004 1003 
+[1744472939.24]: Peer 1001 recieved the 'have' message from 1004 for the piece 59
+[1744472939.27]: Peer 1001 recieved the 'have' message from 1003 for the piece 75
+[1744472939.39]: Peer 1001 recieved the 'have' message from 1003 for the piece 60
+[1744472939.45]: Peer 1001 recieved the 'have' message from 1004 for the piece 59
+[1744472939.47]: Peer 1001 recieved the 'have' message from 1003 for the piece 97
+[1744472939.57]: Peer 1001 recieved the 'have' message from 1005 for the piece 102
+[1744472939.68]: Peer 1001 recieved the 'have' message from 1005 for the piece 43
+[1744472940.31]: Peer 1001 recieved the 'have' message from 1003 for the piece 17
+[1744472940.44]: Peer 1001 recieved the 'have' message from 1003 for the piece 8
+[1744472940.79]: Peer 1001 recieved the 'have' message from 1003 for the piece 46
+[1744472940.94]: Peer 1001 recieved the 'have' message from 1003 for the piece 110
+[1744472941.21]: Peer 1001 recieved the 'have' message from 1003 for the piece 36
+[1744472941.33]: Peer 1001 recieved the 'have' message from 1003 for the piece 96
+[1744472941.63]: Peer 1001 recieved the 'have' message from 1003 for the piece 111
+[1744472942.0]: Peer 1001 recieved the 'have' message from 1003 for the piece 54
+[1744472944.18]: Peer 1001 has preferred neighbors 1004 1002 1006 
+[1744472944.65]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744472944.79]: Peer 1001 has the optimistically unchoked neighbor 1003
+[1744472949.18]: Peer 1001 has preferred neighbors 1002 1005 1006 
+[1744472953.93]: Peer 1001 recieved the 'have' message from 1005 for the piece 43
+[1744472954.18]: Peer 1001 has preferred neighbors 1003 1005 1006 
+[1744472954.42]: Peer 1001 recieved the 'have' message from 1005 for the piece 64
+[1744472954.47]: Peer 1001 recieved the 'have' message from 1006 for the piece 73
+[1744472954.61]: Peer 1001 recieved the 'have' message from 1006 for the piece 73
+[1744472954.69]: Peer 1001 is unchoked by 1005
+[1744472954.78]: Peer 1001 recieved the 'have' message from 1006 for the piece 15
+[1744472954.85]: Peer 1001 recieved the 'have' message from 1004 for the piece 50
+[1744472954.91]: Peer 1001 recieved the 'have' message from 1006 for the piece 73
+[1744472954.92]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744472954.94]: Peer 1001 recieved the 'have' message from 1005 for the piece 64
+[1744472955.1]: Peer 1001 recieved the 'have' message from 1005 for the piece 64
+[1744472955.22]: Peer 1001 recieved the 'have' message from 1004 for the piece 87
+[1744472955.35]: Peer 1001 is unchoked by 1004
+[1744472955.32]: Peer 1001 recieved the 'have' message from 1005 for the piece 64
+[1744472955.43]: Peer 1001 recieved the 'have' message from 1004 for the piece 59
+[1744472955.57]: Peer 1001 recieved the 'have' message from 1004 for the piece 50
+[1744472955.59]: Peer 1001 recieved the 'have' message from 1005 for the piece 64
+[1744472955.64]: Peer 1001 recieved the 'have' message from 1004 for the piece 59
+[1744472955.68]: Peer 1001 recieved the 'have' message from 1004 for the piece 87
+[1744472956.57]: Peer 1001 recieved the 'have' message from 1004 for the piece 87
+[1744472956.77]: Peer 1001 recieved the 'have' message from 1005 for the piece 64
+[1744472957.37]: Peer 1001 recieved the 'have' message from 1003 for the piece 90
+[1744472958.39]: Peer 1001 recieved the 'have' message from 1003 for the piece 90
+[1744472959.18]: Peer 1001 has preferred neighbors 1003 1005 1004 
+[1744472959.5]: Peer 1001 is choked by 1005
+[1744472959.53]: Peer 1001 is unchoked by 1003
+[1744472960.21]: Peer 1001 is unchoked by 1004
+[1744472964.18]: Peer 1001 has preferred neighbors 1005 1003 1002 
+[1744472964.32]: Peer 1001 is unchoked by 1003
+[1744472965.19]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744472965.16]: Peer 1001 is choked by 1004
+[1744472969.18]: Peer 1001 has preferred neighbors 1006 1003 1002 
+[1744472969.33]: Peer 1001 is unchoked by 1003
+[1744472969.46]: Peer 1001 is unchoked by 1005
+[1744472969.7]: Peer 1001 recieved the 'have' message from 1003 for the piece 90
+[1744472969.76]: Peer 1001 recieved the 'have' message from 1003 for the piece 90
+[1744472970.16]: Peer 1001 is unchoked by 1004
+[1744472970.54]: Peer 1001 recieved the 'have' message from 1003 for the piece 90
+[1744472970.76]: Peer 1001 recieved the 'have' message from 1003 for the piece 90
+[1744472971.24]: Peer 1001 recieved the 'have' message from 1003 for the piece 90
+[1744472974.19]: Peer 1001 has preferred neighbors 1004 1003 1002 
+[1744472974.33]: Peer 1001 is unchoked by 1003
+[1744472974.45]: Peer 1001 is unchoked by 1005
+[1744472974.66]: Peer 1001 is unchoked by 1006
+[1744472975.16]: Peer 1001 is unchoked by 1004
+[1744472975.37]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744472975.48]: Peer 1001 is unchoked by 1003
+[1744472979.19]: Peer 1001 has preferred neighbors 1002 1003 1004 
+[1744472979.5]: Peer 1001 is choked by 1005
+[1744472979.65]: Peer 1001 is choked by 1006
+[1744472980.17]: Peer 1001 is unchoked by 1004
+[1744472980.45]: Peer 1001 is choked by 1003
+[1744472984.19]: Peer 1001 has preferred neighbors 1006 1002 1003 
+[1744472984.66]: Peer 1001 is unchoked by 1006
+[1744472985.17]: Peer 1001 is unchoked by 1004
+[1744472985.56]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744472989.19]: Peer 1001 has preferred neighbors 1006 1005 1002 
+[1744472989.65]: Peer 1001 is unchoked by 1006
+[1744472989.99]: Peer 1001 is unchoked by 1004
+[1744472990.23]: Peer 1001 is unchoked by 1003
+[1744472994.19]: Peer 1001 has preferred neighbors 1003 1002 1005 
+[1744472994.46]: Peer 1001 is unchoked by 1003
+[1744472994.66]: Peer 1001 is choked by 1006
+[1744472994.99]: Peer 1001 is unchoked by 1004
+[1744472995.73]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744472999.19]: Peer 1001 has preferred neighbors 1003 1006 1002 
+[1744472999.46]: Peer 1001 is unchoked by 1003
+[1744472999.53]: Peer 1001 is choked by 1004
+[1744472999.68]: Peer 1001 is unchoked by 1006
+[1744473004.19]: Peer 1001 has preferred neighbors 1003 1006 1002 
+[1744473004.46]: Peer 1001 is unchoked by 1003
+[1744473004.47]: Peer 1001 is unchoked by 1004
+[1744473004.66]: Peer 1001 is unchoked by 1006
+[1744473005.93]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473005.93]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473006.03]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473009.19]: Peer 1001 has preferred neighbors 1003 1004 1006 
+[1744473009.46]: Peer 1001 is unchoked by 1004
+[1744473009.48]: Peer 1001 is unchoked by 1003
+[1744473009.66]: Peer 1001 is choked by 1006
+[1744473014.19]: Peer 1001 has preferred neighbors 1006 1004 1003 
+[1744473014.45]: Peer 1001 is unchoked by 1003
+[1744473014.47]: Peer 1001 is unchoked by 1004
+[1744473019.19]: Peer 1001 has preferred neighbors 1003 1004 1002 
+[1744473019.45]: Peer 1001 is choked by 1003
+[1744473019.52]: Peer 1001 is unchoked by 1004
+[1744473019.49]: Peer 1001 is unchoked by 1005
+[1744473021.41]: Peer 1001 is choked by 1005
+[1744473024.19]: Peer 1001 has preferred neighbors 1003 1006 1005 
+[1744473024.47]: Peer 1001 is unchoked by 1004
+[1744473026.37]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473026.48]: Peer 1001 is unchoked by 1004
+[1744473029.19]: Peer 1001 has preferred neighbors 1005 1006 1004 
+[1744473029.49]: Peer 1001 is unchoked by 1003
+[1744473031.14]: Peer 1001 is unchoked by 1004
+[1744473034.19]: Peer 1001 has preferred neighbors 1003 1006 1004 
+[1744473034.46]: Peer 1001 is unchoked by 1003
+[1744473034.67]: Peer 1001 is unchoked by 1006
+[1744473036.13]: Peer 1001 is unchoked by 1004
+[1744473036.55]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473036.56]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473039.19]: Peer 1001 has preferred neighbors 1003 1006 1005 
+[1744473039.45]: Peer 1001 is choked by 1003
+[1744473039.48]: Peer 1001 is choked by 1004
+[1744473039.66]: Peer 1001 is unchoked by 1006
+[1744473041.24]: Peer 1001 is unchoked by 1005
+[1744473044.19]: Peer 1001 has preferred neighbors 1003 1006 1004 
+[1744473044.48]: Peer 1001 is unchoked by 1004
+[1744473044.67]: Peer 1001 is choked by 1006
+[1744473046.24]: Peer 1001 is choked by 1005
+[1744473049.2]: Peer 1001 has preferred neighbors 1003 1005 1002 
+[1744473049.47]: Peer 1001 is unchoked by 1003
+[1744473049.47]: Peer 1001 is choked by 1004
+[1744473049.67]: Peer 1001 is unchoked by 1006
+[1744473054.2]: Peer 1001 has preferred neighbors 1003 1006 1004 
+[1744473054.46]: Peer 1001 is choked by 1003
+[1744473054.49]: Peer 1001 is unchoked by 1004
+[1744473054.67]: Peer 1001 is unchoked by 1006
+[1744473059.2]: Peer 1001 has preferred neighbors 1005 1002 1003 
+[1744473059.52]: Peer 1001 is unchoked by 1004
+[1744473059.58]: Peer 1001 is unchoked by 1005
+[1744473059.68]: Peer 1001 is unchoked by 1006
+[1744473064.2]: Peer 1001 has preferred neighbors 1006 1005 1003 
+[1744473064.49]: Peer 1001 is choked by 1004
+[1744473064.45]: Peer 1001 is unchoked by 1003
+[1744473064.52]: Peer 1001 is choked by 1005
+[1744473064.67]: Peer 1001 is choked by 1006
+[1744473067.06]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473069.2]: Peer 1001 has preferred neighbors 1004 1003 1002 
+[1744473069.46]: Peer 1001 is unchoked by 1003
+[1744473069.49]: Peer 1001 is unchoked by 1005
+[1744473069.55]: Peer 1001 is unchoked by 1004
+[1744473069.66]: Peer 1001 is unchoked by 1006
+[1744473072.25]: Peer 1001 is choked by 1004
+[1744473074.2]: Peer 1001 has preferred neighbors 1002 1004 1003 
+[1744473074.5]: Peer 1001 is choked by 1005
+[1744473074.46]: Peer 1001 is unchoked by 1003
+[1744473074.68]: Peer 1001 is choked by 1006
+[1744473077.28]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473077.28]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473079.2]: Peer 1001 has preferred neighbors 1002 1006 1003 
+[1744473079.46]: Peer 1001 is unchoked by 1003
+[1744473079.49]: Peer 1001 is unchoked by 1005
+[1744473079.67]: Peer 1001 is unchoked by 1006
+[1744473084.2]: Peer 1001 has preferred neighbors 1003 1006 1004 
+[1744473084.46]: Peer 1001 is choked by 1003
+[1744473084.51]: Peer 1001 is unchoked by 1005
+[1744473084.67]: Peer 1001 is choked by 1006
+[1744473089.2]: Peer 1001 has preferred neighbors 1006 1005 1002 
+[1744473089.5]: Peer 1001 is choked by 1005
+[1744473089.67]: Peer 1001 is unchoked by 1006
+[1744473092.23]: Peer 1001 is unchoked by 1004
+[1744473094.2]: Peer 1001 has preferred neighbors 1002 1003 1006 
+[1744473094.5]: Peer 1001 is unchoked by 1005
+[1744473094.67]: Peer 1001 is choked by 1006
+[1744473097.23]: Peer 1001 is unchoked by 1004
+[1744473097.61]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473099.2]: Peer 1001 has preferred neighbors 1003 1006 1005 
+[1744473099.5]: Peer 1001 is choked by 1005
+[1744473099.68]: Peer 1001 is unchoked by 1006
+[1744473102.24]: Peer 1001 is unchoked by 1004
+[1744473102.78]: Peer 1001 is unchoked by 1005
+[1744473104.2]: Peer 1001 has preferred neighbors 1005 1004 1006 
+[1744473104.47]: Peer 1001 is unchoked by 1003
+[1744473104.67]: Peer 1001 is unchoked by 1006
+[1744473107.24]: Peer 1001 is choked by 1004
+[1744473107.77]: Peer 1001 is unchoked by 1005
+[1744473107.77]: Peer 1001 has the optimistically unchoked neighbor 1003
+[1744473109.2]: Peer 1001 has preferred neighbors 1005 1006 1004 
+[1744473109.47]: Peer 1001 is unchoked by 1003
+[1744473109.53]: Peer 1001 is unchoked by 1004
+[1744473109.68]: Peer 1001 is choked by 1006
+[1744473112.64]: Peer 1001 is choked by 1005
+[1744473114.21]: Peer 1001 has preferred neighbors 1006 1002 1005 
+[1744473114.47]: Peer 1001 is unchoked by 1003
+[1744473114.52]: Peer 1001 is unchoked by 1004
+[1744473114.67]: Peer 1001 is unchoked by 1006
+[1744473117.99]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473117.99]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473119.21]: Peer 1001 has preferred neighbors 1006 1002 1004 
+[1744473119.47]: Peer 1001 is unchoked by 1003
+[1744473119.55]: Peer 1001 is choked by 1004
+[1744473119.69]: Peer 1001 is unchoked by 1006
+[1744473124.21]: Peer 1001 has preferred neighbors 1006 1005 1003 
+[1744473124.47]: Peer 1001 is choked by 1003
+[1744473124.53]: Peer 1001 is unchoked by 1005
+[1744473124.52]: Peer 1001 is unchoked by 1004
+[1744473124.68]: Peer 1001 is unchoked by 1006
+[1744473129.21]: Peer 1001 has preferred neighbors 1003 1002 1005 
+[1744473129.47]: Peer 1001 is unchoked by 1003
+[1744473129.5]: Peer 1001 is unchoked by 1005
+[1744473129.52]: Peer 1001 is unchoked by 1004
+[1744473129.7]: Peer 1001 is choked by 1006
+[1744473133.3]: Peer 1001 is choked by 1003
+[1744473134.21]: Peer 1001 has preferred neighbors 1005 1004 1006 
+[1744473134.51]: Peer 1001 is unchoked by 1005
+[1744473134.54]: Peer 1001 is choked by 1004
+[1744473134.68]: Peer 1001 is unchoked by 1006
+[1744473138.28]: Peer 1001 is unchoked by 1003
+[1744473138.35]: Peer 1001 has the optimistically unchoked neighbor 1003
+[1744473139.21]: Peer 1001 has preferred neighbors 1004 1002 1005 
+[1744473139.52]: Peer 1001 is unchoked by 1005
+[1744473139.55]: Peer 1001 is unchoked by 1004
+[1744473139.69]: Peer 1001 is unchoked by 1006
+[1744473143.27]: Peer 1001 is unchoked by 1003
+[1744473144.21]: Peer 1001 has preferred neighbors 1004 1006 1003 
+[1744473144.52]: Peer 1001 is choked by 1004
+[1744473144.51]: Peer 1001 is unchoked by 1005
+[1744473144.68]: Peer 1001 is unchoked by 1006
+[1744473148.28]: Peer 1001 is unchoked by 1003
+[1744473148.57]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473149.21]: Peer 1001 has preferred neighbors 1005 1006 1003 
+[1744473149.52]: Peer 1001 is unchoked by 1004
+[1744473149.59]: Peer 1001 is choked by 1005
+[1744473149.68]: Peer 1001 is unchoked by 1006
+[1744473153.28]: Peer 1001 is choked by 1003
+[1744473154.21]: Peer 1001 has preferred neighbors 1004 1006 1003 
+[1744473154.52]: Peer 1001 is unchoked by 1005
+[1744473154.52]: Peer 1001 is unchoked by 1004
+[1744473154.67]: Peer 1001 is unchoked by 1006
+[1744473158.17]: Peer 1001 is unchoked by 1003
+[1744473159.21]: Peer 1001 has preferred neighbors 1005 1006 1003 
+[1744473159.53]: Peer 1001 is choked by 1005
+[1744473159.52]: Peer 1001 is unchoked by 1004
+[1744473159.69]: Peer 1001 is choked by 1006
+[1744473163.16]: Peer 1001 is choked by 1003
+[1744473164.21]: Peer 1001 has preferred neighbors 1005 1002 1003 
+[1744473164.51]: Peer 1001 is unchoked by 1004
+[1744473164.53]: Peer 1001 is unchoked by 1005
+[1744473164.67]: Peer 1001 is unchoked by 1006
+[1744473168.97]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473169.0]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473169.21]: Peer 1001 has preferred neighbors 1004 1002 1003 
+[1744473169.52]: Peer 1001 is choked by 1005
+[1744473169.53]: Peer 1001 is unchoked by 1004
+[1744473169.68]: Peer 1001 is unchoked by 1006
+[1744473174.21]: Peer 1001 has preferred neighbors 1003 1004 1002 
+[1744473174.51]: Peer 1001 is unchoked by 1005
+[1744473174.54]: Peer 1001 is choked by 1004
+[1744473174.67]: Peer 1001 is unchoked by 1006
+[1744473179.21]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473179.21]: Peer 1001 has preferred neighbors 1004 1002 1005 
+[1744473179.28]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473179.35]: Peer 1001 has the optimistically unchoked neighbor 1003
+[1744473179.52]: Peer 1001 is unchoked by 1004
+[1744473179.59]: Peer 1001 is choked by 1005
+[1744473179.68]: Peer 1001 is unchoked by 1006
+[1744473184.21]: Peer 1001 has preferred neighbors 1005 1003 1002 
+[1744473184.46]: Peer 1001 is unchoked by 1005
+[1744473184.49]: Peer 1001 is unchoked by 1003
+[1744473184.49]: Peer 1001 is unchoked by 1004
+[1744473184.69]: Peer 1001 is choked by 1006
+[1744473189.21]: Peer 1001 has preferred neighbors 1005 1003 1002 
+[1744473189.38]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473189.38]: Peer 1001 is choked by 1004
+[1744473189.44]: Peer 1001 is choked by 1005
+[1744473189.5]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473189.5]: Peer 1001 is unchoked by 1003
+[1744473194.09]: Peer 1001 is unchoked by 1004
+[1744473194.22]: Peer 1001 has preferred neighbors 1003 1005 1006 
+[1744473194.36]: Peer 1001 is unchoked by 1005
+[1744473194.5]: Peer 1001 is unchoked by 1003
+[1744473194.7]: Peer 1001 is unchoked by 1006
+[1744473199.08]: Peer 1001 is unchoked by 1004
+[1744473199.15]: Peer 1001 is unchoked by 1005
+[1744473199.22]: Peer 1001 has preferred neighbors 1003 1006 1002 
+[1744473199.51]: Peer 1001 is choked by 1003
+[1744473199.61]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473199.69]: Peer 1001 is choked by 1006
+[1744473199.77]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473199.83]: Peer 1001 is unchoked by 1004
+[1744473199.75]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473199.86]: Peer 1001 is choked by 1005
+[1744473204.22]: Peer 1001 has preferred neighbors 1004 1003 1002 
+[1744473204.51]: Peer 1001 is unchoked by 1003
+[1744473204.76]: Peer 1001 is unchoked by 1004
+[1744473209.22]: Peer 1001 has preferred neighbors 1005 1002 1003 
+[1744473209.51]: Peer 1001 is unchoked by 1003
+[1744473209.76]: Peer 1001 is unchoked by 1004
+[1744473209.8]: Peer 1001 is unchoked by 1005
+[1744473209.86]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473209.96]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473214.22]: Peer 1001 has preferred neighbors 1006 1002 1003 
+[1744473214.54]: Peer 1001 is unchoked by 1004
+[1744473214.71]: Peer 1001 is choked by 1005
+[1744473219.22]: Peer 1001 has preferred neighbors 1003 1005 1004 
+[1744473219.55]: Peer 1001 is unchoked by 1004
+[1744473220.11]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473224.22]: Peer 1001 has preferred neighbors 1006 1005 1004 
+[1744473224.51]: Peer 1001 is choked by 1003
+[1744473224.57]: Peer 1001 is unchoked by 1005
+[1744473224.61]: Peer 1001 is choked by 1004
+[1744473229.22]: Peer 1001 has preferred neighbors 1002 1006 1005 
+[1744473229.53]: Peer 1001 is unchoked by 1005
+[1744473229.55]: Peer 1001 is unchoked by 1004
+[1744473230.32]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473230.34]: Peer 1001 has the optimistically unchoked neighbor 1003
+[1744473230.58]: Peer 1001 is choked by 1004
+[1744473234.22]: Peer 1001 has preferred neighbors 1003 1006 1004 
+[1744473234.55]: Peer 1001 is unchoked by 1005
+[1744473234.7]: Peer 1001 is unchoked by 1006
+[1744473235.58]: Peer 1001 is unchoked by 1004
+[1744473239.22]: Peer 1001 has preferred neighbors 1002 1004 1005 
+[1744473239.54]: Peer 1001 is choked by 1005
+[1744473239.7]: Peer 1001 is unchoked by 1006
+[1744473240.54]: Peer 1001 is choked by 1004
+[1744473240.54]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473244.22]: Peer 1001 has preferred neighbors 1006 1004 1002 
+[1744473244.52]: Peer 1001 is unchoked by 1003
+[1744473244.55]: Peer 1001 is unchoked by 1005
+[1744473244.69]: Peer 1001 is choked by 1006
+[1744473245.55]: Peer 1001 is unchoked by 1004
+[1744473249.22]: Peer 1001 has preferred neighbors 1004 1006 1003 
+[1744473249.51]: Peer 1001 is choked by 1003
+[1744473249.54]: Peer 1001 is unchoked by 1005
+[1744473250.56]: Peer 1001 is unchoked by 1004
+[1744473250.72]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473254.23]: Peer 1001 has preferred neighbors 1005 1003 1002 
+[1744473254.51]: Peer 1001 is unchoked by 1003
+[1744473254.55]: Peer 1001 is unchoked by 1005
+[1744473254.69]: Peer 1001 is unchoked by 1006
+[1744473255.56]: Peer 1001 is unchoked by 1004
+[1744473255.86]: Peer 1001 is choked by 1005
+[1744473259.23]: Peer 1001 has preferred neighbors 1004 1005 1006 
+[1744473259.51]: Peer 1001 is unchoked by 1003
+[1744473259.7]: Peer 1001 is unchoked by 1006
+[1744473260.56]: Peer 1001 is choked by 1004
+[1744473260.91]: Peer 1001 has the optimistically unchoked neighbor 1003
+[1744473264.23]: Peer 1001 has preferred neighbors 1004 1006 1002 
+[1744473264.51]: Peer 1001 is unchoked by 1003
+[1744473264.7]: Peer 1001 is unchoked by 1006
+[1744473265.57]: Peer 1001 is unchoked by 1004
+[1744473265.79]: Peer 1001 is unchoked by 1005
+[1744473266.14]: Peer 1001 is choked by 1003
+[1744473269.23]: Peer 1001 has preferred neighbors 1002 1004 1003 
+[1744473269.69]: Peer 1001 is choked by 1006
+[1744473270.47]: Peer 1001 is choked by 1005
+[1744473270.55]: Peer 1001 is unchoked by 1004
+[1744473271.17]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473271.2]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473271.21]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473271.21]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473274.23]: Peer 1001 has preferred neighbors 1005 1004 1002 
+[1744473274.7]: Peer 1001 is unchoked by 1006
+[1744473275.58]: Peer 1001 is choked by 1004
+[1744473276.01]: Peer 1001 is unchoked by 1003
+[1744473279.23]: Peer 1001 has preferred neighbors 1002 1005 1003 
+[1744473279.7]: Peer 1001 is choked by 1006
+[1744473281.02]: Peer 1001 is choked by 1003
+[1744473281.41]: Peer 1001 has the optimistically unchoked neighbor 1004
+[1744473281.46]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473281.46]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473281.46]: Peer 1001 has the optimistically unchoked neighbor 1006
+[1744473284.23]: Peer 1001 has preferred neighbors 1006 1005 1004 
+[1744473284.55]: Peer 1001 is unchoked by 1005
+[1744473284.7]: Peer 1001 is unchoked by 1006
+[1744473285.55]: Peer 1001 is unchoked by 1004
+[1744473286.01]: Peer 1001 is unchoked by 1003
+[1744473289.23]: Peer 1001 has preferred neighbors 1002 1004 1006 
+[1744473289.57]: Peer 1001 is choked by 1005
+[1744473289.69]: Peer 1001 is choked by 1006
+[1744473290.56]: Peer 1001 is unchoked by 1004
+[1744473291.01]: Peer 1001 is unchoked by 1003
+[1744473291.64]: Peer 1001 has the optimistically unchoked neighbor 1005
+[1744473291.66]: Peer 1001 has the optimistically unchoked neighbor 1003
+[1744473294.23]: Peer 1001 has preferred neighbors 1004 1006 1005 

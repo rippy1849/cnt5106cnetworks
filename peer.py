@@ -10,25 +10,17 @@ import random
 import numpy as np
 from pathlib import Path
 
-# from threading import Thread, Lock
-# from multiprocessing import Lock
-
-#TODO Anywhere there is a connection.send, need to wrap it in a connection error handler
-
-#TODO Processes Cannot share data, they make a copy and pass it in. There is a max number of threads allowed, threads are a necessity. 
-#TODO Max Number of peers allowed is 10 without slowing down to nothing.
-
-#TODO Remove interested entries in handle_not_interested
 
 HANDSHAKE_HEADER = 'P2PFILESHARINGPROJ'
 
+
+#Holds all shared data between peer connections
 class Tables:
     def __init__(self):
         self.connection_table = {}
         self.connection_key_table = {}
         self.download_table = {}
         self.piece_list = {}
-        # self.preferred_peers = {}
         self.rate_entry = {}
         self.interested_peers = {}
         self.choked_peers = {}
@@ -45,6 +37,7 @@ class Tables:
         self.self_interested_in_connected_peers = {}
         
         self.total_pieces = 0
+        self.current_pieces = 0
 
         
     def getConnectionTable(self):        
@@ -158,6 +151,15 @@ class Tables:
         self.total_pieces = total_number
         
         return
+    
+    def setCurrentPieces(self,current_pieces):
+        
+        self.current_pieces = current_pieces
+    
+    def getCurrentPieces(self):
+        
+        return self.current_pieces
+    
 
 
 def send_message(connection, message, self_peer_id, target_peer_id, i):
@@ -174,42 +176,43 @@ def send_message(connection, message, self_peer_id, target_peer_id, i):
 def generate_file(self_peer_id,common_cfg, tables):
     
     
-    while True:
+    # while True:
     
-        directory = 'peer_' + str(self_peer_id)
-        
-        piece_files = Path(directory).glob("*.piece")
+    directory = 'peer_' + str(self_peer_id)
+    
+    piece_files = Path(directory).glob("*.piece")
 
-        file_name = common_cfg['FileName']
-        total_number_of_pieces = tables.getTotalPieces()
+    file_name = common_cfg['FileName']
+    total_number_of_pieces = tables.getTotalPieces()
+    
+    total_pieces = 0
+    for piece in piece_files:
+        total_pieces += 1
+    
+    tables.setCurrentPieces(total_pieces)
         
-        total_pieces = 0
-        for piece in piece_files:
-            total_pieces += 1
+    
+    if total_number_of_pieces == total_pieces:                     
         
-            
-            
+        filepath = os.path.join(os.getcwd(), directory, file_name)
         
-        if total_number_of_pieces <= total_pieces:                     
+        
+        if not os.path.exists(filepath):
+            piece_files = Path(directory).glob("*.piece")
             
-            filepath = os.path.join(os.getcwd(), directory, file_name)
+            file_string = ""
+            for piece in piece_files:
+                f = open(piece)
+                for line in f:
+                    file_string += line
+            f2 = open(filepath, 'w')
+            f2.write(file_string)
+            f.close()
             
-            
-            if not os.path.exists(filepath):
-                piece_files = Path(directory).glob("*.piece")
-                
-                file_string = ""
-                for piece in piece_files:
-                    f = open(piece)
-                    for line in f:
-                        file_string += line
-                f2 = open(filepath, 'w')
-                f2.write(file_string)
-                f.close()
-            
-            
-            
-        time.sleep(5)
+        log_entry(self_peer_id, f"Peer {self_peer_id} has downloaded the complete file")
+        
+        
+    # time.sleep(5)
     
     
     return
@@ -254,6 +257,13 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
                 choked_table = tables.getChokedTable()
                 connection_table = tables.getConnectionTable()
                 connection_key_table = tables.getConnectionKeyTable()
+                
+                
+                p_list = ""
+                for p in peers_preferred:
+                    p_list += str(p) + " "
+                
+                log_entry(self_peer_id, f"Peer {self_peer_id} has preferred neighbors {p_list}")
                 
                 
                 for pref_neighbor in peers_preferred:
@@ -349,6 +359,11 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
                     connection_table = tables.getConnectionTable()
                     connection_key_table = tables.getConnectionKeyTable()
                     
+                    p_list = ""
+                    for p in peers_preferred:
+                        p_list += str(p) + " "
+                
+                    log_entry(self_peer_id, f"Peer {self_peer_id} has preferred neighbors {p_list}")
                     
                     for pref_neighbor in peers_preferred:
                         # if pref_neighbor in choked_table:
@@ -381,7 +396,7 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
         
         
         
-        if current_timestamp_dl - prev_timestamp_dl_table > 2 and len(download_table) > 0: 
+        if current_timestamp_dl - prev_timestamp_dl_table > int(common_cfg['UnchokingInterval']) and len(download_table) > 0: 
             
             #Fill in missing entires caused by dropped or corrupted download message
             
@@ -407,14 +422,13 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
           
                     
 
-def timeout_download_rate():
-    
-    return
 
 
 def cleanup_logs(self_peer_id):
     
-    filepath = os.path.join(os.getcwd(), 'logs', str(self_peer_id) + '_log')
+    file_name = 'log_peer_' + str(self_peer_id) + '.log'
+    
+    filepath = os.path.join(os.getcwd(), 'logs', file_name)
     
     if os.path.exists(filepath):    
         os.remove(filepath)
@@ -427,7 +441,7 @@ def log_entry(self_peer_id, log_entry):
     
     current_timestamp = round(datetime.now().timestamp(),2)
     
-    file_name = str(self_peer_id) + '_log'
+    file_name = 'log_peer_' + str(self_peer_id) + '.log'
     
     file_written = False
     while file_written == False:
@@ -444,13 +458,13 @@ def log_entry(self_peer_id, log_entry):
             if not os.path.exists(filepath): 
                     
                 file = open(filepath, "w")  # write mode
-                file.write(log_entry + ": " + str(current_timestamp) + "\n")
+                file.write(f"[{str(current_timestamp)}]: {log_entry}\n")
                 file.close()
                 file_written = True
             else:
 
                 file = open(filepath, "a")  # append mode
-                file.write(log_entry + ": " + str(current_timestamp) + "\n")
+                file.write(f"[{str(current_timestamp)}]: {log_entry}\n")
                 file.close()
                 file_written = True               
                 
@@ -671,20 +685,26 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
         case 0:
             #Choke Case
             print("Choking")
+            log_entry(self_peer_id, f"Peer {self_peer_id} is choked by {connected_peer_id}")
+            
             error = 1 # Need something here to not error
         case 1:
             #Unchoke
             print("Unchoking")
             handle_unchoking_message(tables, connected_peer_id)
+            
+            log_entry(self_peer_id, f"Peer {self_peer_id} is unchoked by {connected_peer_id}")
         case 2:
             #Interested 
             print("Interested")
             
             handle_interested_message(tables, connected_peer_id)
+            log_entry(self_peer_id, f"Peer {self_peer_id} recieved the 'interested' message from {connected_peer_id}")
             
         case 3:
             #Not Interested
             print("Not Interested")
+            log_entry(self_peer_id, f"Peer {self_peer_id} recieved the 'not interested' message from {connected_peer_id}")
             
             handle_not_interested_message(tables, connected_peer_id)
         case 4:
@@ -749,6 +769,16 @@ def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_i
         f.write(message_payload)
         f.close()
         
+        total_pieces = tables.getTotalPieces
+        current_pieces = tables.getCurrentPieces()
+        
+        if current_pieces <= total_pieces:
+        
+            generate_file(self_peer_id,common_cfg,tables)
+        
+        
+            log_entry(self_peer_id,f"Peer {self_peer_id} has downloaded the piece {piece_index} from {connected_peer_id} the number of pieces it has is {current_pieces}")
+        
         
         for key,conn in connection_table.items():
             
@@ -796,9 +826,7 @@ def handle_unchoking_message(tables,connected_peer_id):
 def handle_have_message(tables, self_peer_id,connected_peer_id,message_payload):
     
     #Send an interested if peer does not have piece.
-    
-    #TODO Update peer pieces list '1001' [...], '1002' [...] to include a '1' at the correct index
-    
+   
     connection_table = tables.getConnectionTable()
     connection_key_table = tables.getConnectionKeyTable()
     
@@ -809,6 +837,9 @@ def handle_have_message(tables, self_peer_id,connected_peer_id,message_payload):
 
     
     piece_index = int(message_payload)
+    
+    log_entry(self_peer_id, f"Peer {self_peer_id} recieved the 'have' message from {connected_peer_id} for the piece {piece_index}")
+    
     
     piece_list = tables.getPieceList()
     
@@ -929,7 +960,6 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         rate_entry = str(connected_peer_id)
         
         
-        #TODO Somehow, some way, '0' is being skipped, and the table entry is not being set, defaulting to 0, bad connection
         try:
             start_timestamp = download_table[start_entry]
             total_bytes_transferred = download_table[byte_entry]
@@ -938,7 +968,6 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
             total_bytes_transferred = 0
         
         
-        #TODO stop_timestamp-start_timestamp can sometimes be zero, how to handle? Also why? How can two timestamps possibly be identical?
         
         try:
             if stop_timestamp-start_timestamp == 0:
@@ -1302,7 +1331,6 @@ def send_have_message(connection, piece_index):
 def send_bitfield_message(connection,self_peer_id,common_cfg):
     
     
-    #TODO When generating bitfield, might need to check pieces
     
     directory = "peer_" + str(self_peer_id)
     #check to see if the directory exists, if not create it
@@ -1398,7 +1426,6 @@ def send_junk_message(connection, self_peer_id, target_peer_id):
     stop_message = '000192'
     
    
-    #TODO Connection sometimes drops here. Might Need a way to reconnect. Might actually be too many messages. Connection is fine
     for i in range(0,10):
         error_code = send_message(connection,junk_message,self_peer_id,target_peer_id,i)
         if error_code == 1:
@@ -1426,6 +1453,8 @@ def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,tables, peer_cfg, c
             # s.connect((ip, int(port)))
             connected = True
             print(self_peer_id,"Connected", target_peer_id)
+            log_entry(self_peer_id,f"Peer {self_peer_id} makes a connection to Peer {target_peer_id}")
+            log_entry(self_peer_id,f"Peer {self_peer_id} makes a connection from Peer {target_peer_id}")
             
         except:
             print(self_peer_id,"Couldn't Connect To",target_peer_id)
@@ -1503,8 +1532,9 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
                     print("Connection Table Populated")
                     connection_table_populated = True
                 
+                connection_key_table = tables.getConnectionKeyTable()
+                
             
-            #TODO Might need to make sure and wait here to see if all recieved bitfield message
             
             if bitfield == False:
                 send_bitfield_message(connection,self_peer_id,common_cfg)
@@ -1569,6 +1599,8 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
               
                     send_unchoking_message(connection,tables,optimistic_peer)
                     tables.setOptimisticNeighbor(optimistic_peer)
+                    
+                    log_entry(self_peer_id,f"Peer {self_peer_id} has the optimistically unchoked neighbor {optimistic_peer}")
 
 
         time.sleep(1)
@@ -1628,8 +1660,8 @@ def start_peer(peer_id, port):
     preferred_peer_process = threading.Thread(target=preferred_peers, args=(tables,peer_id,peer_cfg,common_cfg,))
     preferred_peer_process.start()
 
-    generate_the_file = threading.Thread(target=generate_file, args=(peer_id,common_cfg, tables))
-    generate_the_file.start()
+    # generate_the_file = threading.Thread(target=generate_file, args=(peer_id,common_cfg, tables))
+    # generate_the_file.start()
 
 
  
