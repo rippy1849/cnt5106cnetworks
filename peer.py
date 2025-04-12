@@ -21,7 +21,6 @@ from pathlib import Path
 #TODO Remove interested entries in handle_not_interested
 
 HANDSHAKE_HEADER = 'P2PFILESHARINGPROJ'
-DOWNLOAD_RATE_WINDOW = 0.5
 
 class Tables:
     def __init__(self):
@@ -36,7 +35,6 @@ class Tables:
         self.optimistically_unchoked_neighbor = ''
         self.has_file = ''
         self.lock = Lock()
-        self.semaphore = 0
         
         self.self_piece_list = []
         
@@ -47,8 +45,7 @@ class Tables:
         self.self_interested_in_connected_peers = {}
         
         self.total_pieces = 0
-        # self.peer_list = []
-        # self.current_peer = 0
+
         
     def getConnectionTable(self):        
         return self.connection_table
@@ -190,9 +187,6 @@ def generate_file(self_peer_id,common_cfg, tables):
         for piece in piece_files:
             total_pieces += 1
         
-        # self_piece_list = tables.getPieceList()
-        
-        # print(total_pieces,total_number_of_pieces,self_piece_list)
             
             
         
@@ -202,14 +196,12 @@ def generate_file(self_peer_id,common_cfg, tables):
             
             
             if not os.path.exists(filepath):
-                # print("Peer without file")
                 piece_files = Path(directory).glob("*.piece")
                 
                 file_string = ""
                 for piece in piece_files:
                     f = open(piece)
                     for line in f:
-                        # print(line)
                         file_string += line
                 f2 = open(filepath, 'w')
                 f2.write(file_string)
@@ -257,16 +249,13 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
                         peer_list.append(peer)
       
                 peers_preferred = np.random.choice(peer_list, size=number_of_preffered_neighbors, replace=False)
-                # print(peers_preferred)
        
                 download_rate_table = tables.getRateTable()
                 choked_table = tables.getChokedTable()
-                # print(choked_table)
                 connection_table = tables.getConnectionTable()
                 connection_key_table = tables.getConnectionKeyTable()
                 
                 
-                # print(self_peer_id,peers_preferred)
                 for pref_neighbor in peers_preferred:
                     # if pref_neighbor in choked_table:
                     #Send Unchoke to preffered peers regardless of choke status
@@ -302,13 +291,10 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
                     
                     
                     if current_timestamp - prev_timestamp > 1:
-                        # print("Timeout - Download Rate Table")
                         for key,value in peer_cfg.items():
                             if str(key) != str(self_peer_id):
-                                # print(download_rate_table)
                                 if key not in download_rate_table:
                                     #Fill in missing entries with byte-rate that made it through
-                                    # print(key)
                                     start_entry = str(key) + '-start'
                                     byte_entry = str(key) + '-bytes'
                                     
@@ -360,12 +346,10 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
                     
                     
                     choked_table = tables.getChokedTable()
-                    # print(choked_table)
                     connection_table = tables.getConnectionTable()
                     connection_key_table = tables.getConnectionKeyTable()
                     
                     
-                    # print(self_peer_id,peers_preferred)
                     for pref_neighbor in peers_preferred:
                         # if pref_neighbor in choked_table:
                         #Send Unchoke to preffered peers regardless of choke status
@@ -420,24 +404,8 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
                     
                 
             download_table = tables.getDownloadTable()
-            # print(len(download_table))
-            # print(download_table)
-                    # download_table[start_entry] = prev_timestamp_dl_table
-                    
-            
-                
-                
-                
-            
-            # if len(download_table) == 9:
-            #     print(download_table)
-            #TODO Only fix this in the event download messages don't make it through. If that's the case the connection is broken
-               
           
-        # download_table = tables.getDownloadTable()
-        # print(len(download_table))
-    
-    return
+                    
 
 def timeout_download_rate():
     
@@ -708,12 +676,9 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
             #Unchoke
             print("Unchoking")
             handle_unchoking_message(tables, connected_peer_id)
-            # log_entry(self_peer_id, 'Unchoking')
         case 2:
             #Interested 
             print("Interested")
-            #TODO Sometimes interested message gets dropped. Might have to deal with this
-            # log_entry(self_peer_id,'Interested')
             
             handle_interested_message(tables, connected_peer_id)
             
@@ -722,7 +687,6 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
             print("Not Interested")
             
             handle_not_interested_message(tables, connected_peer_id)
-            # log_entry(self_peer_id,'Not Interested')
         case 4:
             #Have
             # print("Have")
@@ -735,7 +699,6 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
             #request
             # print("Request")
             handle_request_message(message_payload,self_peer_id,connected_peer_id,tables, peer_cfg)
-            # print(len(connection_table))
         case 7:
             #piece
             # print("Piece")
@@ -744,13 +707,11 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
             handle_piece_message(message_payload,tables, connected_peer_id, self_peer_id, common_cfg)
             
             
-            # print(message_payload)
             
 
         case 8:
             #Establishing Connection Table Needed for python
             # print("Establishing")
-            # print(message_payload)
             handle_establishing_message(message_payload,tables, connected_peer_id, self_peer_id,peer_cfg)
             
         case 9:
@@ -798,7 +759,6 @@ def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_i
         piece_list[piece_index] = 1
         tables.setPieceList(piece_list)
         
-        # generate_file(self_peer_id,common_cfg, tables)
     
     #Determine what piece to ask for here
     
@@ -862,14 +822,7 @@ def handle_have_message(tables, self_peer_id,connected_peer_id,message_payload):
             current_timestamp = datetime.now().timestamp()
             tables.setSelfInterestedTableEntry(str(connected_peer_id),['Yes', current_timestamp])
         
-    
-    # def getConnectedPiecesList(self):
-    #     with self.lock:
-    #         return self.connected_piece_list
-    
-    # def setConnectedPieceList(self, connected_peer_id, piece_list):
-    #     with self.lock:
-    #         self.connected_piece_list[connected_peer_id] = piece_list
+
             
     connected_pieces_list = tables.getConnectedPiecesList()
     
@@ -1375,9 +1328,7 @@ def send_bitfield_message(connection,self_peer_id,common_cfg):
         else:
             total_number_of_pieces = number_of_pieces_int
          
-         
-        # print(total_number_of_pieces)
-        # piece_count = 0   
+   
         bin_string = ""
         for i in range(0,total_number_of_pieces):
             # print(i)
@@ -1394,39 +1345,19 @@ def send_bitfield_message(connection,self_peer_id,common_cfg):
                 bin_string += '0'
             bin_values.append(bin_string)
         piece_string = binary_to_string(bin_values)
-        # print(piece_string)
-        # print(bin_values)
-
-        # piece_string_length = len(piece_string)
-        
-        # print(len(str(len(piece_string))))
-        # size_of_length = len(piece_size)
-        
-        # print(size_of_length)
-        # print(len(str(piece_string)))
-        # string = "11"
+   
         
         
         for i in range(0,4-len(str(len(piece_string)))):
             bitfield_message += '0'
-            # print('hello')
         bitfield_message += str(len(piece_string))
         
-        # print(bitfield_message)
         bitfield_message += '5'
         bitfield_message += piece_string
-        
-        # encoded = bitfield_message.encode()
-        # print(encoded.decode())
-        
-        # print(bitfield_message.encode())
-        # connection.send()
-        # print(bitfield_message)
+ 
         connection.send(bitfield_message.encode('utf-16'))
         
-        # encoded = bitfield_message.encode('utf-16')
-        # connection.send(encoded)
-        # print(encoded)
+
     
     
     return
@@ -1446,7 +1377,6 @@ def send_establishing_message(connection,self_peer_id, connection_number):
     
     establishing_message += str(connection_number)
     
-    # print(establishing_message)
         
     connection.send(establishing_message.encode('utf-16')) 
     
@@ -1467,22 +1397,14 @@ def send_junk_message(connection, self_peer_id, target_peer_id):
     junk_message = '0032911234567890123456789012345678901' 
     stop_message = '000192'
     
-    # prev_timestamp = datetime.now().timestamp()
-    # current_timestamp = datetime.now().timestamp()
-    
-    # while current_timestamp - prev_timestamp < DOWNLOAD_RATE_WINDOW:
+   
     #TODO Connection sometimes drops here. Might Need a way to reconnect. Might actually be too many messages. Connection is fine
     for i in range(0,10):
-        # time.sleep(0.1)
         error_code = send_message(connection,junk_message,self_peer_id,target_peer_id,i)
         if error_code == 1:
             break
-        # connection.send(junk_message.encode('utf-16'))
     
     error_code = send_message(connection,stop_message,self_peer_id,target_peer_id,-1)
-    # connection.send(stop_message.encode('utf-16')) 
-    
-        # current_timestamp = datetime.now().timestamp()
         
     
     return
@@ -1493,7 +1415,6 @@ def send_junk_message(connection, self_peer_id, target_peer_id):
 def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,tables, peer_cfg, common_cfg, pieces_list):
     s = socket.socket()
     connected = False
-    # message_content = False
 
     message_recieve_size = (int(common_cfg['PieceSize']) + 5)*4
     
@@ -1518,60 +1439,20 @@ def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,tables, peer_cfg, c
         #What if message gets cut off?
         
         #Need to make this the max packet size
-        # print(message_recieve_size)
         message = s.recv(message_recieve_size)
-        # print(message)
-        # print("Recieve loop")
+    
         
-        #TODO Messages can be malformed. Need to add, to all send_routines, a re-send based on response or lack thereof
-        #TODO errors="ignore" to fix byte errors
+  
         decoded_message = message.decode('utf-16', errors='ignore')
         
-        # if decoded_message[]
-        #Looking for handshake segment
-        # print(decoded_message)
-        #what if message contains more than one message? NEED TO FIX
+     
         while len(decoded_message) > 0:
-            # print(message)
-            # copy = decoded_message
-            # print(decoded_message)
+        
             
             
             decoded_message = check_message(decoded_message,self_peer_id,tables,target_peer_id, peer_cfg, common_cfg, pieces_list)
-            # print(message)
-            # prev_timestamp = datetime.now().timestamp()
-            #Error here, sometimes returning None, don't know why
-            #Might need to fix this, temp fix
-            #This might actually work for improperly formatted messages that are returned
-            #I'm pretty sure it only returns None when it's improperly formatted
-            # if decoded_message == None:
-            #     decoded_message = ""
-                # print(copy)
-            # current_timestamp = datetime.now().timestamp()
+           
         
-        
-        # #TODO Need to deal with dropped connections. Later.
-        # if (current_timestamp - prev_timestamp) > 5:
-        #     #It has been 5 seconds since last message, connection likely broke
-        #     print("Connection Dropped, attempting to reconnect")
-            # connected = False
-            # s = socket.socket() 
-            
-            # while connected == False:
-            #     try:
-            #         s.connect((ip, int(port)))
-            #         # s.connect((ip, int(port)))
-            #         connected = True
-            #         print(self_peer_id,"Connected", target_peer_id)
-            
-            #     except:
-            #         print(self_peer_id,"Couldn't Connect To",target_peer_id)
-            #         connected = False     
-        
-    
-    
-    
-    return
 
 
 def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_cfg):
@@ -1584,51 +1465,28 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
     established = False
     connection_table_populated = False
     bitfield = False
-    # piece_sent = False
 
 
     handshake_message = 'P2PFILESHARINGPROJ0000000000' + str(self_peer_id)
-    # print(handshake_message)
-    # print(handshake_message)
-    # handshake_message = HANDSHAKE_HEADER + b'0000000000' + str(self_peer_id).encode('utf-16')
+  
     handshake_message = handshake_message.encode('utf-16')
     
-    # print(handshake_message)
-    
-    # fake_message = '00055hello'.encode()
-    # recieve_thread = threading.Thread(target=preferred_peers, args=(tables,peer_cfg,common_cfg,))
-    # recieve_thread.start()
-    
-
     prev_timestamp_unchoking = datetime.now().timestamp()
     prev_timestamp_optimistic = datetime.now().timestamp()
 
     while True:
-        # try:
-            # Sending pipeline for messages
-            #CHECK initial message header and peer id
-            # connection.send(b'Thank you for connecting ' + str(peer_count).encode())
+    
         if handshake == False:
-            # print(handshake_message.decode('utf-16'))
             connection.send(handshake_message)
-            # handshake = True
-            #Check to make sure peer is correct (handshake is also good on their end)
-            
-            #Send ACK that it is the correct connection?
+   
             handshake = True
-        # connection.send(fake_message)
-        # print("sent fake message")
+    
         else:
-            # established = True
             if established == False:
                 send_establishing_message(connection,self_peer_id,connection_number)
-                # print("hi")
                 established = True
             
-            #TODO
-            #Update, there MIGHT be an issue with dropped messages
-            #There is a race case condition where the connection table is stuck at 3 entries. No idea why. Breaks sometimes
-            #MAKE SURE Connection table populates before sending ANY messages
+        
             if connection_table_populated == False:
                 while (len(tables.getConnectionKeyTable()) < (len(peer_cfg)-1)):
                     print('Waiting for connection key table to populate-main loop', len(tables.getConnectionKeyTable()), 2*(len(peer_cfg)-1))   
@@ -1652,56 +1510,29 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
                 send_bitfield_message(connection,self_peer_id,common_cfg)
                 bitfield = True
             
-            
-            # if piece_sent == False and str(self_peer_id) == '1001':
-            #     send_piece(connection,0,self_peer_id)
-            #     piece_sent = True
+         
             
             
             
             current_timestamp = datetime.now().timestamp()
                         
-            # print(current_timestamp)
-            # print(current_timestamp - prev_timestamp)
-            # print(current_timestamp)
+           
             
             #Make this it's own thread to be non-blocking for the optimistic interval, not really necessary given how fast this works
             if current_timestamp - prev_timestamp_unchoking > int(common_cfg['UnchokingInterval']):
                 
-                # print(current_timestamp - prev_timestamp_unchoking, "Unchoking Interval")
-                
-                # log_entry(str(self_peer_id)+'_log','Unchoking Interval ' + str(connection_number))
-                
+               
                 prev_timestamp_unchoking = current_timestamp
                 
-                # print("Unchoking Interval")
                 
                 send_download_message(connection,0)
             
             
-            # while unchoking_thread_started == False:
-            #     try:
-            #         t1 = threading.Thread(target=unchoking_interval, args=(connection,int(common_cfg['UnchokingInterval'])) )
-            #         t1.start()
-            #         unchoking_thread_started = True
-            #         print("Started Send Thread")
-            #     except:
-            #         print("Error starting choking thread")
-                    
-            # while optimistic_thread_started == False:
-            #     try:
-            #         t1 = threading.Thread(target=optimistic_interval, args=(connection,int(common_cfg['OptimisticUnchokingInterval'])))
-            #         t1.start()
-            #         optimistic_thread_started = True
-            #     except:
-            #         print("Error starting optimistic unchoking thread")
+            
                 
             # Make this it's own thread to be non-blocking for the choking interval, not really necessary given how fast 
             if current_timestamp - prev_timestamp_optimistic > int(common_cfg['OptimisticUnchokingInterval']):
                 
-                # print(current_timestamp - prev_timestamp_optimistic, "Optimistic Unchoking " + str(connection_number))
-                
-                # log_entry(str(self_peer_id)+'_log','Optimistic Unchoking')
                 
                 
                 prev_timestamp_optimistic = current_timestamp
@@ -1709,11 +1540,9 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
                 choked_table = tables.getChokedTable()
                 interested_table = tables.getInterestedTable()
                 
-                # print(choked_table)
                 
                 choked_and_interested = []
                 
-                # print(choked_table)
                 
                 for choked_neighbor,value in choked_table.items():
                     if choked_neighbor in interested_table:
@@ -1722,39 +1551,29 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
                     else:
                         interested = 'No'
                     
-                    # print(interested)
                     
                     if interested == 'Yes':
                         choked_and_interested.append(choked_neighbor)
 
-                # print(choked_and_interested)
                 
                 if len(choked_and_interested) > 0:
                     random_peer_index = random.randint(0, len(choked_and_interested)-1)
                 
                     optimistic_peer = choked_and_interested[random_peer_index]
                     
-                    # print(optimistic_peer)
                     connection_table = tables.getConnectionTable()
                     connection_key_table = tables.getConnectionKeyTable()
                     
                     connection_key = connection_key_table[optimistic_peer]
                     connection = connection_table[connection_key]
-                    
-                    
-                    # prev_neighbor = tables.getOptimisticNeighbor()
-                    # print(prev_neighbor)
+              
                     send_unchoking_message(connection,tables,optimistic_peer)
                     tables.setOptimisticNeighbor(optimistic_peer)
 
 
         time.sleep(1)
-        # except:
-        #     print("Closing Connection")
-        #     connection.close()
-        #     break
+      
     
-    return
 
 
 
@@ -1762,9 +1581,7 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
 def start_peer(peer_id, port):
     
     
-    # connection_table = ConnectionTable()
-    
-    # os.remove("filename.txt")
+   
     cleanup_logs(peer_id)
     
     tables = Tables()
@@ -1784,22 +1601,13 @@ def start_peer(peer_id, port):
     for line in peer_info_cfg_file:
         peer_info = line.split(" ")
         peer_cfg[peer_info[0]] = {'ip' : peer_info[1], 'port' : peer_info[2], 'has_file' : peer_info[3]}
-    # print(peer_cfg)
     
-    #Keep track of the send & recieve threads
-    # peer_list = []
-    # for peer,value in peer_cfg.items():
-    #     peer_list.append(peer)
-        
-    # tables.setPeerList(peer_list)
     
     cleanup_and_generate_pieces(peer_id, common_cfg)
     
     generate_piece_list(tables,peer_id,common_cfg, peer_cfg)
     
-    # print(len(tables.getPieceList()),'generate piece list')
-    
-    #Establish Connection to all other peers in peer list
+
     for peer,info in peer_cfg.items():
         if str(peer) != str(peer_id):
             
@@ -1824,32 +1632,24 @@ def start_peer(peer_id, port):
     generate_the_file.start()
 
 
-    # print ("socket binded to %s" %(port))
-
-    # put the socket into listening mode
+ 
     s.listen(5)    
-    # print ("socket is listening")
     connection_count = 1
     while True:
 
     # Establish connection with client.
         #How to tell what peer the connection is to
         c, addr = s.accept()
-        # print ('Got connection from', addr)
         
         
         
-        # connection_table.updateTable(connection_count,c)
         tables.setConnectionTableEntry(connection_count,c)
-        # connection_table[connection_count] = c
-        # print(connection_count)
+   
         
         
         
         t1 = threading.Thread(target=peer_send_routine, args=(peer_id,tables, connection_count, peer_cfg,common_cfg))
         
         connection_count += 1
-        # t2 = threading.Thread(target=peer_recieve_routine, args=(peer_ip,peer_port,peer_id,))
-        # print ('Got connection from', addr )
+   
         t1.start()
-        # t2.start()
