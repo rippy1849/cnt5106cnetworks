@@ -1,590 +1,658 @@
-[1744474779.88]: Peer 1005 makes a connection to Peer 1003
-[1744474779.88]: Peer 1005 makes a connection from Peer 1003
-[1744474780.42]: Peer 1005 makes a connection to Peer 1001
-[1744474780.44]: Peer 1005 makes a connection to Peer 1006
-[1744474780.48]: Peer 1005 makes a connection to Peer 1002
-[1744474780.45]: Peer 1005 makes a connection to Peer 1004
-[1744474780.5]: Peer 1005 makes a connection from Peer 1001
-[1744474780.55]: Peer 1005 makes a connection from Peer 1006
-[1744474780.58]: Peer 1005 makes a connection from Peer 1004
-[1744474780.59]: Peer 1005 makes a connection from Peer 1002
-[1744474785.99]: Peer 1005 is choked by 1006
-[1744474786.01]: Peer 1005 is choked by 1004
-[1744474786.01]: Peer 1005 has preferred neighbors 
-[1744474786.13]: Peer 1005 is choked by 1003
-[1744474787.18]: Peer 1005 is unchoked by 1002
-[1744474787.21]: Peer 1005 is unchoked by 1001
-[1744474787.65]: Peer 1005 has downloaded the piece 92 from 1002 the number of pieces it has is 0
-[1744474787.69]: Peer 1005 has downloaded the piece 9 from 1001 the number of pieces it has is 0
-[1744474787.86]: Peer 1005 recieved the 'have' message from 1003 for the piece 10
-[1744474787.87]: Peer 1005 recieved the 'have' message from 1004 for the piece 86
-[1744474788.0]: Peer 1005 recieved the 'interested' message from 1003
-[1744474788.06]: Peer 1005 recieved the 'interested' message from 1004
-[1744474788.04]: Peer 1005 recieved the 'interested' message from 1006
-[1744474788.2]: Peer 1005 recieved the 'have' message from 1006 for the piece 86
-[1744474788.27]: Peer 1005 recieved the 'have' message from 1003 for the piece 49
-[1744474788.31]: Peer 1005 recieved the 'have' message from 1004 for the piece 20
-[1744474788.44]: Peer 1005 has downloaded the piece 73 from 1002 the number of pieces it has is 2
-[1744474788.47]: Peer 1005 has downloaded the piece 98 from 1001 the number of pieces it has is 2
-[1744474788.89]: Peer 1005 recieved the 'have' message from 1004 for the piece 62
-[1744474788.92]: Peer 1005 recieved the 'have' message from 1006 for the piece 108
-[1744474788.95]: Peer 1005 recieved the 'have' message from 1003 for the piece 91
-[1744474789.16]: Peer 1005 has downloaded the piece 66 from 1002 the number of pieces it has is 4
-[1744474789.21]: Peer 1005 has downloaded the piece 41 from 1001 the number of pieces it has is 4
-[1744474789.46]: Peer 1005 recieved the 'have' message from 1006 for the piece 26
-[1744474789.52]: Peer 1005 recieved the 'have' message from 1004 for the piece 57
-[1744474789.5]: Peer 1005 recieved the 'have' message from 1003 for the piece 52
-[1744474790.04]: Peer 1005 recieved the 'have' message from 1004 for the piece 80
-[1744474790.04]: Peer 1005 has downloaded the piece 111 from 1002 the number of pieces it has is 6
-[1744474790.07]: Peer 1005 has downloaded the piece 36 from 1001 the number of pieces it has is 6
-[1744474790.1]: Peer 1005 has preferred neighbors 1006 1004 1003 
-[1744474790.12]: Peer 1005 recieved the 'have' message from 1003 for the piece 72
-[1744474790.22]: Peer 1005 is unchoked by 1006
-[1744474790.28]: Peer 1005 is unchoked by 1003
-[1744474790.31]: Peer 1005 is choked by 1002
-[1744474790.33]: Peer 1005 is unchoked by 1004
-[1744474790.33]: Peer 1005 is choked by 1001
-[1744474790.37]: Peer 1005 recieved the 'have' message from 1006 for the piece 84
-[1744474790.44]: Peer 1005 recieved the 'have' message from 1004 for the piece 53
-[1744474790.45]: Peer 1005 has downloaded the piece 69 from 1002 the number of pieces it has is 8
-[1744474790.58]: Peer 1005 recieved the 'have' message from 1003 for the piece 2
-ces it has is 9
-[1744474790.8]: Peer 1005 is unchoked by 1002
-[1744474790.83]: Peer 1005 has downloaded the piece 53 from 1004 the number of pieces it has is 10
-[1744474790.81]: Peer 1005 is unchoked by 1001
-[1744474790.94]: Peer 1005 recieved the 'have' message from 1006 for the piece 17
-[1744474791.08]: Peer 1005 is unchoked by 1003
-[1744474791.2]: Peer 1005 recieved the 'have' message from 1006 for the piece 103
-[1744474791.17]: Peer 1005 is unchoked by 1001
-[1744474791.23]: Peer 1005 recieved the 'have' message from 1003 for the piece 27
-[1744474791.23]: Peer 1005 has downloaded the piece 101 from 1002 the number of pieces it has is 11
-[1744474791.28]: Peer 1005 recieved the 'have' message from 1004 for the piece 83
-[1744474791.28]: Peer 1005 is unchoked by 1006
-[1744474791.28]: Peer 1005 recieved the 'have' message from 1003 for the piece 109
-[1744474791.28]: Peer 1005 has downloaded the piece 21 from 1001 the number of pieces it has is 12
-[1744474791.28]: Peer 1005 has preferred neighbors 1006 1003 1001 
-[1744474791.28]: Peer 1005 recieved the 'have' message from 1004 for the piece 74
-[1744474791.28]: Peer 1005 is unchoked by 1002
-[1744474791.38]: Peer 1005 recieved the 'have' message from 1006 for the piece 74
-[1744474791.4]: Peer 1005 is unchoked by 1004
-[1744474791.51]: Peer 1005 has downloaded the piece 88 from 1001 the number of pieces it has is 13
-[1744474791.51]: Peer 1005 recieved the 'have' message from 1003 for the piece 26
-[1744474791.51]: Peer 1005 recieved the 'have' message from 1006 for the piece 65
-[1744474791.51]: Peer 1005 recieved the 'have' message from 1004 for the piece 21
-[1744474791.68]: Peer 1005 recieved the 'have' message from 1004 for the piece 24
-[1744474791.68]: Peer 1005 has downloaded the piece 48 from 1002 the number of pieces it has is 14
-[1744474791.79]: Peer 1005 recieved the 'have' message from 1003 for the piece 62
-[1744474791.79]: Peer 1005 recieved the 'have' message from 1004 for the piece 50
-[1744474792.0]: Peer 1005 recieved the 'have' message from 1003 for the piece 40
-[1744474792.14]: Peer 1005 recieved the 'have' message from 1006 for the piece 76
-[1744474792.11]: Peer 1005 has downloaded the piece 85 from 1002 the number of pieces it has is 15
-[1744474792.17]: Peer 1005 has downloaded the piece 3 from 1001 the number of pieces it has is 15
-[1744474792.17]: Peer 1005 recieved the 'have' message from 1004 for the piece 79
-[1744474792.12]: Peer 1005 recieved the 'have' message from 1003 for the piece 104
-[1744474792.39]: Peer 1005 recieved the 'have' message from 1004 for the piece 63
-[1744474792.39]: Peer 1005 recieved the 'have' message from 1003 for the piece 58
-[1744474792.42]: Peer 1005 has downloaded the piece 0 from 1001 the number of pieces it has is 17
-[1744474792.41]: Peer 1005 has downloaded the piece 56 from 1002 the number of pieces it has is 17
-[1744474792.52]: Peer 1005 recieved the 'have' message from 1003 for the piece 22
-[1744474792.69]: Peer 1005 recieved the 'have' message from 1006 for the piece 75
-[1744474792.7]: Peer 1005 recieved the 'have' message from 1004 for the piece 67
-[1744474792.74]: Peer 1005 recieved the 'have' message from 1003 for the piece 88
-[1744474792.8]: Peer 1005 recieved the 'have' message from 1004 for the piece 51
-[1744474792.85]: Peer 1005 recieved the 'have' message from 1003 for the piece 106
-[1744474792.99]: Peer 1005 has downloaded the piece 15 from 1002 the number of pieces it has is 19
-[1744474793.01]: Peer 1005 recieved the 'have' message from 1006 for the piece 85
-[1744474793.2]: Peer 1005 recieved the 'have' message from 1004 for the piece 69
-[1744474793.02]: Peer 1005 recieved the 'have' message from 1003 for the piece 85
-[1744474793.2]: Peer 1005 has downloaded the piece 64 from 1001 the number of pieces it has is 21
-[1744474793.44]: Peer 1005 recieved the 'have' message from 1004 for the piece 22
-[1744474793.61]: Peer 1005 recieved the 'have' message from 1004 for the piece 109
-[1744474793.6]: Peer 1005 recieved the 'have' message from 1003 for the piece 25
-[1744474793.63]: Peer 1005 has downloaded the piece 74 from 1002 the number of pieces it has is 21
-[1744474793.61]: Peer 1005 recieved the 'have' message from 1006 for the piece 112
-[1744474793.75]: Peer 1005 recieved the 'have' message from 1003 for the piece 9
-[1744474793.74]: Peer 1005 has downloaded the piece 105 from 1001 the number of pieces it has is 22
-[1744474794.03]: Peer 1005 recieved the 'have' message from 1003 for the piece 38
-[1744474794.03]: Peer 1005 has downloaded the piece 59 from 1002 the number of pieces it has is 23
-[1744474793.95]: Peer 1005 recieved the 'have' message from 1004 for the piece 112
-[1744474794.22]: Peer 1005 recieved the 'have' message from 1004 for the piece 52
-[1744474794.31]: Peer 1005 has downloaded the piece 80 from 1001 the number of pieces it has is 24
-[1744474794.4]: Peer 1005 recieved the 'have' message from 1006 for the piece 28
-[1744474794.43]: Peer 1005 recieved the 'have' message from 1004 for the piece 29
-[1744474794.43]: Peer 1005 recieved the 'have' message from 1003 for the piece 35
-[1744474794.55]: Peer 1005 has downloaded the piece 90 from 1002 the number of pieces it has is 25
-[1744474794.55]: Peer 1005 recieved the 'have' message from 1003 for the piece 30
-[1744474794.68]: Peer 1005 recieved the 'have' message from 1004 for the piece 96
-[1744474794.68]: Peer 1005 has downloaded the piece 44 from 1001 the number of pieces it has is 26
-[1744474794.79]: Peer 1005 recieved the 'have' message from 1003 for the piece 0
-[1744474794.9]: Peer 1005 recieved the 'have' message from 1004 for the piece 75
-[1744474794.9]: Peer 1005 has downloaded the piece 99 from 1002 the number of pieces it has is 27
-[1744474794.97]: Peer 1005 recieved the 'have' message from 1003 for the piece 73
-[1744474795.05]: Peer 1005 recieved the 'have' message from 1006 for the piece 91
-[1744474795.05]: Peer 1005 recieved the 'have' message from 1004 for the piece 39
-[1744474795.21]: Peer 1005 recieved the 'have' message from 1003 for the piece 1
-[1744474795.26]: Peer 1005 has downloaded the piece 87 from 1001 the number of pieces it has is 28
-[1744474795.33]: Peer 1005 recieved the 'have' message from 1004 for the piece 10
-[1744474795.52]: Peer 1005 recieved the 'have' message from 1006 for the piece 7
-[1744474795.56]: Peer 1005 recieved the 'have' message from 1003 for the piece 18
-[1744474795.59]: Peer 1005 has downloaded the piece 7 from 1002 the number of pieces it has is 29
-[1744474795.67]: Peer 1005 recieved the 'have' message from 1003 for the piece 74
-[1744474795.63]: Peer 1005 recieved the 'have' message from 1004 for the piece 36
-[1744474795.78]: Peer 1005 has downloaded the piece 78 from 1001 the number of pieces it has is 30
-[1744474795.78]: Peer 1005 recieved the 'have' message from 1004 for the piece 11
-[1744474795.94]: Peer 1005 recieved the 'have' message from 1003 for the piece 3
-[1744474796.0]: Peer 1005 has downloaded the piece 26 from 1002 the number of pieces it has is 31
-[1744474796.1]: Peer 1005 recieved the 'have' message from 1006 for the piece 107
-[1744474796.15]: Peer 1005 has preferred neighbors 1004 1006 1003 
-[1744474796.15]: Peer 1005 recieved the 'have' message from 1004 for the piece 111
-[1744474796.15]: Peer 1005 is unchoked by 1001
-[1744474796.15]: Peer 1005 recieved the 'have' message from 1003 for the piece 23
-[1744474796.15]: Peer 1005 is unchoked by 1002
-[1744474796.18]: Peer 1005 recieved the 'have' message from 1004 for the piece 9
-[1744474796.27]: Peer 1005 is unchoked by 1003
-[1744474796.41]: Peer 1005 is unchoked by 1006
-[1744474796.45]: Peer 1005 has downloaded the piece 54 from 1002 the number of pieces it has is 32
-[1744474796.41]: Peer 1005 is unchoked by 1004
-[1744474796.43]: Peer 1005 recieved the 'have' message from 1003 for the piece 70
-[1744474796.46]: Peer 1005 has downloaded the piece 11 from 1001 the number of pieces it has is 32
-[1744474796.71]: Peer 1005 recieved the 'have' message from 1006 for the piece 64
-[1744474796.71]: Peer 1005 recieved the 'have' message from 1004 for the piece 28
-[1744474796.83]: Peer 1005 recieved the 'have' message from 1006 for the piece 21
-[1744474796.83]: Peer 1005 recieved the 'have' message from 1004 for the piece 48
-[1744474796.89]: Peer 1005 has downloaded the piece 22 from 1003 the number of pieces it has is 34
-[1744474796.88]: Peer 1005 has downloaded the piece 1 from 1002 the number of pieces it has is 34
-[1744474796.93]: Peer 1005 has downloaded the piece 95 from 1001 the number of pieces it has is 34
-[1744474796.96]: Peer 1005 recieved the 'have' message from 1004 for the piece 25
-[1744474797.1]: Peer 1005 recieved the 'have' message from 1006 for the piece 40
-[1744474797.16]: Peer 1005 recieved the 'have' message from 1004 for the piece 105
-[1744474797.14]: Peer 1005 recieved the 'have' message from 1003 for the piece 28
-[1744474797.25]: Peer 1005 recieved the 'have' message from 1004 for the piece 97
-[1744474797.3]: Peer 1005 has downloaded the piece 47 from 1001 the number of pieces it has is 37
-[1744474797.29]: Peer 1005 has downloaded the piece 89 from 1002 the number of pieces it has is 37
-[1744474797.33]: Peer 1005 recieved the 'have' message from 1006 for the piece 15
-[1744474797.35]: Peer 1005 recieved the 'have' message from 1004 for the piece 55
-[1744474797.52]: Peer 1005 has downloaded the piece 91 from 1001 the number of pieces it has is 39
-[1744474797.59]: Peer 1005 recieved the 'have' message from 1006 for the piece 111
-[1744474797.65]: Peer 1005 has downloaded the piece 79 from 1002 the number of pieces it has is 39
-[1744474797.84]: Peer 1005 has downloaded the piece 62 from 1003 the number of pieces it has is 41
-[1744474798.08]: Peer 1005 recieved the 'have' message from 1006 for the piece 44
-s it has is 42
-[1744474798.08]: Peer 1005 has downloaded the piece 13 from 1002 the number of pieces it has is 42
-[1744474798.24]: Peer 1005 recieved the 'have' message from 1004 for the piece 26
-[1744474798.36]: Peer 1005 recieved the 'have' message from 1004 for the piece 76
-[1744474798.4]: Peer 1005 has downloaded the piece 107 from 1001 the number of pieces it has is 44
-[1744474798.52]: Peer 1005 recieved the 'have' message from 1004 for the piece 73
-[1744474798.52]: Peer 1005 recieved the 'have' message from 1006 for the piece 44
-[1744474798.57]: Peer 1005 has downloaded the piece 23 from 1002 the number of pieces it has is 45
-[1744474798.59]: Peer 1005 recieved the 'have' message from 1006 for the piece 110
-[1744474798.78]: Peer 1005 recieved the 'have' message from 1004 for the piece 15
-[1744474798.83]: Peer 1005 recieved the 'have' message from 1006 for the piece 100
-[1744474798.88]: Peer 1005 has downloaded the piece 46 from 1001 the number of pieces it has is 46
-[1744474798.96]: Peer 1005 recieved the 'have' message from 1004 for the piece 99
-[1744474798.99]: Peer 1005 has downloaded the piece 34 from 1002 the number of pieces it has is 46
-[1744474799.11]: Peer 1005 recieved the 'have' message from 1004 for the piece 92
-[1744474799.26]: Peer 1005 recieved the 'have' message from 1006 for the piece 47
-[1744474799.37]: Peer 1005 recieved the 'have' message from 1004 for the piece 42
-[1744474799.66]: Peer 1005 recieved the 'have' message from 1006 for the piece 8
-[1744474799.61]: Peer 1005 has downloaded the piece 77 from 1001 the number of pieces it has is 48
-[1744474799.68]: Peer 1005 has downloaded the piece 70 from 1002 the number of pieces it has is 48
-[1744474799.86]: Peer 1005 recieved the 'have' message from 1004 for the piece 65
-[1744474799.96]: Peer 1005 recieved the 'have' message from 1004 for the piece 58
-[1744474800.05]: Peer 1005 recieved the 'have' message from 1006 for the piece 109
-[1744474800.18]: Peer 1005 has downloaded the piece 52 from 1001 the number of pieces it has is 50
-[1744474800.26]: Peer 1005 recieved the 'have' message from 1004 for the piece 34
-[1744474800.37]: Peer 1005 recieved the 'have' message from 1004 for the piece 12
-[1744474800.37]: Peer 1005 has downloaded the piece 108 from 1002 the number of pieces it has is 50
-[1744474800.37]: Peer 1005 recieved the 'have' message from 1004 for the piece 82
-[1744474800.37]: Peer 1005 has downloaded the piece 10 from 1002 the number of pieces it has is 52
-[1744474800.37]: Peer 1005 recieved the 'have' message from 1004 for the piece 77
-[1744474800.38]: Peer 1005 has downloaded the piece 17 from 1001 the number of pieces it has is 53
-[1744474800.38]: Peer 1005 has downloaded the piece 2 from 1001 the number of pieces it has is 54
-[1744474800.38]: Peer 1005 recieved the 'have' message from 1004 for the piece 103
-[1744474800.38]: Peer 1005 has downloaded the piece 37 from 1002 the number of pieces it has is 54
-[1744474800.38]: Peer 1005 recieved the 'have' message from 1004 for the piece 60
-[1744474800.56]: Peer 1005 recieved the 'have' message from 1006 for the piece 63
-[1744474800.67]: Peer 1005 has downloaded the piece 38 from 1001 the number of pieces it has is 56
-[1744474800.72]: Peer 1005 has downloaded the piece 25 from 1002 the number of pieces it has is 56
-[1744474800.84]: Peer 1005 recieved the 'have' message from 1004 for the piece 94
-[1744474800.97]: Peer 1005 recieved the 'have' message from 1004 for the piece 18
-[1744474801.04]: Peer 1005 has downloaded the piece 39 from 1001 the number of pieces it has is 58
-[1744474801.05]: Peer 1005 recieved the 'have' message from 1006 for the piece 87
-[1744474801.05]: Peer 1005 has downloaded the piece 32 from 1002 the number of pieces it has is 58
-[1744474801.17]: Peer 1005 is unchoked by 1003
-[1744474801.33]: Peer 1005 recieved the 'have' message from 1004 for the piece 43
-[1744474801.28]: Peer 1005 is choked by 1001
-[1744474801.41]: Peer 1005 is unchoked by 1002
-[1744474801.41]: Peer 1005 recieved the 'have' message from 1004 for the piece 31
-[1744474801.46]: Peer 1005 recieved the 'have' message from 1003 for the piece 6
-[1744474801.54]: Peer 1005 is unchoked by 1001
-[1744474801.52]: Peer 1005 recieved the 'have' message from 1006 for the piece 72
-[1744474801.57]: Peer 1005 recieved the 'have' message from 1003 for the piece 5
-[1744474801.57]: Peer 1005 is unchoked by 1004
-[1744474801.71]: Peer 1005 has preferred neighbors 1004 1003 1006 
-[1744474801.71]: Peer 1005 recieved the 'have' message from 1006 for the piece 80
-[1744474801.71]: Peer 1005 recieved the 'have' message from 1004 for the piece 49
-[1744474801.71]: Peer 1005 has downloaded the piece 35 from 1002 the number of pieces it has is 60
-[1744474801.71]: Peer 1005 has downloaded the piece 18 from 1001 the number of pieces it has is 60
-[1744474801.73]: Peer 1005 is unchoked by 1006
-[1744474801.73]: Peer 1005 has downloaded the piece 109 from 1004 the number of pieces it has is 62
-[1744474801.83]: Peer 1005 recieved the 'have' message from 1003 for the piece 105
-[1744474801.91]: Peer 1005 recieved the 'have' message from 1003 for the piece 68
-[1744474801.96]: Peer 1005 has downloaded the piece 65 from 1002 the number of pieces it has is 63
-[1744474802.01]: Peer 1005 recieved the 'have' message from 1006 for the piece 98
-[1744474802.04]: Peer 1005 has downloaded the piece 51 from 1001 the number of pieces it has is 63
-[1744474802.11]: Peer 1005 recieved the 'have' message from 1006 for the piece 94
-[1744474802.17]: Peer 1005 recieved the 'have' message from 1004 for the piece 4
-[1744474802.33]: Peer 1005 recieved the 'have' message from 1004 for the piece 85
-[1744474802.36]: Peer 1005 recieved the 'have' message from 1006 for the piece 36
-[1744474802.39]: Peer 1005 recieved the 'have' message from 1003 for the piece 21
-[1744474802.52]: Peer 1005 recieved the 'have' message from 1003 for the piece 71
-es it has is 65
-[1744474802.52]: Peer 1005 recieved the 'have' message from 1006 for the piece 83
-[1744474802.63]: Peer 1005 has downloaded the piece 63 from 1004 the number of pieces it has is 65
-[1744474802.77]: Peer 1005 recieved the 'have' message from 1003 for the piece 107
-[1744474802.84]: Peer 1005 recieved the 'have' message from 1004 for the piece 3
-[1744474802.92]: Peer 1005 recieved the 'have' message from 1006 for the piece 33
-[1744474802.9]: Peer 1005 recieved the 'have' message from 1004 for the piece 47
-[1744474802.88]: Peer 1005 recieved the 'have' message from 1003 for the piece 75
-[1744474803.04]: Peer 1005 recieved the 'have' message from 1006 for the piece 55
-[1744474803.04]: Peer 1005 has downloaded the piece 67 from 1001 the number of pieces it has is 67
-[1744474803.04]: Peer 1005 recieved the 'have' message from 1004 for the piece 3
-[1744474803.04]: Peer 1005 recieved the 'have' message from 1003 for the piece 14
-[1744474803.09]: Peer 1005 has downloaded the piece 51 from 1002 the number of pieces it has is 67
-[1744474803.15]: Peer 1005 recieved the 'have' message from 1003 for the piece 65
-[1744474803.25]: Peer 1005 recieved the 'have' message from 1003 for the piece 33
-[1744474803.29]: Peer 1005 recieved the 'have' message from 1006 for the piece 92
-[1744474803.32]: Peer 1005 has downloaded the piece 60 from 1001 the number of pieces it has is 68
-[1744474803.25]: Peer 1005 recieved the 'have' message from 1004 for the piece 30
-[1744474803.43]: Peer 1005 recieved the 'have' message from 1003 for the piece 55
-[1744474803.43]: Peer 1005 recieved the 'have' message from 1006 for the piece 106
-[1744474803.43]: Peer 1005 recieved the 'have' message from 1004 for the piece 54
-[1744474803.66]: Peer 1005 recieved the 'have' message from 1006 for the piece 104
-[1744474803.61]: Peer 1005 recieved the 'have' message from 1004 for the piece 70
-[1744474803.79]: Peer 1005 has downloaded the piece 83 from 1001 the number of pieces it has is 69
-[1744474803.79]: Peer 1005 recieved the 'have' message from 1006 for the piece 0
-[1744474803.82]: Peer 1005 recieved the 'have' message from 1003 for the piece 36
-[1744474803.9]: Peer 1005 has downloaded the piece 27 from 1002 the number of pieces it has is 69
-[1744474804.04]: Peer 1005 recieved the 'have' message from 1003 for the piece 97
-[1744474804.04]: Peer 1005 has downloaded the piece 60 from 1004 the number of pieces it has is 70
-[1744474804.25]: Peer 1005 recieved the 'have' message from 1003 for the piece 20
-[1744474804.23]: Peer 1005 has downloaded the piece 45 from 1001 the number of pieces it has is 71
-[1744474804.28]: Peer 1005 recieved the 'have' message from 1006 for the piece 48
-[1744474804.42]: Peer 1005 recieved the 'have' message from 1006 for the piece 56
-[1744474804.44]: Peer 1005 recieved the 'have' message from 1003 for the piece 20
-[1744474804.39]: Peer 1005 recieved the 'have' message from 1004 for the piece 19
-[1744474804.59]: Peer 1005 recieved the 'have' message from 1003 for the piece 4
-[1744474804.69]: Peer 1005 recieved the 'have' message from 1006 for the piece 6
-[1744474804.69]: Peer 1005 recieved the 'have' message from 1004 for the piece 44
-[1744474804.76]: Peer 1005 has downloaded the piece 28 from 1002 the number of pieces it has is 72
-[1744474804.8]: Peer 1005 has downloaded the piece 97 from 1001 the number of pieces it has is 72
-[1744474804.96]: Peer 1005 recieved the 'have' message from 1003 for the piece 53
-[1744474804.93]: Peer 1005 recieved the 'have' message from 1006 for the piece 57
-[1744474805.08]: Peer 1005 recieved the 'have' message from 1004 for the piece 89
-[1744474805.26]: Peer 1005 recieved the 'have' message from 1004 for the piece 5
-[1744474805.31]: Peer 1005 has downloaded the piece 103 from 1002 the number of pieces it has is 74
-[1744474805.39]: Peer 1005 recieved the 'have' message from 1004 for the piece 88
-[1744474805.37]: Peer 1005 recieved the 'have' message from 1006 for the piece 24
-[1744474805.51]: Peer 1005 has downloaded the piece 93 from 1001 the number of pieces it has is 74
-[1744474805.54]: Peer 1005 recieved the 'have' message from 1006 for the piece 34
-[1744474805.46]: Peer 1005 recieved the 'have' message from 1004 for the piece 0
-[1744474805.52]: Peer 1005 recieved the 'have' message from 1003 for the piece 47
-[1744474805.72]: Peer 1005 recieved the 'have' message from 1006 for the piece 95
-[1744474805.72]: Peer 1005 recieved the 'have' message from 1004 for the piece 59
-[1744474805.78]: Peer 1005 recieved the 'have' message from 1006 for the piece 18
-[1744474805.78]: Peer 1005 recieved the 'have' message from 1004 for the piece 40
-[1744474805.84]: Peer 1005 recieved the 'have' message from 1003 for the piece 19
-[1744474805.94]: Peer 1005 has downloaded the piece 19 from 1002 the number of pieces it has is 76
-[1744474805.94]: Peer 1005 recieved the 'have' message from 1006 for the piece 38
-[1744474805.94]: Peer 1005 recieved the 'have' message from 1004 for the piece 37
-[1744474805.97]: Peer 1005 recieved the 'have' message from 1003 for the piece 54
-[1744474806.05]: Peer 1005 recieved the 'have' message from 1006 for the piece 50
-[1744474806.11]: Peer 1005 recieved the 'have' message from 1003 for the piece 61
-[1744474806.1]: Peer 1005 is unchoked by 1002
-[1744474806.17]: Peer 1005 has downloaded the piece 50 from 1001 the number of pieces it has is 76
-[1744474806.27]: Peer 1005 recieved the 'have' message from 1004 for the piece 98
-[1744474806.33]: Peer 1005 recieved the 'have' message from 1003 for the piece 92
-[1744474806.46]: Peer 1005 recieved the 'have' message from 1006 for the piece 89
-[1744474806.43]: Peer 1005 recieved the 'have' message from 1004 for the piece 95
-[1744474806.57]: Peer 1005 recieved the 'have' message from 1006 for the piece 69
-[1744474806.6]: Peer 1005 has downloaded the piece 12 from 1001 the number of pieces it has is 78
-[1744474806.63]: Peer 1005 has downloaded the piece 71 from 1002 the number of pieces it has is 78
-[1744474806.58]: Peer 1005 recieved the 'have' message from 1004 for the piece 32
-[1744474806.73]: Peer 1005 is unchoked by 1006
-[1744474806.87]: Peer 1005 recieved the 'have' message from 1003 for the piece 44
-[1744474806.79]: Peer 1005 recieved the 'have' message from 1004 for the piece 72
-[1744474806.87]: Peer 1005 recieved the 'have' message from 1006 for the piece 9
-[1744474806.98]: Peer 1005 is unchoked by 1003
-[1744474807.0]: Peer 1005 has preferred neighbors 1006 1003 1004 
-[1744474807.01]: Peer 1005 recieved the 'have' message from 1004 for the piece 72
-[1744474807.01]: Peer 1005 has downloaded the piece 57 from 1006 the number of pieces it has is 80
-[1744474807.01]: Peer 1005 has downloaded the piece 86 from 1001 the number of pieces it has is 80
-[1744474807.06]: Peer 1005 recieved the 'have' message from 1004 for the piece 93
-[1744474807.33]: Peer 1005 recieved the 'have' message from 1004 for the piece 46
-[1744474807.45]: Peer 1005 has downloaded the piece 20 from 1002 the number of pieces it has is 82
-[1744474807.5]: Peer 1005 recieved the 'have' message from 1003 for the piece 46
-[1744474807.5]: Peer 1005 recieved the 'have' message from 1006 for the piece 51
-[1744474807.5]: Peer 1005 has downloaded the piece 16 from 1001 the number of pieces it has is 82
-[1744474807.5]: Peer 1005 recieved the 'have' message from 1004 for the piece 35
-[1744474807.62]: Peer 1005 recieved the 'have' message from 1003 for the piece 60
-[1744474807.67]: Peer 1005 recieved the 'have' message from 1004 for the piece 66
-[1744474807.87]: Peer 1005 has downloaded the piece 110 from 1001 the number of pieces it has is 84
-[1744474807.96]: Peer 1005 recieved the 'have' message from 1006 for the piece 20
-[1744474807.98]: Peer 1005 is unchoked by 1004
-[1744474807.96]: Peer 1005 recieved the 'have' message from 1003 for the piece 89
-[1744474808.07]: Peer 1005 has downloaded the piece 76 from 1002 the number of pieces it has is 85
-[1744474808.23]: Peer 1005 recieved the 'have' message from 1006 for the piece 62
-[1744474808.06]: Peer 1005 recieved the 'have' message from 1003 for the piece 37
-[1744474808.25]: Peer 1005 recieved the 'have' message from 1004 for the piece 41
-[1744474808.29]: Peer 1005 recieved the 'have' message from 1006 for the piece 68
-[1744474808.45]: Peer 1005 recieved the 'have' message from 1004 for the piece 84
-[1744474808.51]: Peer 1005 has downloaded the piece 24 from 1001 the number of pieces it has is 86
-[1744474808.6]: Peer 1005 recieved the 'have' message from 1004 for the piece 16
-[1744474808.64]: Peer 1005 has downloaded the piece 82 from 1002 the number of pieces it has is 87
-[1744474808.72]: Peer 1005 recieved the 'have' message from 1003 for the piece 96
-[1744474808.73]: Peer 1005 recieved the 'have' message from 1004 for the piece 78
-[1744474808.78]: Peer 1005 recieved the 'have' message from 1006 for the piece 1
-[1744474808.83]: Peer 1005 recieved the 'have' message from 1003 for the piece 99
-[1744474808.83]: Peer 1005 recieved the 'have' message from 1006 for the piece 19
-[1744474808.83]: Peer 1005 has downloaded the piece 100 from 1001 the number of pieces it has is 88
-[1744474808.83]: Peer 1005 recieved the 'have' message from 1004 for the piece 100
-[1744474808.94]: Peer 1005 recieved the 'have' message from 1004 for the piece 71
-[1744474809.08]: Peer 1005 recieved the 'have' message from 1004 for the piece 8
-[1744474809.19]: Peer 1005 has downloaded the piece 104 from 1002 the number of pieces it has is 89
-[1744474809.25]: Peer 1005 recieved the 'have' message from 1006 for the piece 3
-[1744474809.29]: Peer 1005 recieved the 'have' message from 1003 for the piece 57
-[1744474809.46]: Peer 1005 has downloaded the piece 72 from 1001 the number of pieces it has is 89
-[1744474809.54]: Peer 1005 recieved the 'have' message from 1006 for the piece 97
-[1744474809.75]: Peer 1005 has downloaded the piece 30 from 1004 the number of pieces it has is 91
-[1744474809.98]: Peer 1005 has downloaded the piece 61 from 1001 the number of pieces it has is 91
-[1744474810.21]: Peer 1005 recieved the 'have' message from 1006 for the piece 25
-[1744474810.11]: Peer 1005 recieved the 'have' message from 1003 for the piece 90
-[1744474810.21]: Peer 1005 recieved the 'have' message from 1004 for the piece 64
-[1744474810.17]: Peer 1005 has downloaded the piece 14 from 1002 the number of pieces it has is 92
-[1744474810.38]: Peer 1005 recieved the 'have' message from 1004 for the piece 102
-[1744474810.41]: Peer 1005 recieved the 'have' message from 1003 for the piece 87
-[1744474810.44]: Peer 1005 recieved the 'have' message from 1006 for the piece 14
-[1744474810.46]: Peer 1005 recieved the 'have' message from 1004 for the piece 107
-[1744474810.55]: Peer 1005 has downloaded the piece 75 from 1001 the number of pieces it has is 94
-[1744474810.55]: Peer 1005 recieved the 'have' message from 1006 for the piece 35
-[1744474810.56]: Peer 1005 recieved the 'have' message from 1004 for the piece 87
-[1744474810.78]: Peer 1005 recieved the 'have' message from 1006 for the piece 102
-[1744474810.83]: Peer 1005 recieved the 'have' message from 1003 for the piece 102
-[1744474810.86]: Peer 1005 recieved the 'have' message from 1004 for the piece 27
-[1744474810.94]: Peer 1005 has downloaded the piece 112 from 1002 the number of pieces it has is 95
-[1744474811.01]: Peer 1005 recieved the 'have' message from 1004 for the piece 23
-[1744474811.08]: Peer 1005 has downloaded the piece 33 from 1001 the number of pieces it has is 95
-[1744474811.16]: Peer 1005 recieved the 'have' message from 1004 for the piece 2
-[1744474811.2]: Peer 1005 is unchoked by 1002
-[1744474811.22]: Peer 1005 recieved the 'have' message from 1003 for the piece 7
-[1744474811.33]: Peer 1005 recieved the 'have' message from 1006 for the piece 59
-[1744474811.27]: Peer 1005 recieved the 'have' message from 1004 for the piece 7
-[1744474811.36]: Peer 1005 recieved the 'have' message from 1003 for the piece 69
-[1744474811.44]: Peer 1005 recieved the 'have' message from 1006 for the piece 46
-[1744474811.46]: Peer 1005 recieved the 'have' message from 1004 for the piece 27
-[1744474811.55]: Peer 1005 recieved the 'have' message from 1004 for the piece 68
-[1744474811.76]: Peer 1005 has preferred neighbors 1006 1003 1004 
-[1744474811.76]: Peer 1005 is unchoked by 1003
-[1744474811.76]: Peer 1005 has downloaded the piece 8 from 1002 the number of pieces it has is 97
-[1744474811.76]: Peer 1005 has downloaded the piece 29 from 1001 the number of pieces it has is 97
-[1744474811.89]: Peer 1005 recieved the 'have' message from 1006 for the piece 32
-[1744474811.89]: Peer 1005 recieved the 'have' message from 1004 for the piece 14
-[1744474811.95]: Peer 1005 is unchoked by 1001
-[1744474811.96]: Peer 1005 recieved the 'have' message from 1003 for the piece 103
-[1744474811.96]: Peer 1005 recieved the 'have' message from 1006 for the piece 66
-[1744474811.98]: Peer 1005 is unchoked by 1006
-[1744474811.99]: Peer 1005 recieved the 'have' message from 1003 for the piece 86
-[1744474812.17]: Peer 1005 recieved the 'have' message from 1006 for the piece 71
-[1744474812.18]: Peer 1005 recieved the 'have' message from 1003 for the piece 103
-[1744474812.53]: Peer 1005 recieved the 'have' message from 1003 for the piece 59
-[1744474812.48]: Peer 1005 has downloaded the piece 75 from 1004 the number of pieces it has is 99
-[1744474812.66]: Peer 1005 recieved the 'have' message from 1003 for the piece 64
-[1744474812.64]: Peer 1005 recieved the 'have' message from 1006 for the piece 88
-[1744474812.66]: Peer 1005 has downloaded the piece 84 from 1002 the number of pieces it has is 99
-[1744474812.76]: Peer 1005 recieved the 'have' message from 1003 for the piece 95
-[1744474812.66]: Peer 1005 has downloaded the piece 94 from 1001 the number of pieces it has is 99
-[1744474812.82]: Peer 1005 recieved the 'have' message from 1003 for the piece 51
-[1744474812.8]: Peer 1005 recieved the 'have' message from 1004 for the piece 17
-[1744474812.9]: Peer 1005 recieved the 'have' message from 1006 for the piece 79
-[1744474812.95]: Peer 1005 is unchoked by 1004
-[1744474812.96]: Peer 1005 recieved the 'have' message from 1003 for the piece 39
-[1744474812.96]: Peer 1005 recieved the 'have' message from 1006 for the piece 43
-[1744474813.08]: Peer 1005 recieved the 'have' message from 1003 for the piece 82
-[1744474813.09]: Peer 1005 recieved the 'have' message from 1004 for the piece 33
-[1744474813.18]: Peer 1005 recieved the 'have' message from 1003 for the piece 93
-[1744474813.26]: Peer 1005 recieved the 'have' message from 1004 for the piece 81
-[1744474813.34]: Peer 1005 has downloaded the piece 102 from 1006 the number of pieces it has is 101
-[1744474813.37]: Peer 1005 recieved the 'have' message from 1003 for the piece 15
-[1744474813.45]: Peer 1005 recieved the 'have' message from 1003 for the piece 78
-[1744474813.44]: Peer 1005 recieved the 'have' message from 1004 for the piece 81
-[1744474813.52]: Peer 1005 has downloaded the piece 43 from 1002 the number of pieces it has is 102
-[1744474813.53]: Peer 1005 recieved the 'have' message from 1006 for the piece 12
-[1744474813.56]: Peer 1005 recieved the 'have' message from 1003 for the piece 82
-[1744474813.58]: Peer 1005 has downloaded the piece 106 from 1001 the number of pieces it has is 102
-[1744474813.58]: Peer 1005 recieved the 'have' message from 1006 for the piece 10
-[1744474813.65]: Peer 1005 recieved the 'have' message from 1006 for the piece 10
-[1744474813.72]: Peer 1005 recieved the 'have' message from 1004 for the piece 56
-[1744474813.77]: Peer 1005 recieved the 'have' message from 1003 for the piece 94
-[1744474813.86]: Peer 1005 recieved the 'have' message from 1003 for the piece 108
-[1744474813.85]: Peer 1005 recieved the 'have' message from 1004 for the piece 1
-[1744474813.94]: Peer 1005 recieved the 'have' message from 1003 for the piece 84
-[1744474813.88]: Peer 1005 recieved the 'have' message from 1006 for the piece 39
-[1744474814.0]: Peer 1005 recieved the 'have' message from 1004 for the piece 104
-[1744474814.11]: Peer 1005 recieved the 'have' message from 1003 for the piece 11
-[1744474814.11]: Peer 1005 recieved the 'have' message from 1006 for the piece 4
-[1744474814.16]: Peer 1005 recieved the 'have' message from 1003 for the piece 112
-[1744474814.16]: Peer 1005 has downloaded the piece 31 from 1002 the number of pieces it has is 104
-[1744474814.16]: Peer 1005 recieved the 'have' message from 1004 for the piece 6
-[1744474814.19]: Peer 1005 has downloaded the piece 55 from 1001 the number of pieces it has is 104
-[1744474814.24]: Peer 1005 recieved the 'have' message from 1006 for the piece 90
-[1744474814.3]: Peer 1005 recieved the 'have' message from 1004 for the piece 6
-[1744474814.33]: Peer 1005 recieved the 'have' message from 1003 for the piece 41
-[1744474814.39]: Peer 1005 recieved the 'have' message from 1003 for the piece 79
-[1744474814.41]: Peer 1005 recieved the 'have' message from 1006 for the piece 82
-[1744474814.44]: Peer 1005 recieved the 'have' message from 1004 for the piece 6
-[1744474814.52]: Peer 1005 recieved the 'have' message from 1003 for the piece 80
-[1744474814.59]: Peer 1005 recieved the 'have' message from 1006 for the piece 53
-[1744474814.67]: Peer 1005 recieved the 'have' message from 1004 for the piece 108
-[1744474814.67]: Peer 1005 recieved the 'have' message from 1003 for the piece 66
-[1744474814.7]: Peer 1005 recieved the 'have' message from 1006 for the piece 53
-[1744474814.76]: Peer 1005 recieved the 'have' message from 1003 for the piece 67
-[1744474814.76]: Peer 1005 recieved the 'have' message from 1006 for the piece 27
-[1744474814.91]: Peer 1005 recieved the 'have' message from 1006 for the piece 60
-[1744474815.06]: Peer 1005 recieved the 'have' message from 1003 for the piece 110
-[1744474815.17]: Peer 1005 has downloaded the piece 58 from 1002 the number of pieces it has is 106
-[1744474815.22]: Peer 1005 recieved the 'have' message from 1003 for the piece 63
-[1744474815.4]: Peer 1005 has downloaded the piece 58 from 1001 the number of pieces it has is 106
-[1744474815.4]: Peer 1005 has downloaded the piece 6 from 1004 the number of pieces it has is 106
-[1744474815.43]: Peer 1005 has downloaded the piece 55 from 1006 the number of pieces it has is 106
-[1744474815.47]: Peer 1005 recieved the 'have' message from 1003 for the piece 45
-[1744474815.6]: Peer 1005 recieved the 'have' message from 1003 for the piece 42
-[1744474815.66]: Peer 1005 recieved the 'have' message from 1006 for the piece 2
-[1744474815.63]: Peer 1005 recieved the 'have' message from 1004 for the piece 45
-[1744474815.8]: Peer 1005 recieved the 'have' message from 1006 for the piece 93
-[1744474815.89]: Peer 1005 recieved the 'have' message from 1006 for the piece 30
-[1744474816.03]: Peer 1005 has downloaded the piece 6 from 1002 the number of pieces it has is 108
-[1744474816.11]: Peer 1005 recieved the 'have' message from 1003 for the piece 12
-[1744474816.19]: Peer 1005 recieved the 'have' message from 1006 for the piece 2
-[1744474816.19]: Peer 1005 is unchoked by 1002
-[1744474816.22]: Peer 1005 has downloaded the piece 42 from 1001 the number of pieces it has is 108
-[1744474816.28]: Peer 1005 recieved the 'have' message from 1003 for the piece 111
-[1744474816.25]: Peer 1005 recieved the 'have' message from 1006 for the piece 13
-[1744474816.28]: Peer 1005 has downloaded the piece 40 from 1004 the number of pieces it has is 108
-[1744474816.42]: Peer 1005 recieved the 'have' message from 1006 for the piece 61
-[1744474816.39]: Peer 1005 recieved the 'have' message from 1003 for the piece 81
-[1744474816.42]: Peer 1005 is choked by 1001
-[1744474816.61]: Peer 1005 recieved the 'have' message from 1003 for the piece 8
-[1744474816.56]: Peer 1005 recieved the 'have' message from 1006 for the piece 58
-[1744474816.7]: Peer 1005 recieved the 'have' message from 1003 for the piece 100
-[1744474816.64]: Peer 1005 recieved the 'have' message from 1004 for the piece 6
-[1744474816.71]: Peer 1005 recieved the 'have' message from 1006 for the piece 22
-[1744474816.79]: Peer 1005 recieved the 'have' message from 1004 for the piece 106
-[1744474816.93]: Peer 1005 recieved the 'have' message from 1004 for the piece 90
-[1744474816.95]: Peer 1005 has downloaded the piece 42 from 1002 the number of pieces it has is 110
-[1744474816.93]: Peer 1005 is unchoked by 1003
-[1744474817.01]: Peer 1005 recieved the 'have' message from 1004 for the piece 101
-[1744474817.01]: Peer 1005 has preferred neighbors 1004 1003 1006 
-[1744474817.01]: Peer 1005 recieved the 'have' message from 1006 for the piece 81
-[1744474817.01]: Peer 1005 recieved the 'have' message from 1003 for the piece 17
-[1744474817.04]: Peer 1005 recieved the 'have' message from 1006 for the piece 42
-[1744474817.1]: Peer 1005 recieved the 'have' message from 1006 for the piece 58
-[1744474817.22]: Peer 1005 recieved the 'have' message from 1006 for the piece 37
-[1744474817.2]: Peer 1005 has downloaded the piece 5 from 1002 the number of pieces it has is 110
-[1744474817.2]: Peer 1005 recieved the 'have' message from 1004 for the piece 110
-[1744474817.26]: Peer 1005 recieved the 'have' message from 1003 for the piece 43
-[1744474817.34]: Peer 1005 recieved the 'have' message from 1004 for the piece 110
-[1744474817.33]: Peer 1005 is unchoked by 1006
-[1744474817.4]: Peer 1005 recieved the 'have' message from 1003 for the piece 13
-[1744474817.42]: Peer 1005 recieved the 'have' message from 1006 for the piece 77
-[1744474817.43]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
-[1744474817.42]: Peer 1005 recieved the 'have' message from 1004 for the piece 91
-[1744474817.56]: Peer 1005 recieved the 'have' message from 1006 for the piece 105
-[1744474817.69]: Peer 1005 recieved the 'have' message from 1003 for the piece 56
-[1744474817.72]: Peer 1005 has downloaded the piece 68 from 1002 the number of pieces it has is 111
-[1744474817.72]: Peer 1005 recieved the 'have' message from 1006 for the piece 41
-[1744474817.82]: Peer 1005 recieved the 'have' message from 1004 for the piece 91
-[1744474817.82]: Peer 1005 recieved the 'have' message from 1006 for the piece 101
-[1744474817.82]: Peer 1005 recieved the 'have' message from 1003 for the piece 56
-[1744474817.97]: Peer 1005 recieved the 'have' message from 1006 for the piece 29
-[1744474818.22]: Peer 1005 recieved the 'have' message from 1006 for the piece 29
-[1744474818.48]: Peer 1005 recieved the 'have' message from 1006 for the piece 16
-[1744474818.54]: Peer 1005 recieved the 'have' message from 1003 for the piece 31
-[1744474818.62]: Peer 1005 recieved the 'have' message from 1006 for the piece 78
-[1744474818.72]: Peer 1005 recieved the 'have' message from 1003 for the piece 24
-[1744474818.93]: Peer 1005 recieved the 'have' message from 1006 for the piece 67
-[1744474819.02]: Peer 1005 recieved the 'have' message from 1003 for the piece 77
-[1744474819.05]: Peer 1005 recieved the 'have' message from 1006 for the piece 70
-[1744474819.32]: Peer 1005 recieved the 'have' message from 1003 for the piece 16
-[1744474820.13]: Peer 1005 recieved the 'have' message from 1003 for the piece 76
-[1744474820.95]: Peer 1005 recieved the 'have' message from 1003 for the piece 98
-[1744474821.0]: Peer 1005 is unchoked by 1001
-[1744474821.19]: Peer 1005 is unchoked by 1003
-[1744474821.31]: Peer 1005 recieved the 'have' message from 1003 for the piece 83
-[1744474822.01]: Peer 1005 has preferred neighbors 1006 1003 1004 
-[1744474833.92]: Peer 1005 has downloaded the complete file
-[1744474834.25]: Peer 1005 has downloaded the complete file
-[1744474834.21]: Peer 1005 has downloaded the piece 96 from 1002 the number of pieces it has is 112
-[1744474834.39]: Peer 1005 has downloaded the piece 68 from 1004 the number of pieces it has is 112
-[1744474834.63]: Peer 1005 has preferred neighbors 1003 1004 1001 
-[1744474834.63]: Peer 1005 recieved the 'have' message from 1004 for the piece 91
-[1744474834.7]: Peer 1005 has downloaded the complete file
-[1744474834.71]: Peer 1005 has downloaded the piece 96 from 1002 the number of pieces it has is 113
-[1744474834.75]: Peer 1005 is unchoked by 1002
-[1744474834.75]: Peer 1005 has downloaded the complete file
-[1744474834.76]: Peer 1005 has downloaded the piece 68 from 1006 the number of pieces it has is 113
-[1744474834.77]: Peer 1005 has downloaded the complete file
-[1744474834.77]: Peer 1005 recieved the 'have' message from 1006 for the piece 70
-[1744474834.77]: Peer 1005 has downloaded the piece 68 from 1004 the number of pieces it has is 113
-[1744474834.8]: Peer 1005 recieved the 'have' message from 1006 for the piece 52
-[1744474834.89]: Peer 1005 recieved the 'have' message from 1006 for the piece 31
-[1744474834.95]: Peer 1005 is unchoked by 1004
-[1744474834.95]: Peer 1005 recieved the 'have' message from 1006 for the piece 49
-[1744474834.96]: Peer 1005 recieved the 'have' message from 1006 for the piece 54
-[1744474835.05]: Peer 1005 has downloaded the complete file
-[1744474835.08]: Peer 1005 recieved the 'have' message from 1006 for the piece 31
-[1744474835.09]: Peer 1005 is unchoked by 1004
-[1744474835.09]: Peer 1005 has downloaded the piece 96 from 1001 the number of pieces it has is 113
-[1744474835.09]: Peer 1005 recieved the 'have' message from 1006 for the piece 73
-[1744474835.1]: Peer 1005 recieved the 'have' message from 1004 for the piece 61
-[1744474835.15]: Peer 1005 recieved the 'have' message from 1006 for the piece 5
-[1744474835.18]: Peer 1005 has downloaded the complete file
-[1744474835.2]: Peer 1005 is unchoked by 1001
-[1744474835.28]: Peer 1005 recieved the 'not interested' message from 1004
-[1744474835.31]: Peer 1005 recieved the 'have' message from 1006 for the piece 73
-[1744474835.4]: Peer 1005 has downloaded the piece 96 from 1003 the number of pieces it has is 113
-[1744474835.42]: Peer 1005 recieved the 'have' message from 1004 for the piece 61
-[1744474835.5]: Peer 1005 is unchoked by 1006
-[1744474835.66]: Peer 1005 recieved the 'have' message from 1004 for the piece 61
-[1744474835.67]: Peer 1005 recieved the 'have' message from 1006 for the piece 99
-[1744474835.67]: Peer 1005 is unchoked by 1001
-[1744474835.8]: Peer 1005 recieved the 'have' message from 1006 for the piece 99
-[1744474835.8]: Peer 1005 recieved the 'have' message from 1003 for the piece 34
-[1744474835.8]: Peer 1005 recieved the 'have' message from 1006 for the piece 45
-[1744474835.8]: Peer 1005 has preferred neighbors 1001 1004 1002 
-[1744474835.8]: Peer 1005 recieved the 'have' message from 1006 for the piece 45
-[1744474835.8]: Peer 1005 recieved the 'have' message from 1004 for the piece 61
-[1744474835.8]: Peer 1005 recieved the 'have' message from 1006 for the piece 45
-[1744474835.83]: Peer 1005 is unchoked by 1003
-[1744474835.86]: Peer 1005 recieved the 'have' message from 1004 for the piece 61
-[1744474836.0]: Peer 1005 is unchoked by 1001
-[1744474836.08]: Peer 1005 is unchoked by 1006
-essage from 1004 for the piece 61
-[1744474836.21]: Peer 1005 is unchoked by 1003
-[1744474836.26]: Peer 1005 recieved the 'have' message from 1004 for the piece 61
-[1744474836.37]: Peer 1005 is unchoked by 1006
-[1744474836.83]: Peer 1005 is unchoked by 1004
-[1744474836.97]: Peer 1005 has preferred neighbors 1003 1001 1004 
-[1744474838.23]: Peer 1005 recieved the 'have' message from 1003 for the piece 50
-[1744474838.36]: Peer 1005 recieved the 'have' message from 1003 for the piece 29
-[1744474838.61]: Peer 1005 recieved the 'have' message from 1003 for the piece 29
-[1744474839.15]: Peer 1005 recieved the 'have' message from 1006 for the piece 96
-[1744474839.26]: Peer 1005 recieved the 'have' message from 1006 for the piece 96
-[1744474839.39]: Peer 1005 recieved the 'have' message from 1006 for the piece 96
-[1744474839.52]: Peer 1005 is unchoked by 1006
-[1744474839.58]: Peer 1005 recieved the 'have' message from 1003 for the piece 29
-[1744474840.98]: Peer 1005 is unchoked by 1001
-[1744474841.26]: Peer 1005 has the optimistically unchoked neighbor 1006
-[1744474841.82]: Peer 1005 is unchoked by 1004
-[1744474841.97]: Peer 1005 has preferred neighbors 1004 1003 1002 
-[1744474843.46]: Peer 1005 is unchoked by 1003
-[1744474844.22]: Peer 1005 is unchoked by 1006
+[1744906144.18]: Peer 1005 makes a connection to Peer 1003
+[1744906144.18]: Peer 1005 makes a connection to Peer 1004
+[1744906144.18]: Peer 1005 makes a connection from Peer 1003
+[1744906144.18]: Peer 1005 makes a connection from Peer 1004
+[1744906146.23]: Peer 1005 makes a connection to Peer 1001
+[1744906146.26]: Peer 1005 makes a connection to Peer 1002
+[1744906146.29]: Peer 1005 makes a connection from Peer 1001
+[1744906146.37]: Peer 1005 makes a connection from Peer 1002
+[1744906151.28]: Peer 1005 makes a connection to Peer 1006
+[1744906151.39]: Peer 1005 makes a connection from Peer 1006
+[1744906157.62]: Peer 1005 recieved the 'have' message from 1006 for the piece 53
+[1744906157.99]: Peer 1005 recieved the 'have' message from 1006 for the piece 66
+[1744906158.31]: Peer 1005 has preferred neighbors 
+[1744906158.31]: Peer 1005 is choked by 1003
+[1744906158.35]: Peer 1005 is choked by 1004
+[1744906158.36]: Peer 1005 recieved the 'have' message from 1006 for the piece 65
+[1744906159.27]: Peer 1005 is unchoked by 1002
+[1744906159.3]: Peer 1005 is unchoked by 1006
+[1744906159.27]: Peer 1005 is unchoked by 1001
+[1744906159.44]: Peer 1005 recieved the 'have' message from 1006 for the piece 90
+[1744906159.45]: Peer 1005 recieved the 'have' message from 1006 for the piece 18
+[1744906159.72]: Peer 1005 has downloaded the piece 48 from 1001 the number of pieces it has is 0
+[1744906159.73]: Peer 1005 recieved the 'have' message from 1006 for the piece 3
+[1744906159.79]: Peer 1005 has downloaded the piece 100 from 1002 the number of pieces it has is 0
+[1744906160.03]: Peer 1005 recieved the 'interested' message from 1004
+[1744906160.08]: Peer 1005 recieved the 'interested' message from 1003
+[1744906160.15]: Peer 1005 recieved the 'have' message from 1004 for the piece 92
+[1744906160.15]: Peer 1005 recieved the 'have' message from 1006 for the piece 70
+[1744906160.17]: Peer 1005 recieved the 'have' message from 1003 for the piece 108
+[1744906160.28]: Peer 1005 has downloaded the piece 80 from 1001 the number of pieces it has is 2
+[1744906160.37]: Peer 1005 recieved the 'have' message from 1006 for the piece 36
+[1744906160.54]: Peer 1005 has downloaded the piece 22 from 1002 the number of pieces it has is 3
+[1744906160.61]: Peer 1005 recieved the 'have' message from 1004 for the piece 59
+[1744906160.67]: Peer 1005 recieved the 'have' message from 1006 for the piece 24
+[1744906160.81]: Peer 1005 recieved the 'have' message from 1003 for the piece 2
+[1744906160.99]: Peer 1005 has downloaded the piece 37 from 1001 the number of pieces it has is 4
+[1744906161.04]: Peer 1005 recieved the 'have' message from 1006 for the piece 34
+[1744906161.1]: Peer 1005 recieved the 'have' message from 1004 for the piece 77
+[1744906161.12]: Peer 1005 has the optimistically unchoked neighbor 1006
+[1744906161.19]: Peer 1005 has downloaded the piece 108 from 1002 the number of pieces it has is 5
+[1744906161.29]: Peer 1005 recieved the 'have' message from 1003 for the piece 55
+[1744906161.44]: Peer 1005 recieved the 'have' message from 1006 for the piece 27
+[1744906161.55]: Peer 1005 has downloaded the piece 111 from 1001 the number of pieces it has is 6
+[1744906161.72]: Peer 1005 has downloaded the piece 3 from 1002 the number of pieces it has is 7
+[1744906161.74]: Peer 1005 recieved the 'have' message from 1004 for the piece 99
+[1744906161.81]: Peer 1005 recieved the 'have' message from 1006 for the piece 91
+[1744906161.97]: Peer 1005 recieved the 'have' message from 1003 for the piece 92
+[1744906162.17]: Peer 1005 recieved the 'have' message from 1006 for the piece 12
+[1744906162.22]: Peer 1005 has downloaded the piece 86 from 1001 the number of pieces it has is 8
+[1744906162.31]: Peer 1005 has downloaded the piece 107 from 1002 the number of pieces it has is 8
+[1744906162.31]: Peer 1005 has preferred neighbors 1004 1003 1006 
+[1744906162.31]: Peer 1005 is unchoked by 1003
+[1744906162.33]: Peer 1005 recieved the 'have' message from 1004 for the piece 8
+[1744906162.39]: Peer 1005 is choked by 1002
+[1744906162.44]: Peer 1005 recieved the 'have' message from 1003 for the piece 109
+[1744906162.48]: Peer 1005 recieved the 'have' message from 1006 for the piece 31
+[1744906162.61]: Peer 1005 recieved the 'have' message from 1006 for the piece 48
+[1744906162.64]: Peer 1005 has downloaded the piece 31 from 1002 the number of pieces it has is 10
+[1744906162.76]: Peer 1005 recieved the 'have' message from 1006 for the piece 96
+[1744906162.81]: Peer 1005 recieved the 'have' message from 1004 for the piece 105
+[1744906162.86]: Peer 1005 recieved the 'have' message from 1006 for the piece 74
+[1744906162.9]: Peer 1005 recieved the 'have' message from 1003 for the piece 48
+[1744906162.86]: Peer 1005 has downloaded the piece 43 from 1001 the number of pieces it has is 11
+[1744906162.98]: Peer 1005 recieved the 'have' message from 1006 for the piece 98
+[1744906163.19]: Peer 1005 recieved the 'have' message from 1004 for the piece 54
+[1744906163.19]: Peer 1005 recieved the 'have' message from 1003 for the piece 31
+[1744906163.19]: Peer 1005 recieved the 'have' message from 1006 for the piece 62
+[1744906163.33]: Peer 1005 has downloaded the piece 81 from 1001 the number of pieces it has is 12
+[1744906163.33]: Peer 1005 recieved the 'have' message from 1006 for the piece 29
+[1744906163.44]: Peer 1005 recieved the 'have' message from 1006 for the piece 16
+[1744906163.6]: Peer 1005 has preferred neighbors 1003 1004 1006 
+[1744906163.6]: Peer 1005 has downloaded the piece 8 from 1001 the number of pieces it has is 13
+[1744906163.8]: Peer 1005 recieved the 'have' message from 1003 for the piece 104
+[1744906163.81]: Peer 1005 recieved the 'have' message from 1006 for the piece 19
+[1744906163.87]: Peer 1005 recieved the 'have' message from 1006 for the piece 85
+[1744906163.92]: Peer 1005 recieved the 'have' message from 1004 for the piece 81
+[1744906164.14]: Peer 1005 is unchoked by 1006
+[1744906164.15]: Peer 1005 has downloaded the piece 79 from 1001 the number of pieces it has is 14
+[1744906164.12]: Peer 1005 is unchoked by 1002
+[1744906164.25]: Peer 1005 recieved the 'have' message from 1003 for the piece 40
+[1744906164.28]: Peer 1005 recieved the 'have' message from 1006 for the piece 104
+[1744906164.33]: Peer 1005 recieved the 'have' message from 1004 for the piece 74
+[1744906164.4]: Peer 1005 is unchoked by 1001
+[1744906164.51]: Peer 1005 has downloaded the piece 15 from 1002 the number of pieces it has is 15
+[1744906164.59]: Peer 1005 recieved the 'have' message from 1004 for the piece 36
+[1744906164.65]: Peer 1005 has downloaded the piece 18 from 1006 the number of pieces it has is 15
+[1744906164.76]: Peer 1005 is unchoked by 1004
+[1744906164.78]: Peer 1005 has downloaded the piece 0 from 1001 the number of pieces it has is 17
+[1744906164.89]: Peer 1005 recieved the 'have' message from 1006 for the piece 13
+[1744906165.0]: Peer 1005 recieved the 'have' message from 1006 for the piece 83
+[1744906165.0]: Peer 1005 recieved the 'have' message from 1004 for the piece 93
+[1744906165.15]: Peer 1005 recieved the 'have' message from 1006 for the piece 9
+[1744906165.29]: Peer 1005 has downloaded the piece 112 from 1001 the number of pieces it has is 18
+[1744906165.32]: Peer 1005 recieved the 'have' message from 1006 for the piece 100
+[1744906165.37]: Peer 1005 recieved the 'have' message from 1004 for the piece 72
+[1744906165.51]: Peer 1005 recieved the 'have' message from 1006 for the piece 60
+[1744906165.72]: Peer 1005 recieved the 'have' message from 1006 for the piece 99
+[1744906165.84]: Peer 1005 recieved the 'have' message from 1004 for the piece 66
+[1744906165.94]: Peer 1005 recieved the 'have' message from 1006 for the piece 61
+[1744906165.98]: Peer 1005 has downloaded the piece 72 from 1001 the number of pieces it has is 20
+[1744906166.08]: Peer 1005 has downloaded the piece 72 from 1002 the number of pieces it has is 21
+[1744906166.19]: Peer 1005 recieved the 'have' message from 1004 for the piece 102
+[1744906166.34]: Peer 1005 recieved the 'have' message from 1006 for the piece 37
+[1744906166.58]: Peer 1005 recieved the 'have' message from 1006 for the piece 38
+es it has is 21
+[1744906166.64]: Peer 1005 recieved the 'have' message from 1004 for the piece 21
+[1744906166.78]: Peer 1005 has downloaded the piece 4 from 1002 the number of pieces it has is 22
+[1744906166.94]: Peer 1005 recieved the 'have' message from 1006 for the piece 49
+[1744906167.14]: Peer 1005 recieved the 'have' message from 1004 for the piece 103
+[1744906167.23]: Peer 1005 has downloaded the piece 54 from 1001 the number of pieces it has is 23
+[1744906167.26]: Peer 1005 recieved the 'have' message from 1006 for the piece 43
+[1744906167.41]: Peer 1005 has downloaded the piece 13 from 1002 the number of pieces it has is 24
+[1744906167.53]: Peer 1005 recieved the 'have' message from 1006 for the piece 68
+[1744906167.6]: Peer 1005 recieved the 'have' message from 1006 for the piece 14
+[1744906167.6]: Peer 1005 recieved the 'have' message from 1004 for the piece 38
+[1744906167.97]: Peer 1005 has downloaded the piece 12 from 1001 the number of pieces it has is 25
+[1744906168.05]: Peer 1005 recieved the 'have' message from 1004 for the piece 0
+[1744906168.16]: Peer 1005 recieved the 'have' message from 1006 for the piece 110
+[1744906168.11]: Peer 1005 has downloaded the piece 25 from 1002 the number of pieces it has is 26
+[1744906168.27]: Peer 1005 recieved the 'have' message from 1006 for the piece 110
+[1744906168.32]: Peer 1005 recieved the 'have' message from 1003 for the piece 7
+[1744906168.36]: Peer 1005 recieved the 'have' message from 1006 for the piece 20
+[1744906168.37]: Peer 1005 is unchoked by 1003
+[1744906168.46]: Peer 1005 recieved the 'have' message from 1003 for the piece 70
+[1744906168.47]: Peer 1005 recieved the 'have' message from 1004 for the piece 22
+[1744906168.6]: Peer 1005 has preferred neighbors 1003 1004 1006 
+[1744906168.6]: Peer 1005 recieved the 'have' message from 1004 for the piece 48
+[1744906168.6]: Peer 1005 has downloaded the piece 10 from 1001 the number of pieces it has is 27
+[1744906168.67]: Peer 1005 has downloaded the piece 36 from 1002 the number of pieces it has is 28
+[1744906168.67]: Peer 1005 recieved the 'have' message from 1006 for the piece 56
+[1744906168.78]: Peer 1005 recieved the 'have' message from 1004 for the piece 56
+[1744906168.9]: Peer 1005 recieved the 'have' message from 1003 for the piece 52
+[1744906168.96]: Peer 1005 is unchoked by 1002
+[1744906169.0]: Peer 1005 recieved the 'have' message from 1006 for the piece 55
+[1744906169.09]: Peer 1005 recieved the 'have' message from 1006 for the piece 7
+[1744906169.09]: Peer 1005 recieved the 'have' message from 1004 for the piece 80
+[1744906169.12]: Peer 1005 has downloaded the piece 42 from 1001 the number of pieces it has is 29
+[1744906169.18]: Peer 1005 recieved the 'have' message from 1003 for the piece 45
+[1744906169.23]: Peer 1005 recieved the 'have' message from 1004 for the piece 4
+[1744906169.34]: Peer 1005 has downloaded the piece 55 from 1002 the number of pieces it has is 30
+[1744906169.34]: Peer 1005 recieved the 'have' message from 1006 for the piece 89
+[1744906169.34]: Peer 1005 recieved the 'have' message from 1003 for the piece 3
+[1744906169.34]: Peer 1005 recieved the 'have' message from 1004 for the piece 29
+[1744906169.41]: Peer 1005 is unchoked by 1006
+[1744906169.4]: Peer 1005 is unchoked by 1001
+[1744906169.48]: Peer 1005 recieved the 'have' message from 1003 for the piece 58
+[1744906169.51]: Peer 1005 recieved the 'have' message from 1006 for the piece 75
+[1744906169.51]: Peer 1005 recieved the 'have' message from 1004 for the piece 31
+[1744906169.58]: Peer 1005 recieved the 'have' message from 1003 for the piece 53
+[1744906169.58]: Peer 1005 recieved the 'have' message from 1006 for the piece 80
+[1744906169.65]: Peer 1005 recieved the 'have' message from 1004 for the piece 1
+[1744906169.76]: Peer 1005 recieved the 'have' message from 1006 for the piece 46
+[1744906169.76]: Peer 1005 has downloaded the piece 69 from 1001 the number of pieces it has is 31
+[1744906169.8]: Peer 1005 has downloaded the piece 94 from 1002 the number of pieces it has is 31
+[1744906169.8]: Peer 1005 is unchoked by 1004
+[1744906169.87]: Peer 1005 recieved the 'have' message from 1006 for the piece 21
+[1744906170.02]: Peer 1005 recieved the 'have' message from 1003 for the piece 27
+[1744906169.97]: Peer 1005 recieved the 'have' message from 1006 for the piece 42
+[1744906170.11]: Peer 1005 recieved the 'have' message from 1003 for the piece 90
+[1744906170.13]: Peer 1005 has downloaded the piece 92 from 1002 the number of pieces it has is 33
+[1744906170.13]: Peer 1005 recieved the 'have' message from 1004 for the piece 104
+[1744906170.22]: Peer 1005 recieved the 'have' message from 1006 for the piece 67
+[1744906170.23]: Peer 1005 recieved the 'have' message from 1003 for the piece 95
+[1744906170.26]: Peer 1005 has downloaded the piece 52 from 1001 the number of pieces it has is 33
+[1744906170.37]: Peer 1005 recieved the 'have' message from 1006 for the piece 78
+[1744906170.36]: Peer 1005 recieved the 'have' message from 1004 for the piece 110
+[1744906170.51]: Peer 1005 recieved the 'have' message from 1006 for the piece 105
+[1744906170.7]: Peer 1005 recieved the 'have' message from 1006 for the piece 58
+[1744906170.67]: Peer 1005 has downloaded the piece 6 from 1002 the number of pieces it has is 35
+[1744906170.76]: Peer 1005 recieved the 'have' message from 1003 for the piece 61
+[1744906170.88]: Peer 1005 recieved the 'have' message from 1006 for the piece 26
+[1744906170.88]: Peer 1005 has downloaded the piece 84 from 1001 the number of pieces it has is 35
+[1744906170.93]: Peer 1005 recieved the 'have' message from 1003 for the piece 28
+[1744906170.96]: Peer 1005 recieved the 'have' message from 1004 for the piece 79
+[1744906170.98]: Peer 1005 recieved the 'have' message from 1003 for the piece 0
+[1744906171.06]: Peer 1005 recieved the 'have' message from 1006 for the piece 79
+[1744906171.18]: Peer 1005 has downloaded the piece 98 from 1002 the number of pieces it has is 37
+[1744906171.15]: Peer 1005 recieved the 'have' message from 1006 for the piece 69
+[1744906171.32]: Peer 1005 has downloaded the piece 32 from 1001 the number of pieces it has is 37
+[1744906171.46]: Peer 1005 recieved the 'have' message from 1006 for the piece 84
+[1744906171.51]: Peer 1005 recieved the 'have' message from 1003 for the piece 63
+[1744906171.51]: Peer 1005 has downloaded the piece 74 from 1002 the number of pieces it has is 39
+[1744906171.54]: Peer 1005 recieved the 'have' message from 1004 for the piece 65
+[1744906171.55]: Peer 1005 recieved the 'have' message from 1006 for the piece 0
+[1744906171.6]: Peer 1005 recieved the 'have' message from 1003 for the piece 111
+[1744906171.64]: Peer 1005 has downloaded the piece 38 from 1001 the number of pieces it has is 40
+[1744906171.64]: Peer 1005 has downloaded the piece 83 from 1002 the number of pieces it has is 40
+[1744906171.71]: Peer 1005 recieved the 'have' message from 1004 for the piece 20
+[1744906171.72]: Peer 1005 recieved the 'have' message from 1003 for the piece 73
+[1744906171.77]: Peer 1005 recieved the 'have' message from 1006 for the piece 17
+[1744906172.01]: Peer 1005 recieved the 'have' message from 1004 for the piece 95
+[1744906172.14]: Peer 1005 recieved the 'have' message from 1006 for the piece 15
+[1744906172.17]: Peer 1005 recieved the 'have' message from 1003 for the piece 9
+[1744906172.23]: Peer 1005 has downloaded the piece 95 from 1002 the number of pieces it has is 42
+[1744906172.22]: Peer 1005 has downloaded the piece 102 from 1001 the number of pieces it has is 42
+[1744906172.25]: Peer 1005 recieved the 'have' message from 1006 for the piece 76
+[1744906172.29]: Peer 1005 recieved the 'have' message from 1003 for the piece 72
+[1744906172.47]: Peer 1005 recieved the 'have' message from 1006 for the piece 72
+[1744906172.48]: Peer 1005 recieved the 'have' message from 1004 for the piece 13
+[1744906172.73]: Peer 1005 recieved the 'have' message from 1006 for the piece 25
+[1744906172.71]: Peer 1005 recieved the 'have' message from 1004 for the piece 40
+[1744906172.79]: Peer 1005 has downloaded the piece 17 from 1001 the number of pieces it has is 44
+[1744906172.87]: Peer 1005 recieved the 'have' message from 1003 for the piece 15
+[1744906172.84]: Peer 1005 has downloaded the piece 21 from 1002 the number of pieces it has is 44
+[1744906173.04]: Peer 1005 recieved the 'have' message from 1006 for the piece 112
+[1744906173.07]: Peer 1005 recieved the 'have' message from 1003 for the piece 47
+[1744906173.1]: Peer 1005 recieved the 'have' message from 1004 for the piece 89
+[1744906173.1]: Peer 1005 recieved the 'have' message from 1006 for the piece 41
+[1744906173.28]: Peer 1005 has downloaded the piece 11 from 1001 the number of pieces it has is 46
+[1744906173.39]: Peer 1005 is unchoked by 1003
+[1744906173.39]: Peer 1005 has downloaded the piece 87 from 1002 the number of pieces it has is 46
+[1744906173.46]: Peer 1005 recieved the 'have' message from 1003 for the piece 112
+[1744906173.56]: Peer 1005 recieved the 'have' message from 1006 for the piece 28
+[1744906173.59]: Peer 1005 recieved the 'have' message from 1004 for the piece 71
+[1744906173.61]: Peer 1005 has downloaded the piece 71 from 1001 the number of pieces it has is 48
+[1744906173.67]: Peer 1005 recieved the 'have' message from 1003 for the piece 5
+[1744906173.66]: Peer 1005 recieved the 'have' message from 1006 for the piece 111
+[1744906173.7]: Peer 1005 has preferred neighbors 1003 1004 1006 
+[1744906173.71]: Peer 1005 recieved the 'have' message from 1006 for the piece 5
+[1744906173.71]: Peer 1005 has downloaded the piece 59 from 1002 the number of pieces it has is 49
+[1744906173.87]: Peer 1005 recieved the 'have' message from 1004 for the piece 12
+[1744906173.87]: Peer 1005 recieved the 'have' message from 1003 for the piece 5
+[1744906173.9]: Peer 1005 recieved the 'have' message from 1006 for the piece 23
+[1744906174.05]: Peer 1005 has downloaded the piece 1 from 1001 the number of pieces it has is 50
+[1744906174.05]: Peer 1005 recieved the 'have' message from 1006 for the piece 2
+[1744906174.05]: Peer 1005 recieved the 'have' message from 1004 for the piece 28
+[1744906174.23]: Peer 1005 has downloaded the piece 47 from 1002 the number of pieces it has is 50
+[1744906174.24]: Peer 1005 recieved the 'have' message from 1004 for the piece 11
+[1744906174.24]: Peer 1005 is unchoked by 1006
+[1744906174.29]: Peer 1005 recieved the 'have' message from 1006 for the piece 6
+[1744906174.33]: Peer 1005 is choked by 1002
+[1744906174.41]: Peer 1005 recieved the 'have' message from 1006 for the piece 1
+[1744906174.43]: Peer 1005 recieved the 'have' message from 1003 for the piece 77
+[1744906174.52]: Peer 1005 recieved the 'have' message from 1006 for the piece 107
+[1744906174.55]: Peer 1005 recieved the 'have' message from 1004 for the piece 33
+[1744906174.63]: Peer 1005 recieved the 'have' message from 1006 for the piece 11
+[1744906174.63]: Peer 1005 recieved the 'have' message from 1003 for the piece 19
+[1744906174.74]: Peer 1005 recieved the 'have' message from 1004 for the piece 69
+[1744906174.75]: Peer 1005 recieved the 'have' message from 1006 for the piece 50
+[1744906174.88]: Peer 1005 recieved the 'have' message from 1006 for the piece 102
+[1744906174.86]: Peer 1005 recieved the 'have' message from 1004 for the piece 83
+[1744906174.91]: Peer 1005 recieved the 'have' message from 1003 for the piece 37
+[1744906174.97]: Peer 1005 recieved the 'have' message from 1006 for the piece 103
+[1744906175.01]: Peer 1005 is unchoked by 1004
+[1744906175.01]: Peer 1005 has downloaded the piece 105 from 1001 the number of pieces it has is 52
+[1744906175.11]: Peer 1005 recieved the 'have' message from 1004 for the piece 10
+[1744906175.25]: Peer 1005 recieved the 'have' message from 1004 for the piece 112
+[1744906175.34]: Peer 1005 recieved the 'have' message from 1004 for the piece 18
+[1744906175.4]: Peer 1005 recieved the 'have' message from 1003 for the piece 75
+[1744906175.54]: Peer 1005 recieved the 'have' message from 1003 for the piece 46
+[1744906175.54]: Peer 1005 recieved the 'have' message from 1004 for the piece 88
+[1744906175.7]: Peer 1005 recieved the 'have' message from 1006 for the piece 8
+[1744906175.86]: Peer 1005 recieved the 'have' message from 1006 for the piece 22
+es it has is 53
+[1744906175.87]: Peer 1005 recieved the 'have' message from 1003 for the piece 105
+[1744906175.98]: Peer 1005 recieved the 'have' message from 1004 for the piece 26
+[1744906176.26]: Peer 1005 recieved the 'have' message from 1004 for the piece 108
+[1744906176.27]: Peer 1005 recieved the 'have' message from 1006 for the piece 92
+[1744906176.24]: Peer 1005 recieved the 'have' message from 1003 for the piece 12
+[1744906176.33]: Peer 1005 recieved the 'have' message from 1004 for the piece 76
+[1744906176.35]: Peer 1005 recieved the 'have' message from 1006 for the piece 109
+[1744906176.36]: Peer 1005 has downloaded the piece 29 from 1001 the number of pieces it has is 54
+[1744906176.41]: Peer 1005 recieved the 'have' message from 1003 for the piece 4
+[1744906176.55]: Peer 1005 recieved the 'have' message from 1006 for the piece 30
+[1744906176.61]: Peer 1005 recieved the 'have' message from 1003 for the piece 11
+[1744906176.69]: Peer 1005 recieved the 'have' message from 1004 for the piece 47
+[1744906176.69]: Peer 1005 recieved the 'have' message from 1006 for the piece 101
+[1744906177.0]: Peer 1005 recieved the 'have' message from 1003 for the piece 84
+[1744906177.0]: Peer 1005 has downloaded the piece 28 from 1001 the number of pieces it has is 55
+[1744906177.03]: Peer 1005 recieved the 'have' message from 1004 for the piece 53
+[1744906177.09]: Peer 1005 recieved the 'have' message from 1006 for the piece 82
+[1744906177.17]: Peer 1005 recieved the 'have' message from 1004 for the piece 101
+[1744906177.2]: Peer 1005 recieved the 'have' message from 1003 for the piece 107
+[1744906177.26]: Peer 1005 recieved the 'have' message from 1006 for the piece 33
+[1744906177.42]: Peer 1005 recieved the 'have' message from 1006 for the piece 51
+[1744906177.52]: Peer 1005 recieved the 'have' message from 1004 for the piece 67
+[1744906177.6]: Peer 1005 has downloaded the piece 56 from 1001 the number of pieces it has is 56
+[1744906177.63]: Peer 1005 recieved the 'have' message from 1006 for the piece 44
+[1744906177.6]: Peer 1005 recieved the 'have' message from 1003 for the piece 41
+[1744906177.73]: Peer 1005 recieved the 'have' message from 1004 for the piece 73
+[1744906177.82]: Peer 1005 recieved the 'have' message from 1006 for the piece 59
+[1744906177.93]: Peer 1005 recieved the 'have' message from 1006 for the piece 94
+[1744906177.97]: Peer 1005 recieved the 'have' message from 1003 for the piece 1
+[1744906177.91]: Peer 1005 recieved the 'have' message from 1004 for the piece 9
+[1744906178.05]: Peer 1005 recieved the 'have' message from 1006 for the piece 106
+[1744906178.05]: Peer 1005 is unchoked by 1002
+[1744906178.17]: Peer 1005 recieved the 'have' message from 1003 for the piece 66
+es it has is 57
+[1744906178.22]: Peer 1005 recieved the 'have' message from 1004 for the piece 46
+[1744906178.28]: Peer 1005 recieved the 'have' message from 1006 for the piece 71
+[1744906178.31]: Peer 1005 is unchoked by 1003
+[1744906178.34]: Peer 1005 recieved the 'have' message from 1006 for the piece 32
+[1744906178.42]: Peer 1005 has downloaded the piece 41 from 1002 the number of pieces it has is 58
+[1744906178.44]: Peer 1005 recieved the 'have' message from 1003 for the piece 82
+[1744906178.47]: Peer 1005 recieved the 'have' message from 1006 for the piece 54
+[1744906178.51]: Peer 1005 recieved the 'have' message from 1004 for the piece 49
+[1744906178.56]: Peer 1005 recieved the 'have' message from 1003 for the piece 17
+[1744906178.61]: Peer 1005 recieved the 'have' message from 1006 for the piece 95
+[1744906178.62]: Peer 1005 recieved the 'have' message from 1004 for the piece 78
+[1744906178.67]: Peer 1005 recieved the 'have' message from 1003 for the piece 33
+[1744906178.76]: Peer 1005 recieved the 'have' message from 1006 for the piece 40
+[1744906178.79]: Peer 1005 has preferred neighbors 1003 1004 1006 
+[1744906178.79]: Peer 1005 recieved the 'have' message from 1003 for the piece 86
+[1744906178.79]: Peer 1005 has downloaded the piece 57 from 1001 the number of pieces it has is 59
+[1744906178.82]: Peer 1005 recieved the 'have' message from 1004 for the piece 64
+[1744906178.9]: Peer 1005 recieved the 'have' message from 1006 for the piece 77
+[1744906179.0]: Peer 1005 has downloaded the piece 106 from 1002 the number of pieces it has is 60
+[1744906179.0]: Peer 1005 recieved the 'have' message from 1006 for the piece 77
+[1744906179.02]: Peer 1005 recieved the 'have' message from 1003 for the piece 64
+[1744906179.11]: Peer 1005 recieved the 'have' message from 1006 for the piece 63
+[1744906179.1]: Peer 1005 is unchoked by 1001
+[1744906179.16]: Peer 1005 recieved the 'have' message from 1003 for the piece 103
+[1744906179.2]: Peer 1005 recieved the 'have' message from 1006 for the piece 64
+[1744906179.25]: Peer 1005 recieved the 'have' message from 1004 for the piece 27
+[1744906179.36]: Peer 1005 has downloaded the piece 109 from 1001 the number of pieces it has is 61
+[1744906179.34]: Peer 1005 is unchoked by 1006
+[1744906179.45]: Peer 1005 recieved the 'have' message from 1003 for the piece 56
+[1744906179.55]: Peer 1005 recieved the 'have' message from 1004 for the piece 57
+[1744906179.52]: Peer 1005 recieved the 'have' message from 1006 for the piece 57
+[1744906179.62]: Peer 1005 recieved the 'have' message from 1003 for the piece 51
+[1744906179.69]: Peer 1005 recieved the 'have' message from 1006 for the piece 93
+[1744906179.78]: Peer 1005 is unchoked by 1004
+[1744906179.78]: Peer 1005 has downloaded the piece 53 from 1002 the number of pieces it has is 62
+[1744906179.78]: Peer 1005 has downloaded the piece 27 from 1001 the number of pieces it has is 62
+[1744906179.8]: Peer 1005 recieved the 'have' message from 1004 for the piece 106
+[1744906180.0]: Peer 1005 recieved the 'have' message from 1003 for the piece 13
+[1744906180.15]: Peer 1005 has downloaded the piece 16 from 1006 the number of pieces it has is 64
+[1744906180.22]: Peer 1005 recieved the 'have' message from 1003 for the piece 106
+[1744906180.25]: Peer 1005 recieved the 'have' message from 1004 for the piece 70
+[1744906180.31]: Peer 1005 recieved the 'have' message from 1006 for the piece 35
+[1744906180.34]: Peer 1005 recieved the 'have' message from 1003 for the piece 62
+[1744906180.37]: Peer 1005 recieved the 'have' message from 1004 for the piece 34
+[1744906180.43]: Peer 1005 has downloaded the piece 103 from 1001 the number of pieces it has is 64
+[1744906180.46]: Peer 1005 recieved the 'have' message from 1006 for the piece 81
+[1744906180.49]: Peer 1005 has downloaded the piece 68 from 1002 the number of pieces it has is 65
+[1744906180.6]: Peer 1005 recieved the 'have' message from 1003 for the piece 26
+[1744906180.6]: Peer 1005 recieved the 'have' message from 1004 for the piece 84
+[1744906180.62]: Peer 1005 recieved the 'have' message from 1006 for the piece 39
+[1744906180.7]: Peer 1005 recieved the 'have' message from 1003 for the piece 54
+[1744906180.7]: Peer 1005 has downloaded the piece 89 from 1001 the number of pieces it has is 67
+[1744906180.7]: Peer 1005 recieved the 'have' message from 1004 for the piece 85
+[1744906180.7]: Peer 1005 recieved the 'have' message from 1006 for the piece 81
+[1744906180.87]: Peer 1005 recieved the 'have' message from 1003 for the piece 96
+[1744906180.96]: Peer 1005 recieved the 'have' message from 1004 for the piece 24
+[1744906181.11]: Peer 1005 has downloaded the piece 75 from 1006 the number of pieces it has is 68
+[1744906181.22]: Peer 1005 has downloaded the piece 67 from 1002 the number of pieces it has is 68
+[1744906181.28]: Peer 1005 has downloaded the piece 85 from 1001 the number of pieces it has is 68
+[1744906181.3]: Peer 1005 recieved the 'have' message from 1004 for the piece 5
+[1744906181.45]: Peer 1005 recieved the 'have' message from 1006 for the piece 86
+[1744906181.53]: Peer 1005 recieved the 'have' message from 1004 for the piece 2
+[1744906181.56]: Peer 1005 recieved the 'have' message from 1006 for the piece 10
+[1744906181.67]: Peer 1005 recieved the 'have' message from 1003 for the piece 6
+[1744906181.67]: Peer 1005 recieved the 'have' message from 1006 for the piece 47
+[1744906181.78]: Peer 1005 has downloaded the piece 60 from 1001 the number of pieces it has is 71
+[1744906181.81]: Peer 1005 recieved the 'have' message from 1006 for the piece 47
+[1744906181.81]: Peer 1005 recieved the 'have' message from 1003 for the piece 32
+[1744906182.02]: Peer 1005 recieved the 'have' message from 1003 for the piece 42
+[1744906182.1]: Peer 1005 has downloaded the piece 70 from 1002 the number of pieces it has is 71
+[1744906182.07]: Peer 1005 recieved the 'have' message from 1004 for the piece 41
+[1744906182.27]: Peer 1005 has downloaded the piece 90 from 1001 the number of pieces it has is 73
+[1744906182.22]: Peer 1005 has downloaded the piece 63 from 1006 the number of pieces it has is 73
+[1744906182.24]: Peer 1005 recieved the 'have' message from 1004 for the piece 30
+[1744906182.4]: Peer 1005 recieved the 'have' message from 1003 for the piece 59
+[1744906182.41]: Peer 1005 recieved the 'have' message from 1004 for the piece 90
+[1744906182.43]: Peer 1005 recieved the 'have' message from 1006 for the piece 87
+[1744906182.56]: Peer 1005 recieved the 'have' message from 1006 for the piece 108
+[1744906182.67]: Peer 1005 has downloaded the piece 77 from 1001 the number of pieces it has is 75
+[1744906182.71]: Peer 1005 recieved the 'have' message from 1003 for the piece 39
+[1744906182.75]: Peer 1005 has downloaded the piece 88 from 1002 the number of pieces it has is 75
+[1744906182.85]: Peer 1005 recieved the 'have' message from 1006 for the piece 4
+[1744906182.86]: Peer 1005 recieved the 'have' message from 1004 for the piece 58
+[1744906182.92]: Peer 1005 recieved the 'have' message from 1006 for the piece 88
+[1744906182.94]: Peer 1005 recieved the 'have' message from 1004 for the piece 82
+[1744906182.97]: Peer 1005 recieved the 'have' message from 1003 for the piece 68
+[1744906183.23]: Peer 1005 has downloaded the piece 78 from 1001 the number of pieces it has is 77
+[1744906183.34]: Peer 1005 recieved the 'have' message from 1003 for the piece 93
+[1744906183.36]: Peer 1005 has downloaded the piece 2 from 1006 the number of pieces it has is 77
+[1744906183.36]: Peer 1005 recieved the 'have' message from 1004 for the piece 100
+[1744906183.48]: Peer 1005 recieved the 'have' message from 1003 for the piece 49
+[1744906183.56]: Peer 1005 recieved the 'have' message from 1004 for the piece 50
+[1744906183.54]: Peer 1005 has downloaded the piece 104 from 1002 the number of pieces it has is 79
+[1744906183.71]: Peer 1005 recieved the 'have' message from 1004 for the piece 7
+[1744906183.71]: Peer 1005 is unchoked by 1003
+[1744906183.78]: Peer 1005 has downloaded the piece 82 from 1001 the number of pieces it has is 79
+[1744906183.84]: Peer 1005 recieved the 'have' message from 1003 for the piece 18
+[1744906183.91]: Peer 1005 has downloaded the piece 45 from 1006 the number of pieces it has is 81
+[1744906184.01]: Peer 1005 is unchoked by 1002
+[1744906184.02]: Peer 1005 is unchoked by 1001
+[1744906184.07]: Peer 1005 recieved the 'have' message from 1004 for the piece 97
+[1744906184.07]: Peer 1005 has preferred neighbors 1004 1006 1003 
+[1744906184.07]: Peer 1005 has downloaded the piece 49 from 1003 the number of pieces it has is 82
+[1744906184.07]: Peer 1005 is unchoked by 1006
+[1744906184.11]: Peer 1005 recieved the 'have' message from 1003 for the piece 16
+[1744906184.28]: Peer 1005 has downloaded the piece 26 from 1001 the number of pieces it has is 83
+[1744906184.35]: Peer 1005 recieved the 'have' message from 1003 for the piece 83
+[1744906184.33]: Peer 1005 recieved the 'have' message from 1004 for the piece 17
+[1744906184.47]: Peer 1005 recieved the 'have' message from 1003 for the piece 50
+[1744906184.49]: Peer 1005 has downloaded the piece 76 from 1006 the number of pieces it has is 83
+[1744906184.58]: Peer 1005 is unchoked by 1004
+[1744906184.72]: Peer 1005 recieved the 'have' message from 1004 for the piece 68
+[1744906184.78]: Peer 1005 recieved the 'have' message from 1004 for the piece 44
+[1744906184.82]: Peer 1005 has downloaded the piece 46 from 1001 the number of pieces it has is 86
+[1744906184.86]: Peer 1005 recieved the 'have' message from 1004 for the piece 68
+[1744906184.97]: Peer 1005 has downloaded the piece 65 from 1002 the number of pieces it has is 86
+[1744906185.0]: Peer 1005 has downloaded the piece 51 from 1006 the number of pieces it has is 86
+[1744906185.08]: Peer 1005 recieved the 'have' message from 1004 for the piece 86
+[1744906185.12]: Peer 1005 has downloaded the piece 66 from 1003 the number of pieces it has is 86
+[1744906185.18]: Peer 1005 recieved the 'have' message from 1004 for the piece 109
+[1744906185.31]: Peer 1005 has downloaded the piece 30 from 1006 the number of pieces it has is 90
+[1744906185.35]: Peer 1005 recieved the 'have' message from 1003 for the piece 85
+[1744906185.35]: Peer 1005 has downloaded the piece 33 from 1002 the number of pieces it has is 90
+[1744906185.43]: Peer 1005 recieved the 'have' message from 1003 for the piece 38
+[1744906185.69]: Peer 1005 recieved the 'have' message from 1003 for the piece 43
+[1744906185.93]: Peer 1005 recieved the 'have' message from 1003 for the piece 8
+eces it has is 92
+[1744906185.91]: Peer 1005 has downloaded the piece 35 from 1006 the number of pieces it has is 92
+[1744906185.95]: Peer 1005 has downloaded the piece 20 from 1002 the number of pieces it has is 92
+[1744906186.0]: Peer 1005 recieved the 'have' message from 1003 for the piece 60
+[1744906186.0]: Peer 1005 recieved the 'have' message from 1004 for the piece 111
+[1744906186.0]: Peer 1005 has downloaded the piece 61 from 1001 the number of pieces it has is 92
+[1744906186.0]: Peer 1005 recieved the 'have' message from 1004 for the piece 55
+[1744906186.0]: Peer 1005 has downloaded the piece 19 from 1006 the number of pieces it has is 96
+[1744906186.0]: Peer 1005 recieved the 'have' message from 1004 for the piece 62
+[1744906186.1]: Peer 1005 recieved the 'have' message from 1004 for the piece 14
+[1744906186.23]: Peer 1005 recieved the 'have' message from 1004 for the piece 94
+[1744906186.34]: Peer 1005 recieved the 'have' message from 1004 for the piece 107
+[1744906186.43]: Peer 1005 has downloaded the piece 64 from 1006 the number of pieces it has is 97
+[1744906186.48]: Peer 1005 has downloaded the piece 96 from 1003 the number of pieces it has is 97
+[1744906186.66]: Peer 1005 has downloaded the piece 93 from 1002 the number of pieces it has is 99
+[1744906186.66]: Peer 1005 recieved the 'have' message from 1003 for the piece 88
+[1744906186.68]: Peer 1005 has downloaded the piece 93 from 1001 the number of pieces it has is 101
+[1744906186.74]: Peer 1005 has downloaded the piece 20 from 1004 the number of pieces it has is 99
+[1744906186.77]: Peer 1005 has downloaded the piece 62 from 1006 the number of pieces it has is 99
+[1744906186.83]: Peer 1005 recieved the 'have' message from 1003 for the piece 14
+[1744906186.9]: Peer 1005 recieved the 'have' message from 1004 for the piece 91
+[1744906187.02]: Peer 1005 recieved the 'have' message from 1004 for the piece 87
+[1744906187.1]: Peer 1005 recieved the 'have' message from 1004 for the piece 61
+[1744906187.17]: Peer 1005 has downloaded the piece 5 from 1002 the number of pieces it has is 101
+[1744906187.24]: Peer 1005 recieved the 'have' message from 1004 for the piece 37
+[1744906187.27]: Peer 1005 recieved the 'have' message from 1003 for the piece 67
+[1744906187.38]: Peer 1005 recieved the 'have' message from 1004 for the piece 35
+[1744906187.48]: Peer 1005 has downloaded the piece 101 from 1006 the number of pieces it has is 101
+[1744906187.64]: Peer 1005 recieved the 'have' message from 1003 for the piece 71
+[1744906187.74]: Peer 1005 recieved the 'have' message from 1006 for the piece 52
+[1744906187.78]: Peer 1005 recieved the 'have' message from 1003 for the piece 24
+[1744906187.89]: Peer 1005 has downloaded the piece 58 from 1001 the number of pieces it has is 103
+[1744906187.95]: Peer 1005 recieved the 'have' message from 1006 for the piece 52
+[1744906188.05]: Peer 1005 has downloaded the piece 91 from 1004 the number of pieces it has is 103
+[1744906188.06]: Peer 1005 recieved the 'have' message from 1006 for the piece 97
+[1744906188.2]: Peer 1005 has downloaded the piece 7 from 1002 the number of pieces it has is 103
+[1744906188.25]: Peer 1005 recieved the 'not interested' message from 1006
+[1744906188.25]: Peer 1005 has downloaded the piece 62 from 1003 the number of pieces it has is 106
+[1744906188.28]: Peer 1005 recieved the 'have' message from 1004 for the piece 16
+[1744906188.47]: Peer 1005 recieved the 'have' message from 1003 for the piece 24
+[1744906188.51]: Peer 1005 recieved the 'have' message from 1004 for the piece 43
+[1744906188.73]: Peer 1005 has downloaded the piece 24 from 1006 the number of pieces it has is 106
+[1744906188.81]: Peer 1005 recieved the 'have' message from 1004 for the piece 3
+[1744906188.82]: Peer 1005 recieved the 'have' message from 1003 for the piece 99
+[1744906188.95]: Peer 1005 recieved the 'have' message from 1006 for the piece 97
+[1744906188.96]: Peer 1005 is unchoked by 1003
+[1744906188.98]: Peer 1005 has downloaded the piece 97 from 1001 the number of pieces it has is 106
+[1744906189.04]: Peer 1005 recieved the 'have' message from 1006 for the piece 97
+[1744906189.13]: Peer 1005 has downloaded the piece 39 from 1002 the number of pieces it has is 108
+[1744906189.27]: Peer 1005 recieved the 'have' message from 1006 for the piece 97
+[1744906189.31]: Peer 1005 has preferred neighbors 1003 1004 
+[1744906189.31]: Peer 1005 is choked by 1001
+[1744906189.32]: Peer 1005 has downloaded the piece 44 from 1004 the number of pieces it has is 109
+[1744906189.4]: Peer 1005 is unchoked by 1002
+[1744906189.6]: Peer 1005 has downloaded the piece 97 from 1003 the number of pieces it has is 110
+[1744906189.58]: Peer 1005 recieved the 'have' message from 1004 for the piece 51
+[1744906189.75]: Peer 1005 recieved the 'have' message from 1004 for the piece 15
+[1744906189.92]: Peer 1005 has downloaded the piece 23 from 1002 the number of pieces it has is 110
+[1744906189.88]: Peer 1005 recieved the 'have' message from 1003 for the piece 34
+[1744906189.92]: Peer 1005 recieved the 'have' message from 1004 for the piece 42
+[1744906190.06]: Peer 1005 recieved the 'have' message from 1003 for the piece 100
+[1744906190.06]: Peer 1005 recieved the 'have' message from 1003 for the piece 35
+[1744906190.07]: Peer 1005 recieved the 'have' message from 1004 for the piece 96
+[1744906190.19]: Peer 1005 recieved the 'have' message from 1004 for the piece 63
+[1744906190.17]: Peer 1005 recieved the 'have' message from 1003 for the piece 23
+[1744906190.41]: Peer 1005 recieved the 'have' message from 1003 for the piece 98
+[1744906190.44]: Peer 1005 is unchoked by 1004
+[1744906190.5]: Peer 1005 has downloaded the piece 34 from 1002 the number of pieces it has is 111
+[1744906190.55]: Peer 1005 recieved the 'have' message from 1003 for the piece 81
+[1744906190.55]: Peer 1005 recieved the 'have' message from 1004 for the piece 39
+[1744906191.05]: Peer 1005 has downloaded the piece 34 from 1004 the number of pieces it has is 112
+[1744906191.01]: Peer 1005 has downloaded the piece 23 from 1003 the number of pieces it has is 112
+[1744906191.25]: Peer 1005 recieved the 'have' message from 1003 for the piece 110
+[1744906191.26]: Peer 1005 recieved the 'have' message from 1004 for the piece 52
+[1744906191.48]: Peer 1005 recieved the 'have' message from 1003 for the piece 97
+[1744906191.53]: Peer 1005 recieved the 'have' message from 1004 for the piece 75
+[1744906191.56]: Peer 1005 is unchoked by 1001
+[1744906191.62]: Peer 1005 recieved the 'have' message from 1003 for the piece 74
+[1744906191.65]: Peer 1005 recieved the 'have' message from 1004 for the piece 45
+[1744906191.71]: Peer 1005 recieved the 'have' message from 1003 for the piece 80
+[1744906191.79]: Peer 1005 recieved the 'have' message from 1004 for the piece 25
+[1744906191.91]: Peer 1005 recieved the 'have' message from 1004 for the piece 32
+[1744906191.82]: Peer 1005 recieved the 'have' message from 1003 for the piece 94
+[1744906192.01]: Peer 1005 is unchoked by 1006
+[1744906192.05]: Peer 1005 recieved the 'have' message from 1004 for the piece 98
+[1744906192.12]: Peer 1005 recieved the 'have' message from 1004 for the piece 98
+[1744906192.27]: Peer 1005 recieved the 'have' message from 1003 for the piece 36
+[1744906192.4]: Peer 1005 recieved the 'have' message from 1003 for the piece 102
+[1744906192.4]: Peer 1005 recieved the 'have' message from 1004 for the piece 98
+[1744906193.32]: Peer 1005 has preferred neighbors 1004 1003 
+[1744906207.15]: Peer 1005 has downloaded the complete file
+[1744906207.39]: Peer 1005 has downloaded the piece 73 from 1002 the number of pieces it has is 112
+[1744906207.4]: Peer 1005 has downloaded the complete file
+[1744906207.48]: Peer 1005 has downloaded the complete file
+[1744906207.5]: Peer 1005 has downloaded the piece 73 from 1006 the number of pieces it has is 113
+[1744906207.67]: Peer 1005 has downloaded the piece 73 from 1004 the number of pieces it has is 113
+[1744906207.81]: Peer 1005 has preferred neighbors 1003 1004 1002 
+[1744906207.81]: Peer 1005 has downloaded the complete file
+[1744906207.82]: Peer 1005 has downloaded the complete file
+[1744906207.82]: Peer 1005 recieved the 'have' message from 1004 for the piece 19
+[1744906207.82]: Peer 1005 has downloaded the complete file
+[1744906207.87]: Peer 1005 is choked by 1006
+[1744906207.82]: Peer 1005 has downloaded the piece 73 from 1003 the number of pieces it has is 113
+[1744906207.87]: Peer 1005 has downloaded the piece 73 from 1001 the number of pieces it has is 113
+[1744906207.87]: Peer 1005 recieved the 'have' message from 1004 for the piece 6
+[1744906207.87]: Peer 1005 has downloaded the piece 73 from 1002 the number of pieces it has is 113
+[1744906208.01]: Peer 1005 recieved the 'have' message from 1004 for the piece 98
+[1744906208.07]: Peer 1005 is unchoked by 1001
+[1744906208.14]: Peer 1005 recieved the 'have' message from 1003 for the piece 65
+[1744906208.14]: Peer 1005 is unchoked by 1006
+[1744906208.14]: Peer 1005 is unchoked by 1001
+[1744906208.14]: Peer 1005 recieved the 'have' message from 1003 for the piece 65
+[1744906208.14]: Peer 1005 is unchoked by 1006
+[1744906208.14]: Peer 1005 has downloaded the complete file
+[1744906208.14]: Peer 1005 recieved the 'have' message from 1003 for the piece 29
+[1744906208.14]: Peer 1005 has downloaded the piece 73 from 1004 the number of pieces it has is 113
+[1744906208.14]: Peer 1005 is unchoked by 1002
+[1744906208.14]: Peer 1005 is unchoked by 1003
+[1744906208.14]: Peer 1005 recieved the 'have' message from 1003 for the piece 29
+[1744906208.14]: Peer 1005 recieved the 'have' message from 1003 for the piece 79
+[1744906208.14]: Peer 1005 is unchoked by 1004
+[1744906208.14]: Peer 1005 is unchoked by 1001
+[1744906208.15]: Peer 1005 recieved the 'have' message from 1003 for the piece 79
+[1744906208.15]: Peer 1005 is unchoked by 1002
+[1744906208.15]: Peer 1005 is unchoked by 1006
+[1744906208.15]: Peer 1005 recieved the 'have' message from 1004 for the piece 6
+[1744906208.15]: Peer 1005 recieved the 'have' message from 1003 for the piece 30
+[1744906208.15]: Peer 1005 recieved the 'have' message from 1003 for the piece 22
+[1744906208.15]: Peer 1005 recieved the 'have' message from 1004 for the piece 23
+[1744906208.15]: Peer 1005 is unchoked by 1001
+[1744906208.15]: Peer 1005 is choked by 1002
+[1744906208.15]: Peer 1005 is unchoked by 1004
+[1744906208.31]: Peer 1005 recieved the 'have' message from 1004 for the piece 23
+[1744906208.4]: Peer 1005 recieved the 'have' message from 1004 for the piece 6
+[1744906208.32]: Peer 1005 recieved the 'have' message from 1003 for the piece 91
+[1744906208.56]: Peer 1005 recieved the 'have' message from 1004 for the piece 23
+[1744906208.63]: Peer 1005 recieved the 'have' message from 1003 for the piece 44
+[1744906208.63]: Peer 1005 recieved the 'have' message from 1004 for the piece 23
+[1744906208.76]: Peer 1005 recieved the 'have' message from 1003 for the piece 87
+[1744906208.79]: Peer 1005 recieved the 'have' message from 1004 for the piece 23
+[1744906208.84]: Peer 1005 recieved the 'have' message from 1003 for the piece 25
+[1744906208.84]: Peer 1005 recieved the 'have' message from 1003 for the piece 57
+[1744906208.84]: Peer 1005 is unchoked by 1002
+[1744906208.87]: Peer 1005 recieved the 'not interested' message from 1004
+[1744906208.9]: Peer 1005 recieved the 'have' message from 1003 for the piece 69
+[1744906209.03]: Peer 1005 recieved the 'have' message from 1003 for the piece 89
+[1744906209.15]: Peer 1005 recieved the 'have' message from 1003 for the piece 20
+[1744906209.33]: Peer 1005 recieved the 'have' message from 1003 for the piece 20
+[1744906209.47]: Peer 1005 recieved the 'have' message from 1003 for the piece 21
+[1744906209.6]: Peer 1005 recieved the 'have' message from 1003 for the piece 21
+[1744906209.74]: Peer 1005 recieved the 'have' message from 1003 for the piece 78
+[1744906209.86]: Peer 1005 recieved the 'have' message from 1003 for the piece 78
+[1744906209.99]: Peer 1005 is unchoked by 1003
+[1744906210.32]: Peer 1005 is unchoked by 1003
+[1744906210.6]: Peer 1005 is unchoked by 1004
+[1744906210.86]: Peer 1005 is unchoked by 1003
+[1744906211.47]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
+[1744906211.63]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
+[1744906211.75]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
+[1744906211.88]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
+[1744906212.24]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
+[1744906212.79]: Peer 1005 has preferred neighbors 1002 1001 1004 
+[1744906213.02]: Peer 1005 is unchoked by 1001
+[1744906213.08]: Peer 1005 is unchoked by 1006
+[1744906213.82]: Peer 1005 is unchoked by 1002
+[1744906214.32]: Peer 1005 is unchoked by 1004
+[1744906217.35]: Peer 1005 is unchoked by 1003
+[1744906217.79]: Peer 1005 has preferred neighbors 1002 1001 1006 
+[1744906218.02]: Peer 1005 is choked by 1001
+[1744906218.08]: Peer 1005 is unchoked by 1006
+[1744906218.48]: Peer 1005 has the optimistically unchoked neighbor 1003
+[1744906218.84]: Peer 1005 is unchoked by 1002
+[1744906219.29]: Peer 1005 is choked by 1004
+[1744906219.35]: Peer 1005 is unchoked by 1001
+[1744906221.39]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
+[1744906221.98]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
+[1744906222.34]: Peer 1005 is choked by 1003
+[1744906222.49]: Peer 1005 recieved the 'have' message from 1003 for the piece 101
+[1744906222.79]: Peer 1005 has preferred neighbors 1001 1006 1002 
+[1744906223.02]: Peer 1005 is unchoked by 1001
+[1744906223.09]: Peer 1005 is unchoked by 1006
+essage from 1003 for the piece 101
+[1744906223.86]: Peer 1005 is unchoked by 1002
+[1744906224.27]: Peer 1005 is unchoked by 1004
+[1744906227.34]: Peer 1005 is unchoked by 1003
+[1744906227.79]: Peer 1005 has preferred neighbors 1003 1004 1001 
+[1744906228.03]: Peer 1005 is unchoked by 1001
+[1744906228.09]: Peer 1005 is choked by 1006
+[1744906228.83]: Peer 1005 is choked by 1002
+[1744906229.26]: Peer 1005 is unchoked by 1004
+[1744906229.45]: Peer 1005 is unchoked by 1002
+[1744906229.77]: Peer 1005 is unchoked by 1004
+[1744906232.35]: Peer 1005 is choked by 1003
+[1744906232.69]: Peer 1005 is unchoked by 1006
+[1744906232.79]: Peer 1005 has preferred neighbors 1002 1001 1006 
+[1744906233.02]: Peer 1005 is unchoked by 1001
+[1744906234.73]: Peer 1005 has preferred neighbors 1004 1003 1002 
+[1744906234.77]: Peer 1005 is unchoked by 1004
+[1744906238.03]: Peer 1005 is unchoked by 1001
+[1744906238.14]: Peer 1005 is unchoked by 1006
+[1744906239.7]: Peer 1005 is unchoked by 1004
+[1744906239.73]: Peer 1005 has preferred neighbors 1004 1003 1006 
+[1744906242.35]: Peer 1005 is unchoked by 1003
+[1744906243.02]: Peer 1005 is choked by 1001
+[1744906243.13]: Peer 1005 is unchoked by 1006
+[1744906243.86]: Peer 1005 is unchoked by 1002
+[1744906244.58]: Peer 1005 has preferred neighbors 1003 1001 1006 
+[1744906244.7]: Peer 1005 is choked by 1004
+[1744906247.34]: Peer 1005 is unchoked by 1003
+[1744906248.12]: Peer 1005 is choked by 1006
+[1744906249.58]: Peer 1005 has preferred neighbors 1001 1002 1004 
+[1744906249.66]: Peer 1005 is unchoked by 1004
+[1744906249.88]: Peer 1005 is unchoked by 1001
+[1744906252.35]: Peer 1005 is unchoked by 1003
+[1744906253.02]: Peer 1005 is unchoked by 1006
+[1744906253.18]: Peer 1005 is unchoked by 1006
+[1744906253.84]: Peer 1005 is unchoked by 1002
+[1744906254.56]: Peer 1005 has preferred neighbors 1006 1004 1003 
+[1744906254.67]: Peer 1005 is unchoked by 1004
+[1744906257.34]: Peer 1005 is choked by 1003
+[1744906258.03]: Peer 1005 is unchoked by 1001
+[1744906258.11]: Peer 1005 is unchoked by 1006
+[1744906258.83]: Peer 1005 is unchoked by 1002
+[1744906259.56]: Peer 1005 has preferred neighbors 1002 1001 1004 
+[1744906259.86]: Peer 1005 is unchoked by 1004
+[1744906262.35]: Peer 1005 is unchoked by 1003
+[1744906263.02]: Peer 1005 is unchoked by 1001
+[1744906263.83]: Peer 1005 is unchoked by 1002
+[1744906264.56]: Peer 1005 has preferred neighbors 1002 1001 1003 
+[1744906264.66]: Peer 1005 is unchoked by 1004
+[1744906265.46]: Peer 1005 has preferred neighbors 1002 1001 1006 
+[1744906267.35]: Peer 1005 is unchoked by 1003
+[1744906268.03]: Peer 1005 is unchoked by 1001
+[1744906268.14]: Peer 1005 is unchoked by 1006
+[1744906268.83]: Peer 1005 is unchoked by 1002
+[1744906269.67]: Peer 1005 is unchoked by 1004
+[1744906270.46]: Peer 1005 has preferred neighbors 1002 1003 1004 
+[1744906272.34]: Peer 1005 is choked by 1003
+[1744906273.03]: Peer 1005 is unchoked by 1001
+[1744906273.12]: Peer 1005 is unchoked by 1006
+[1744906273.84]: Peer 1005 is choked by 1002
+[1744906274.66]: Peer 1005 is choked by 1004
+[1744906275.46]: Peer 1005 has preferred neighbors 1004 1006 1001 
+[1744906277.35]: Peer 1005 is unchoked by 1003

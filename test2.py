@@ -37,7 +37,7 @@ import os
     #     break
     
     
-test = [1,2,3,4]
+# test = [1,2,3,4]
 
 # test2 = test.copy()
 
@@ -47,6 +47,16 @@ test = [1,2,3,4]
 
 # print(test.index(2))
 
-peers_preferred = np.random.choice(test, size=1, replace=False)
+# peers_preferred = np.random.choice(test, size=1, replace=False)
 
-print(peers_preferred[0])
+# print(peers_preferred[0])
+
+
+f = open('thefile')
+
+
+total_bytes = 0
+for line in f:
+    total_bytes += len(line)
+    
+print(total_bytes)
