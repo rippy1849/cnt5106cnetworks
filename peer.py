@@ -740,7 +740,7 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
         case 1:
             #Unchoke
             # print("Unchoking")
-            handle_unchoking_message(tables, connected_peer_id)
+            handle_unchoking_message(tables, connected_peer_id, self_peer_id)
             
             log_entry(self_peer_id, f"Peer {self_peer_id} is unchoked by {connected_peer_id}")
         case 2:
@@ -830,7 +830,7 @@ def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_i
         
         for key,conn in connection_table.items():
             
-            send_have_message(conn,piece_index)
+            send_have_message(conn,piece_index, self_peer_id, connected_peer_id)
 
         
         piece_list = tables.getPieceList()
@@ -846,7 +846,7 @@ def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_i
     
     if requested_piece_index != -1:
     
-        send_request_message(tables,connection,requested_piece_index,connected_peer_id)
+        send_request_message(tables,connection,requested_piece_index,connected_peer_id, self_peer_id)
     
     #send request
     
@@ -854,7 +854,7 @@ def handle_piece_message(message_payload, tables, connected_peer_id, self_peer_i
     return
 
 
-def handle_unchoking_message(tables,connected_peer_id):
+def handle_unchoking_message(tables,connected_peer_id, self_peer_id):
     
     connection_table = tables.getConnectionTable()
     connection_key_table = tables.getConnectionKeyTable()
@@ -865,7 +865,7 @@ def handle_unchoking_message(tables,connected_peer_id):
     
     if requested_piece_index != -1:
         # print("Sending Request Message")
-        send_request_message(tables,connection,requested_piece_index, connected_peer_id)
+        send_request_message(tables,connection,requested_piece_index, connected_peer_id, self_peer_id)
     
     
     return
@@ -897,7 +897,7 @@ def handle_have_message(tables, self_peer_id,connected_peer_id,message_payload):
         self_interest_table = tables.getSelfInterestedTable()
         
         if str(connected_peer_id) not in self_interest_table:
-            send_interested_message(connection, tables, self_peer_id)
+            send_interested_message(connection, tables, self_peer_id, connected_peer_id)
             current_timestamp = datetime.now().timestamp()
             tables.setSelfInterestedTableEntry(str(connected_peer_id),['Yes', current_timestamp])
         
@@ -932,7 +932,7 @@ def handle_have_message(tables, self_peer_id,connected_peer_id,message_payload):
             
             if current_timestamp - last_message_sent > 1:
                 
-                send_not_interested_message(connection,tables,self_peer_id)
+                send_not_interested_message(connection,tables,self_peer_id, connected_peer_id)
                 tables.removeSelfInterestedTableEntry(str(connected_peer_id))
         
     
@@ -1069,7 +1069,7 @@ def handle_request_message(message_payload,self_peer_id,connected_peer_id,tables
     requested_index = int(message_payload)
     
     if str(connected_peer_id) not in choked_table:
-        send_piece(connection,requested_index,self_peer_id)
+        send_piece(connection,requested_index,self_peer_id, connected_peer_id)
         
     
               
@@ -1133,6 +1133,8 @@ def handle_bitfield_message(message_payload, tables, self_peer_id,connected_peer
     res = ''.join(format(ord(i), '08b') for i in message_payload)
     interested = False
     
+    log_entry(self_peer_id,f"{self_peer_id} recieved bitfield message from {connected_peer_id}")
+    
     connection_table = tables.getConnectionTable()
     connection_key_table = tables.getConnectionKeyTable()
     
@@ -1156,7 +1158,7 @@ def handle_bitfield_message(message_payload, tables, self_peer_id,connected_peer
             self_interested_table = tables.getSelfInterestedTable()
             
             if str(connected_peer_id) not in self_interested_table:
-                send_interested_message(connection, tables, self_peer_id)
+                send_interested_message(connection, tables, self_peer_id, connected_peer_id)
             
                 current_timestamp = datetime.now().timestamp()
                 tables.setSelfInterestedTableEntry(str(connected_peer_id),['Yes',current_timestamp])
@@ -1168,7 +1170,7 @@ def handle_bitfield_message(message_payload, tables, self_peer_id,connected_peer
     
     if interested == False:
         self_interested_table = tables.getSelfInterestedTable()
-        send_not_interested_message(connection, tables,self_peer_id)
+        send_not_interested_message(connection, tables,self_peer_id, connected_peer_id)
         
         self_interested_table = tables.getSelfInterestedTable()
         
@@ -1205,6 +1207,8 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
             peer_id = message[28+offset_handshake:32+offset_handshake]
         
             print("Handshake from ", connected_peer_id ,"to", self_peer_id)
+            
+            log_entry(self_peer_id, f"Handshake from {connected_peer_id} to {self_peer_id}")
         
         
         
@@ -1260,18 +1264,21 @@ def check_message(message,self_peer_id,tables, connected_peer_id, peer_cfg, comm
     return ""
     
 
-def send_interested_message(connection, tables, self_peer_id):
+def send_interested_message(connection, tables, self_peer_id, connected_peer_id):
     
     interested_message = '00002'
+    log_entry(self_peer_id, f"{self_peer_id} sent interested message to {connected_peer_id}")
     
     connection.send(interested_message.encode('utf-16'))
     
     return
 
 
-def send_not_interested_message(connection, tables, self_peer_id):
+def send_not_interested_message(connection, tables, self_peer_id, connected_peer_id):
     
     not_interested_message = '00003'
+    
+    log_entry(self_peer_id, f"{self_peer_id} sent not interested message to {connected_peer_id}")
     
     connection.send(not_interested_message.encode('utf-16'))
     
@@ -1305,11 +1312,13 @@ def send_choking_message(connection, tables, target_peer_id):
 
 
 #Sends a request message to the desired peer connection for a specific piece index
-def send_request_message(tables,connection, piece_index, connected_peer_id):
+def send_request_message(tables,connection, piece_index, connected_peer_id, self_peer_id):
     
     payload = ""
     
     length_of_piece = len(str(piece_index))
+    
+    log_entry(self_peer_id,f"{self_peer_id} sent request message to {connected_peer_id}")
     
     
     for i in range(0,4-length_of_piece):
@@ -1326,12 +1335,13 @@ def send_request_message(tables,connection, piece_index, connected_peer_id):
     
     return
 
-def send_piece(connection, piece_index, self_peer_id):
+def send_piece(connection, piece_index, self_peer_id, connected_peer_id):
     
     #Assuming message length field is 4 bytes long, we must divide 5 byte int by 2 to fit it in 4 byte length field
     piece_message = ""
     piece_string = ""
     
+    log_entry(self_peer_id, f"{self_peer_id} sent piece message to {connected_peer_id}")
     
     directory = 'peer_' + str(self_peer_id)
     piece_file = str(piece_index) + '.piece'
@@ -1374,10 +1384,10 @@ def send_piece(connection, piece_index, self_peer_id):
     return
 
 
-def send_have_message(connection, piece_index):
+def send_have_message(connection, piece_index, self_peer_id, connected_peer_id):
     
     have_message = '00044'
-    
+    log_entry(self_peer_id,f"{self_peer_id} sent have message to {connected_peer_id}")
     
     piece_index_length = len(str(piece_index))
         
@@ -1599,6 +1609,8 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
     
         if handshake == False:
             connection.send(handshake_message)
+            
+            log_entry(self_peer_id, f"{self_peer_id} sent handshake message to connection 100{connection_number}")
    
             handshake = True
     
@@ -1631,19 +1643,21 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
             if bitfield == False:
                 send_bitfield_message(connection,self_peer_id,common_cfg)
                 bitfield = True
+                log_entry(self_peer_id,f"{self_peer_id} sent bitfield message to 100{connection_number}")
             
          
             
             
             
             current_timestamp = datetime.now().timestamp()
-                        
-           
             
+            un_int = int(common_cfg['UnchokingInterval'])
+           
+            #TODO Unchoking interval every p seconds
             #Make this it's own thread to be non-blocking for the optimistic interval, not really necessary given how fast this works
             if current_timestamp - prev_timestamp_unchoking > int(common_cfg['UnchokingInterval']):
                 
-               
+                log_entry(self_peer_id, f"Normal Choking Interval every {un_int} seconds")
                 prev_timestamp_unchoking = current_timestamp
                 
                 whoHasFile = tables.getWhoHasFile()
@@ -1659,13 +1673,13 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
                 
                 
             
+            opt_un_int = int(common_cfg['OptimisticUnchokingInterval'])
             
-            
-                
+            #TODO Optimistic unchoking interval every m seconds
             # Make this it's own thread to be non-blocking for the choking interval, not really necessary given how fast 
             if current_timestamp - prev_timestamp_optimistic > int(common_cfg['OptimisticUnchokingInterval']):
                 
-                
+                log_entry(self_peer_id, f"Optimistic Choking Interval every {opt_un_int}")
                 
                 prev_timestamp_optimistic = current_timestamp
                 

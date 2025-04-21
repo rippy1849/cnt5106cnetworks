@@ -1,31 +1,7 @@
-[1745257218.68]: Peer 1004 makes a connection to Peer 1001
-[1745257218.73]: Peer 1004 makes a connection to Peer 1002
-[1745257218.81]: Peer 1004 makes a connection from Peer 1001
-[1745257218.81]: Peer 1004 makes a connection to Peer 1005
-[1745257218.85]: Peer 1004 makes a connection from Peer 1002
-[1745257218.82]: Peer 1004 makes a connection to Peer 1003
-[1745257218.9]: Peer 1004 makes a connection from Peer 1005
-[1745257218.85]: Peer 1004 makes a connection to Peer 1006
-[1745257219.01]: Peer 1004 makes a connection from Peer 1003
-[1745257219.07]: Peer 1004 makes a connection from Peer 1006
-[1745257221.85]: Peer 1004 recieved the 'not interested' message from 1001
-[1745257221.94]: Peer 1004 recieved the 'not interested' message from 1002
-[1745257221.97]: Peer 1004 recieved the 'not interested' message from 1003
-[1745257222.0]: Peer 1004 recieved the 'not interested' message from 1006
-[1745257222.01]: Peer 1004 recieved the 'not interested' message from 1005
-[1745257223.45]: Peer 1004 is unchoked by 1001
-[1745257223.91]: Peer 1004 has preferred neighbors 1002 1005 1001 
-[1745257223.92]: Peer 1004 is unchoked by 1003
-[1745257223.99]: Peer 1004 is choked by 1001
-[1745257228.41]: Peer 1004 is choked by 1005
-[1745257228.57]: Peer 1004 is unchoked by 1006
-[1745257228.89]: Exited Recv Routine
-[1745257228.91]: Exited Send Routine
-[1745257228.99]: Exited Send Routine
-[1745257229.0]: Exited Recv Routine
-[1745257229.07]: Exited Send Routine
-[1745257229.1]: Exited Send Routine
-[1745257229.13]: Exited Send Routine
-[1745257233.39]: Exited Recv Routine
-[1745257233.54]: Exited Recv Routine
-[1745257233.54]: Exited Recv Routine
+[1745262742.51]: Peer 1004 makes a connection to Peer 1003
+[1745262742.56]: Peer 1004 makes a connection from Peer 1003
+[1745262742.56]: Peer 1004 makes a connection from Peer 1005
+[1745262743.53]: Peer 1004 makes a connection to Peer 1001
+[1745262743.54]: Peer 1004 makes a connection to Peer 1002
+[1745262743.67]: Peer 1004 makes a connection from Peer 1001
+[1745262743.7]: Peer 1004 makes a connection from Peer 1002
