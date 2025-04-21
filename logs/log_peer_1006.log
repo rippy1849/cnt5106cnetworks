@@ -1,9 +1,31 @@
-[1744903552.65]: Peer 1006 makes a connection to Peer 1002
-[1744903552.69]: Peer 1006 makes a connection to Peer 1003
-[1744903552.72]: Peer 1006 makes a connection from Peer 1002
-[1744903552.81]: Peer 1006 makes a connection from Peer 1004
-[1744903552.81]: Peer 1006 makes a connection from Peer 1003
-[1744903552.88]: Peer 1006 makes a connection to Peer 1005
-[1744903552.8]: Peer 1006 makes a connection to Peer 1001
-[1744903553.01]: Peer 1006 makes a connection from Peer 1005
-[1744903552.98]: Peer 1006 makes a connection from Peer 1001
+[1745257218.17]: Peer 1006 makes a connection to Peer 1001
+[1745257218.17]: Peer 1006 makes a connection from Peer 1002
+[1745257218.17]: Peer 1006 makes a connection from Peer 1001
+[1745257218.71]: Peer 1006 makes a connection to Peer 1004
+[1745257218.74]: Peer 1006 makes a connection to Peer 1005
+[1745257218.74]: Peer 1006 makes a connection to Peer 1003
+[1745257218.79]: Peer 1006 makes a connection from Peer 1004
+[1745257218.81]: Peer 1006 makes a connection from Peer 1003
+[1745257218.79]: Peer 1006 makes a connection from Peer 1005
+[1745257221.91]: Peer 1006 recieved the 'not interested' message from 1001
+[1745257221.89]: Peer 1006 recieved the 'not interested' message from 1002
+[1745257222.06]: Peer 1006 recieved the 'not interested' message from 1005
+[1745257222.08]: Peer 1006 recieved the 'not interested' message from 1003
+[1745257222.11]: Peer 1006 recieved the 'not interested' message from 1004
+[1745257223.42]: Peer 1006 is unchoked by 1005
+[1745257223.43]: Peer 1006 is unchoked by 1002
+[1745257223.56]: Peer 1006 has preferred neighbors 1003 1001 1005 
+[1745257223.98]: Peer 1006 is choked by 1001
+[1745257224.04]: Peer 1006 is unchoked by 1002
+[1745257228.41]: Peer 1006 is unchoked by 1005
+[1745257228.54]: Peer 1006 has preferred neighbors 1004 1005 1002 
+[1745257229.02]: Exited Send Routine
+[1745257228.93]: Exited Recv Routine
+[1745257229.01]: Exited Recv Routine
+[1745257229.07]: Exited Recv Routine
+[1745257229.06]: Exited Send Routine
+[1745257229.16]: Exited Send Routine
+[1745257229.26]: Exited Send Routine
+[1745257229.27]: Exited Send Routine
+[1745257233.41]: Exited Recv Routine
+[1745257233.54]: Exited Recv Routine

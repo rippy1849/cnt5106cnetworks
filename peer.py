@@ -39,6 +39,8 @@ class Tables:
         self.total_pieces = 0
         self.current_pieces = 0
 
+        self.who_has_file = {}
+        self.everyone_has_file = {}
         
     def getConnectionTable(self):        
         return self.connection_table
@@ -160,6 +162,22 @@ class Tables:
         
         return self.current_pieces
     
+    def setWhoHasFile(self, entry, value):
+        self.who_has_file[entry] = value
+        
+        return
+
+    def getWhoHasFile(self):
+        
+        return self.who_has_file    
+    
+    def setEveryoneHasFile(self,entry,value):
+        self.everyone_has_file[entry] = value
+        return
+    
+    def getEveryoneHasFile(self):
+        
+        return self.everyone_has_file
 
 
 def send_message(connection, message, self_peer_id, target_peer_id, i):
@@ -191,7 +209,7 @@ def generate_file(self_peer_id,common_cfg, tables):
     
     tables.setCurrentPieces(total_pieces)
         
-    
+    # print(total_number_of_pieces)
     if total_number_of_pieces == total_pieces:                     
         
         filepath = os.path.join(os.getcwd(), directory, file_name)
@@ -210,6 +228,7 @@ def generate_file(self_peer_id,common_cfg, tables):
             f.close()
             
         log_entry(self_peer_id, f"Peer {self_peer_id} has downloaded the complete file")
+        tables.setWhoHasFile(str(self_peer_id),'Yes')
         
         
     # time.sleep(5)
@@ -219,6 +238,9 @@ def generate_file(self_peer_id,common_cfg, tables):
 
 
 def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
+    
+    
+    
     
     prev_timestamp_dl_table = datetime.now().timestamp()
     
@@ -244,6 +266,33 @@ def preferred_peers(tables,self_peer_id,peer_cfg,common_cfg):
             if has_file:
                 #If peer has the file randomize preferred peers
                 error = 1
+                
+                # print(f"{self_peer_id} has the file")
+                c_table = tables.getConnectionTable()
+                
+                for _,c in c_table.items():
+                    send_download_message(c,3)
+                
+                tables.setWhoHasFile(str(self_peer_id),'Yes')
+                
+                who_has_file = tables.getWhoHasFile()
+                
+                # print(f"{self_peer_id} has {len(who_has_file)} entries")
+                
+                if len(who_has_file) == len(peer_cfg):
+                    tables.setEveryoneHasFile(str(self_peer_id),'Yes')
+                    # print(f"{self_peer_id} Knows everyone has file")
+                    # send_download_message(c,4)
+                    for _,c in c_table.items():
+                        send_download_message(c,4)
+                    
+                    everyone_table = tables.getEveryoneHasFile()
+                    
+                    if len(everyone_table) == len(peer_cfg):
+                        
+                        print(f"{self_peer_id} exiting Preferred Peer Routine")
+                        exit()
+                
                 peer_list = []
                 peers_preferred = []
                 
@@ -684,26 +733,26 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
     match message_type:
         case 0:
             #Choke Case
-            print("Choking")
+            # print("Choking")
             log_entry(self_peer_id, f"Peer {self_peer_id} is choked by {connected_peer_id}")
             
             error = 1 # Need something here to not error
         case 1:
             #Unchoke
-            print("Unchoking")
+            # print("Unchoking")
             handle_unchoking_message(tables, connected_peer_id)
             
             log_entry(self_peer_id, f"Peer {self_peer_id} is unchoked by {connected_peer_id}")
         case 2:
             #Interested 
-            print("Interested")
+            # print("Interested")
             
             handle_interested_message(tables, connected_peer_id)
             log_entry(self_peer_id, f"Peer {self_peer_id} recieved the 'interested' message from {connected_peer_id}")
             
         case 3:
             #Not Interested
-            print("Not Interested")
+            # print("Not Interested")
             log_entry(self_peer_id, f"Peer {self_peer_id} recieved the 'not interested' message from {connected_peer_id}")
             
             handle_not_interested_message(tables, connected_peer_id)
@@ -713,7 +762,7 @@ def handle_message(message_type,message_payload,tables, connected_peer_id, self_
             handle_have_message(tables, self_peer_id,connected_peer_id, message_payload)
         case 5:
             #Bitfield
-            print("Bitfield")
+            # print("Bitfield")
             handle_bitfield_message(message_payload,tables,self_peer_id,connected_peer_id)
         case 6:
             #request
@@ -982,6 +1031,23 @@ def handle_download_rate_message(message_payload,tables, connected_peer_id, self
         
         tables.setRateEntry(rate_entry,download_rate)
         
+        
+    if message_payload[0] == '3':
+        
+        tables.setWhoHasFile(str(connected_peer_id), 'Yes')
+        
+        whoHasFile = tables.getWhoHasFile()
+        
+        # print(f"{self_peer_id} has {len(whoHasFile)} entries in who has file")
+        
+    if message_payload[0] == '4':
+        tables.setEveryoneHasFile(str(connected_peer_id), 'Yes')
+        
+        everyone_table = tables.getEveryoneHasFile()
+        
+        # print(f"So far, {self_peer_id} has {len(everyone_table)} people know everyone has the file")
+        
+        
     
     return
 
@@ -1202,6 +1268,7 @@ def send_interested_message(connection, tables, self_peer_id):
     
     return
 
+
 def send_not_interested_message(connection, tables, self_peer_id):
     
     not_interested_message = '00003'
@@ -1413,6 +1480,9 @@ def send_establishing_message(connection,self_peer_id, connection_number):
 
 def send_download_message(connection, message_type):
     
+    
+    
+    
     download_message = '00019' + str(message_type)
     
     connection.send(download_message.encode('utf-16')) 
@@ -1441,6 +1511,8 @@ def send_junk_message(connection, self_peer_id, target_peer_id):
 def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,tables, peer_cfg, common_cfg, pieces_list):
     s = socket.socket()
     connected = False
+    
+    
 
     message_recieve_size = (int(common_cfg['PieceSize']) + 5)*4
     
@@ -1464,6 +1536,15 @@ def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,tables, peer_cfg, c
     while True:
     # receive data from the server
         
+        everyone_table = tables.getEveryoneHasFile()
+            
+        if len(everyone_table) == len(peer_cfg):
+            # s.shutdown(socket.SHUT_RDWR)
+            # print(f"{self_peer_id} has {len(everyone_table)} entries")
+            print(f"{self_peer_id} exiting recv routine")
+            log_entry(self_peer_id,"Exited Recv Routine")
+            exit()
+        
         #What if message gets cut off?
         
         #Need to make this the max packet size
@@ -1486,6 +1567,8 @@ def peer_recieve_routine(ip,port,target_peer_id,self_peer_id,tables, peer_cfg, c
 def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_cfg):
     
     
+    
+    
     connection_table = tables.getConnectionTable()
     connection = connection_table[connection_number]
     
@@ -1503,6 +1586,16 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
     prev_timestamp_optimistic = datetime.now().timestamp()
 
     while True:
+    
+        everyone_table = tables.getEveryoneHasFile()
+            
+        if len(everyone_table) == len(peer_cfg):
+                        
+            # print(f"{self_peer_id} has {len(everyone_table)} entries")
+            print(f"{self_peer_id} exiting send routine")
+            log_entry(self_peer_id,"Exited Send Routine")
+            exit()
+    
     
         if handshake == False:
             connection.send(handshake_message)
@@ -1553,8 +1646,18 @@ def peer_send_routine(self_peer_id,tables, connection_number, peer_cfg, common_c
                
                 prev_timestamp_unchoking = current_timestamp
                 
+                whoHasFile = tables.getWhoHasFile()
+                if str(self_peer_id) in whoHasFile:
+                    # print(f"{self_peer_id} has the file")
+                    
+                    send_download_message(connection,3)
+                    send_download_message(connection,0)
+                else:
+                    send_download_message(connection,0)
+                # print(f"{self_peer_id} has sent download message")
                 
-                send_download_message(connection,0)
+                
+                
             
             
             
@@ -1662,12 +1765,16 @@ def start_peer(peer_id, port):
     # generate_the_file = threading.Thread(target=generate_file, args=(peer_id,common_cfg, tables))
     # generate_the_file.start()
 
-
+    # exit()
  
     s.listen(5)    
     connection_count = 1
     while True:
 
+
+        if connection_count == len(peer_cfg):
+            print("Exiting Main Process")
+            exit()
     # Establish connection with client.
         #How to tell what peer the connection is to
         c, addr = s.accept()
